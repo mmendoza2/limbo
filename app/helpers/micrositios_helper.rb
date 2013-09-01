@@ -1,0 +1,2 @@
+module MicrositiosHelper
+end

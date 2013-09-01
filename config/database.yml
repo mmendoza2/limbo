@@ -1,0 +1,29 @@
+# BASES DE DATOS CON MYSQL, se quito la ultima linea "socket" - no se si sea necesaria para el momento de subirla al host
+
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: notelimites_development
+  pool: 5
+  username: root
+  password:
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: notelimites_test
+  pool: 5
+  username: root
+  password:
+
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: notelimites_production
+  pool: 5
+  username: root
+  password:
