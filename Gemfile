@@ -27,7 +27,7 @@ gem 'taps'
 # Use sqlite3 as the database for Active Record
 
 # Base de datos postgresql
-gem 'mysql'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

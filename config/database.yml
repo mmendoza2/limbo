@@ -1,29 +1,21 @@
 # BASES DE DATOS CON MYSQL, se quito la ultima linea "socket" - no se si sea necesaria para el momento de subirla al host
 
 development:
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  database: notelimites_development
+  adapter: postgresql
+  database: development
   pool: 5
-  username: root
-  password:
-
+  timeout: 5000
+  host: localhost
 test:
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  database: notelimites_test
+  adapter: postgresql
+  database: test
   pool: 5
-  username: root
-  password:
-
+  timeout: 5000
+  host: localhost
 
 production:
-  adapter: mysql
-  encoding: utf8
-  reconnect: false
-  database: notelimites_production
+  adapter: postgresql
+  database: production
   pool: 5
-  username: root
-  password:
+  timeout: 5000
+  host: localhost
