@@ -13,14 +13,17 @@ gem 'friendly_id', '5.0.0.beta4'
 gem 'geocoder'
 # Para realizar scaffold sin todos los recursos
 gem 'nifty-generators'
-gem 'devise', '3.0.0.rc'
+
 # Para instalar ruby en Godaddy ssh
 gem 'net-ssh'
 # Para migrar una base de datos a otra
 gem 'taps'
 
-# Para has secure password
 
+
+# Para poder subir la app a heroku
+
+gem 'rails_12factor', '0.0.2'
 
 
 
