@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Notelimites::Application.load_tasks
+NoTeLimites::Application.load_tasks

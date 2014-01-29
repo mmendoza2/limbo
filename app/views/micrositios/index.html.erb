@@ -1,40 +1,37 @@
-<h1>Micrositios Lista</h1>
-
-<div  id="micrositiocontainer">
-
-<table>
-  <thead>
-    <tr>
-      <th class="micrositiodescripcionlistaaltura">Imagenes</th>
-      <th class="micrositiodescripcionlistatitulo">Micrositio</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    <% @micrositios.each do |micrositio| %>
-      <tr >
-        <td class="micrositiodescripcionlistaaltura"><%= image_tag micrositio.photo.url(:small) %></td>
-        <td class="micrositiodescripcionlista">
-        <%= link_to micrositio.nombre, micrositio %>
-        <%= micrositio.descripcion %>
-        </td>
-        <td>
-        <ul>
-        <li><%= link_to 'Ver más --->', micrositio %></li>
-        <li><%= link_to 'Editar  --->', edit_micrositio_path(micrositio) %></li>
-        <li><%= link_to 'Destruir --->', micrositio, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-        </ul>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 
-<br>
+    <h1>Todos los micrositios</h1>
 
-<%= link_to 'Nuevo Micrositio', new_micrositio_path %>
 
-</div>
+    <div class="row">
+      <%=	 form_tag micrositios_path , :method => 'get' do %>
+          </p>
+        <div id="search">  <%= text_field_tag :search, params[:search] %>   </div>
+          <%= submit_tag "Search", :name => nil %>
+          </p>
+      <%	 end %>
+    </div>
+
+
+    <div  id="micrositiocontainer">
+
+      <ul>
+        <% @micrositios.take(19).each do |micrositio| %>
+            <% if micrositio.photo_file_size? %>
+                <li id="cadaevento">
+                  <%= link_to micrositio.name, micrositio %>
+                  <%= image_tag micrositio.photo.url(:small) %>
+                  <%= micrositio.imagen %>
+            <% else %>
+                <li id="cadaevento">
+                  <%= link_to micrositio.name, micrositio %>
+                  <img src="https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/<%= micrositio.photo_file_name %>"    >
+                  <%= micrositio.imagen %>
+            <% end %>
+
+        <% end %>
+
+      </ul>
+
+
+    </div>

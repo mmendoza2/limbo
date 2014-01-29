@@ -1,21 +1,10 @@
-# BASES DE DATOS CON MYSQL, se quito la ultima linea "socket" - no se si sea necesaria para el momento de subirla al host
+
 
 development:
   adapter: postgresql
-  database: development
-  pool: 5
-  timeout: 5000
+  encoding: unicode
+  database: notelimites_dev
+  username: Meme
+  password:
   host: localhost
-test:
-  adapter: postgresql
-  database: test
-  pool: 5
-  timeout: 5000
-  host: localhost
-
-production:
-  adapter: postgresql
-  database: production
-  pool: 5
-  timeout: 5000
-  host: localhost
+  port: 5432

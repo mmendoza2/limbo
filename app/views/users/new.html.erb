@@ -1,25 +1,61 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<% if signed_in? %>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
 
-        <%= render 'shared/error_messages', object: f.object %>
+  <%= puts(request.env['omniauth.auth'])   %>
+  <%=    %>
+  <%= @user.name %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+    <p> YA ESTAS LOGUEADO</p>
+    <p> AHORA</p>
+    <p> ¡COMIENZA A CONOCER MÉXICO!</p>
 
-        <%= f.label :email %>
-        <%= f.text_field :email %>
+<% else %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation %>
 
-        <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
+<div class="container">
+    <div class="contenedorpagprincipal">
+        <div class="login-form-wrap-center">
+          <h1 class="sign-up-header">Resgitrate en No Te Limites</h1>
+          <div class="wrapper-form">
+
+
+
+            <section class="wrapper-facebook">
+              <div id="user-widget">
+                <% if current_user %>
+                    Welcome <strong><%= current_user.name %></strong>!
+                    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                <% else %>
+                    <%= link_to "Registrate con Facebook", "/auth/facebook", id: "sign_in", class: "btn btn-large btn-primary" %>
+                <% end %>
+              </div>
+
+             </section>
+
+
+
+
+
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footerpagprincipal">
+  <div class="container">
+    <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </div>
 </div>
+
+
+
+<% end %>
+
+
+
+
+
+

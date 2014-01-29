@@ -1,5 +1,7 @@
 class EventosController < ApplicationController
-  before_action :set_evento, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
+  before_action :admin_user,     only: :destroy
+
 
   # GET /eventos
   # GET /eventos.json
@@ -11,7 +13,9 @@ class EventosController < ApplicationController
   # GET /eventos/1.json
   def show
     @eventos = Evento.all
-    @micrositioevento= Micrositio
+    @micrositioevento= Micrositio.all
+    @user = Evento.friendly.find(params[:id])
+    @evento = Evento.friendly.find(params[:id])
   end
 
   # GET /eventos/new
@@ -26,8 +30,7 @@ class EventosController < ApplicationController
   # POST /eventos
   # POST /eventos.json
   def create
-    @evento = Evento.new(evento_params)
-
+    @evento = current_user.eventos.build(evento_params)
     respond_to do |format|
       if @evento.save
         format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
@@ -63,22 +66,21 @@ class EventosController < ApplicationController
     end
   end
 
-  def has_attached_file
-  end
-
-  def photo
-  end
 
 
   private
-    # Use callbacks to share common setup or constraints between actions.
 
+  # Use callbacks to share common setup or constraints between actions.
   def set_evento
     @evento = Evento.friendly.find(params[:id])
   end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
-      params[:evento].permit(:nombre, :descripcion, :photo, :precio, :fecha, :artista, :urloficial)
+      params[:evento].permit(:nombre, :descripcion, :photo, :precio, :fecha, :artista, :urloficial, :estado)
     end
+
+
+
+
 end

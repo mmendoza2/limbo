@@ -1,4 +1,4 @@
-Notelimites::Application.configure do
+NoTeLimites::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -14,7 +14,7 @@ Notelimites::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -23,7 +23,33 @@ Notelimites::Application.configure do
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
-  # This option may cause significant delays in view rendering with a large
-  # number of complex assets.
   config.assets.debug = true
+
+  # devise
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => 'notelimites.com',
+      :user_name            => 'ntl@notelimites.com',
+      :password             => 'NTL12wolmen',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  }
+
+  # Specify what domain to use for mailer URLs
+  config.action_mailer.default_url_options = {host: 'localhost:3000'}
+
+
+
+
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => ENV['AWS_BUCKET'],
+          :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+          :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+  }
+
+
 end

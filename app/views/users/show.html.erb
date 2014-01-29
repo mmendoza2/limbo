@@ -1,30 +1,38 @@
-<p id="notice"><%= notice %></p>
 
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="span4">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
-  </aside>
+    <div class="row">
+      <section class="menu">
+        <p>...................................</p>
+        <%=  link_to "Micrositios", controller: "micrositios", action:"index"  %>
+        <p>...................................</p>
+        <%=  link_to "Eventos", controller: "eventos", action:"index"  %>
+        <p>...................................</p>
+        <%=  link_to "Estados", controller: "estados", action:"index"  %>
+        <p>...................................</p>
 
-  <div class="span8">
-    <%= render 'follow_form' if signed_in? %>
+      </section>
 
-    <% if @user.microposts.any? %>
-        <h3>Microposts (<%= @user.microposts.count %>)</h3>
-        <ol class="microposts">
-          <%= render @microposts %>
-        </ol>
-        <%= will_paginate @microposts %>
-    <% end %>
-  </div>
 
-</div>
 
+
+
+      <aside class="span4">
+        <section>
+          <%= render 'follow_form' %>
+        </section>
+        <section>
+          <%= render 'shared/user_info' %>
+        </section>
+        <section>
+          <%= render 'shared/stats' %>
+        </section>
+        <section>
+          <%= render 'shared/micropost_form' %>
+        </section>
+      </aside>
+      <div class="span8">
+        <h3>Micropost Feed</h3>
+        <%= render 'shared/feed' %>
+      </div>
+
+
+    </div>

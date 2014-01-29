@@ -15,7 +15,8 @@
     </data-source>
     <data-source source="LOCAL" name="Rails notelimites: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="76a74c44-2fd5-45c6-bfc2-9b27baa85d99">
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/notelimites_dev</jdbc-url>
+      <user-name>Meme</user-name>
       <libraries>
         <library>
           <url>file://$USER_HOME$/Library/Preferences/RubyMine50/jdbc-drivers/postgresql-driver-license.txt</url>

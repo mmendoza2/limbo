@@ -1,23 +1,73 @@
-Notelimites::Application.routes.draw do
-  resources :eventos
-  resources :locations
+NoTeLimites::Application.routes.draw do
+
+  resources :search_suggestionns
+
+  root to: 'notelimites#home'
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+  match '/users/auth/facebook' => 'devise/omniauth_callbacks#passthru',  via: 'get'
+  match 'auth/:provider/callback', to: 'sessions#create',   via: 'get'
+  match 'auth/failure', to: redirect('/'),                  via: 'get'
+  match '/users/sign_out',    to: 'devise/sessions#destroy',    via: 'post'
+  match '/users/seleccionestados',    to: 'users#editestados',    via: 'get'
+  match '/users/seleccionactividades',    to: 'users#editactividades',    via: 'get'
+  match '/users/seleccionlugares',    to: 'users#editlugares',    via: 'get'
+  match '/users/seleccionusuarios',    to: 'users#editusuarios',    via: 'get'
+  match '/index',    to: 'notelimites#index',    via: 'get'
+  match '/ayuda',    to: 'notelimites#ayuda',    via: 'get'
+  match '/terminos',    to: 'notelimites#terminos',    via: 'get'
+  match '/nosotros',   to: 'notelimites#nosotros',   via: 'get'
+  match '/contacto', to: 'notelimites#contacto', via: 'get'
+  match '/instrucciones', to: 'notelimites#instrucciones', via: 'get'
+  match '/micrositios', to: 'micrositios#index', via: 'get'
+
   resources :users do
     member do
       get :following, :followers
     end
   end
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :eventos do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :micrositios do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :actividades do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :estados do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :actividadespadre do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :users
+  resources :actividades
+  resources :actividades, :as => :actividad
+  resources :actividadespadre
+  resources :actividadespadre, :as => :actividadpadre
+  resources :estados
+  resources :categorias
+  resources :eventos
+  resources :locations
   resources :micrositios
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  root 'notelimites#home'
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
-  match '/help',    to: 'notelimites#help',    via: 'get'
-  match '/nosotros',   to: 'notelimites#nosotros',   via: 'get'
-  match '/contacto', to: 'notelimites#contacto', via: 'get'
-  match '/micrositios', to: 'micrositios#index', via: 'get'
+  resources :relationeventos, only: [:create, :destroy]
+  resources :relationmicrositios, only: [:create, :destroy]
+  resources :relationestados, only: [:create, :destroy]
+  resources :relationactividades, only: [:create, :destroy]
+  resources :relationactividadespadre, only: [:create, :destroy]
 
 
 
@@ -29,58 +79,4 @@ Notelimites::Application.routes.draw do
 
 
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-  
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

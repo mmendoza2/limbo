@@ -1,20 +1,32 @@
 class NotelimitesController < ApplicationController
 
+
   def home
-    if signed_in?
-      @micropost  = current_user.microposts.build
-      @feed_items = current_user.feed.paginate(page: params[:page])
-    end
+      @micrositios = Micrositio.all
+      @eventos = Evento.all
+      @actividades = Actividad.all
+      @users = User.all
+
+
+
   end
 
-
-
-  def help
+  def ayuda
   end
+
 
   def nosotros
   end
 
   def contacto
   end
+
+  def terminos
+  end
+
+  def instrucciones
+    @actividades = Actividad.all
+  end
+
+
 end
