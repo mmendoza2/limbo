@@ -21,11 +21,7 @@
         <% end %>
         <br>
         <br>
-        <%= form_for(@user) do |f| %>
-              <%= render 'shared/error_messages', object: f.object %>
-              <%= collection_select(:estado, :estado_id, Estado.all, :id, :estado) %>
-              <div class="col-md-7">  <%= f.submit "Da click para Actualizar", class: "btn btn-primary" %> </div>
-        <% end %>
+
         <br>
         <br>
         <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>

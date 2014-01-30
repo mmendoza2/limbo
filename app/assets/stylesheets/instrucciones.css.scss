@@ -61,3 +61,18 @@
   /*    border-color: #922323; */
   border-color: #e5adad;
 }
+
+
+#controls {
+  position: absolute;
+  bottom: 1em;
+  left: 100px;
+  width: 400px;
+  z-index: 20000;
+  padding: 0 0.5em 0.5em 0.5em;
+}
+html, body, #map_canvas {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}

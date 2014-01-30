@@ -34,5 +34,8 @@ class ApplicationController < ActionController::Base
 
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :avatar
+    devise_parameter_sanitizer.for(:sign_up) << :lat
+    devise_parameter_sanitizer.for(:sign_up) << :lng
+
   end
 end

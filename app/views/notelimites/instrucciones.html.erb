@@ -1,3 +1,30 @@
+<script>
+    $(document).ready(function () {
+
+
+        var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+        var mapOptions = {
+            zoom: 4,
+            center: myLatlng
+        }
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        // Place a draggable marker on the map
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable:true,
+            title:"Your location!"
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function (event) {
+            document.getElementById("latbox").value = this.getPosition().lat();
+            document.getElementById("lngbox").value = this.getPosition().lng();
+        });
+
+    });
+</script>
+
 <% @user ||= current_user %>
 <% provide(:title, 'Instrucciones') %>
 
@@ -9,14 +36,26 @@
   </div>
 
   <div class="row header-interests">
-    <div class="col-md-9">
-        <h1>Que actividades te gustan, <%=	 current_user.name %> ?</h1>
-        <h5 style="color: #000000">Selecciona tu estado y mínimo 3 actividades para poder recomendarte lugares y eventos.
-          <button data-toggle="popover" title="Estamos para ayudarte" data-content="Empieza por seguir actividades que te gustan, dandole click en la actividad" style="border-radius: 15px">?</button>
-        </h5>
 
 
-    </div>
+        <div class="col-md-9">
+            <h1>Que actividades te gustan, <%=	 current_user.name %> ?</h1>
+            <h5 style="color: #000000">Selecciona tu estado y mínimo 3 actividades para poder recomendarte lugares y eventos.
+              <button data-toggle="popover" title="Estamos para ayudarte" data-content="Empieza por seguir actividades que te gustan, dandole click en la actividad" style="border-radius: 15px">?</button>
+            </h5>
+          <%= form_for(@user, :html => { :multipart => true }) do |f| %>
+
+                  <div id="map-canvas" class="thumbnail" style="height:200px"></div>
+
+                  <div id="latlong">
+                    <p>Latitude: <input size="20" type="text" id="latbox" name="lat"></p>
+                    <p>Longitude: <input size="20" type="text" id="lngbox" name="lng"></p>
+                  </div>
+
+          <% end %>
+
+        </div>
+
     <div class="col-md-3">
              <%	 if @user.followed_actividades.count >= 3 %>
 
