@@ -66,12 +66,12 @@
                                       <div id="follow_form" >
                                         <% if current_user.following?(x) %>
                                             <%= form_for(current_user.relationships.find_by(followed_id: x), html: { method: :delete })  do |f| %>
-                                                <%= f.submit "seguir", class: " btn btn-primary" %>
+                                                <%= f.submit "No seguir", class: " btn btn-primary" %>
                                             <% end %>
                                         <% else %>
                                             <%= form_for(current_user.relationships.build(followed_id: x.id)) do |f| %>
                                                 <div><%= f.hidden_field :followed_id %></div>
-                                                <%= f.submit  "No seguir", class: "btn " %>
+                                                <%= f.submit  "Seguir", class: "btn " %>
                                             <% end %>
                                         <% end %>
                                       </div>
@@ -133,12 +133,12 @@
                                 <div id="follow_form" >
                                   <% if current_user.following?(user) %>
                                       <%= form_for(current_user.relationships.find_by(followed_id: user), html: { method: :delete })  do |f| %>
-                                          <%= f.submit "seguir", class: " btn btn-primary" %>
+                                          <%= f.submit "No seguir", class: " btn btn-primary" %>
                                       <% end %>
                                   <% else %>
                                       <%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
                                           <div><%= f.hidden_field :followed_id %></div>
-                                          <%= f.submit  "No seguir", class: "btn " %>
+                                          <%= f.submit  "Seguir", class: "btn " %>
                                       <% end %>
                                   <% end %>
                                 </div>
