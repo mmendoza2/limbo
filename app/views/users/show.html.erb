@@ -1,38 +1,20 @@
+<div class="col-md-6">
+  <h3> Randomchat Feed</h3>
+  <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
+  <strong>Microposts</strong> <%= @user.microposts.count %>
+  <%= render 'shared/feed' %>
+</div>
 
-    <div class="row">
-      <section class="menu">
-        <p>...................................</p>
-        <%=  link_to "Micrositios", controller: "micrositios", action:"index"  %>
-        <p>...................................</p>
-        <%=  link_to "Eventos", controller: "eventos", action:"index"  %>
-        <p>...................................</p>
-        <%=  link_to "Estados", controller: "estados", action:"index"  %>
-        <p>...................................</p>
-
-      </section>
+<div>
+</div>
 
 
 
+<div class="col-md-6" style="margin-top: 100px">
+  <% if @user.microposts.any? %>
+      <%= render 'shared/micropost_form' %>
+      <%= will_paginate @microposts %>
+  <% end %>
+</div>
 
 
-      <aside class="span4">
-        <section>
-          <%= render 'follow_form' %>
-        </section>
-        <section>
-          <%= render 'shared/user_info' %>
-        </section>
-        <section>
-          <%= render 'shared/stats' %>
-        </section>
-        <section>
-          <%= render 'shared/micropost_form' %>
-        </section>
-      </aside>
-      <div class="span8">
-        <h3>Micropost Feed</h3>
-        <%= render 'shared/feed' %>
-      </div>
-
-
-    </div>

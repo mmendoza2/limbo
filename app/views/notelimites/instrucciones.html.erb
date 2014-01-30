@@ -1,18 +1,21 @@
 <% @user ||= current_user %>
 <% provide(:title, 'Instrucciones') %>
 
-<div class="container" style="margin-top: 40px">
+<div  style="margin-top: 20px">
   <div class="row">
    <div class="col-md-6">
      <img src="https://s3.amazonaws.com/imagenes.notelimites/ntl-logo.png" style="width: 400px; margin-bottom: 20px">
    </div>
   </div>
+
   <div class="row header-interests">
     <div class="col-md-9">
         <h1>Que actividades te gustan, <%=	 current_user.name %> ?</h1>
-        <h5 style="color: #000000">Selecciona mínimo 3 actividades para poder recomendarte lugares y eventos.
+        <h5 style="color: #000000">Selecciona tu estado y mínimo 3 actividades para poder recomendarte lugares y eventos.
           <button data-toggle="popover" title="Estamos para ayudarte" data-content="Empieza por seguir actividades que te gustan, dandole click en la actividad" style="border-radius: 15px">?</button>
         </h5>
+
+
     </div>
     <div class="col-md-3">
              <%	 if @user.followed_actividades.count >= 3 %>
@@ -27,6 +30,7 @@
              <%	 end %>
     </div>
   </div>
+
   <div class="row wrapper-interests">
    <div class="row">
     <div class="col-md-6">

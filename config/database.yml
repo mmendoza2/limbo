@@ -3,8 +3,8 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: notelimites_dev
-  username: Meme
+  database: ntlcom_dev
+  username:  Meme
   password:
   host: localhost
   port: 5432

@@ -100,6 +100,10 @@ class User < ActiveRecord::Base
   facebook { |fb| fb.get_connection("me", "friends?fields=installed") }
   end
 
+  def invite_friends
+    facebook { |fb| fb.get_connection("me", "friends?fields=installed") }
+  end
+
 
 
 
