@@ -10,10 +10,8 @@ class MicrositiosController < ApplicationController
   # GET /micrositios
   # GET /micrositios.json
   def index
+    @micrositios = Micrositio.all
 
-
-    @micrositios = Micrositio.order(:name).where("name like ?", "#{params[:term]}")
-    render json: @micrositios.map(&:name)
   end
 
   # GET /micrositios/1
