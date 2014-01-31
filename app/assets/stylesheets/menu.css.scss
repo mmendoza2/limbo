@@ -1,5 +1,22 @@
 /* custom template */
+html, body {
+  height: 100%;
+  font-family:verdana,arial,sans-serif;
+  color:#555555;
+}
 
+.nav {
+  font-family:Arial,sans-serif;
+  font-size:13px;
+}
+
+a {
+  color:#222222;
+}
+
+a:hover {
+  text-decoration:none;
+}
 
 hr {
   border-color:#dedede;
@@ -29,11 +46,11 @@ hr {
 }
 
 .column .padding {
-  padding: 0px;
+  padding: 20px;
 }
 
 .full{
-  padding-top:20px;
+  padding-top:70px;
 }
 
 .box {
@@ -95,6 +112,7 @@ hr {
 #sidebar, #sidebar a, #sidebar-footer a {
   color:#ffffff;
   background-color:transparent;
+  text-shadow:0 0 2px #000000;
   padding-left:5px;
 }
 #sidebar .nav li>a:hover {
@@ -148,7 +166,7 @@ h1,h2,h3 {
 }
 .btn-default {
   color:#666666;
-
+  text-shadow:0 0 1px rgba(0,0,0,.3);
 }
 .form-control {
 
