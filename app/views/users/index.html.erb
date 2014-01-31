@@ -41,57 +41,59 @@
                             <%	 if x == current_user %>
                             <%	 else %>
 
-                                <div class="row wrapusers" >
-                                  <div class="col-xs-2    col-sm-2">
-                                    <% if x.photo_file_name.blank?  %>
-                                        <% if x.avatar.blank?  %>
-                                            <%= link_to image_tag("http://imagenes.notelimites.s3.amazonaws.com/users/default_user.png", class: "avatarchico", :size => "100x50" ), x %>
-                                        <%	 else %>
-                                            <%= link_to image_tag(x.avatar, class: "avatarchico", :size => "100x50" ), x %>
+                            <div class="row wrapusers" >
+                              <div class="col-xs-4    col-sm-2">
+                                <% if x.photo_file_name.blank?  %>
+                                    <% if x.avatar.blank?  %>
+                                        <%= link_to image_tag("http://imagenes.notelimites.s3.amazonaws.com/users/default_user.png", class: "avatarchico", :size => "100x50" ), x %>
+                                    <%	 else %>
+                                        <%= link_to image_tag(x.avatar, class: "avatarchico", :size => "100x50" ), x %>
+                                    <% end %>
+                                <% else %>
+                                    <%= link_to image_tag(x.photo.url(:square), class: "avatarchico", :size => "100x50" ), x %>
+                                <%	 end %>
+                              </div>
+                              <div class="col-xs-5 col-sm-5 ">
+                                <div class="row">
+                                  <%=	link_to x.name, x %>
+                                </div>
+                                <div class="row hidden-xs">
+                                  <small>   Actividades que sigue <%=         user.followed_actividades.count %>     </small>
+                                </div>
+                              </div>
+                              <div class="col-sm-3 col-xs-3">
+                                <div class="row">
+                                  <div id="follow_form" >
+                                    <% if current_user.following?(x) %>
+                                        <%= form_for(current_user.relationships.find_by(followed_id: x), html: { method: :delete })  do |f| %>
+                                            <%= f.submit "No seguir", class: "hidden-xs hidden-sm btn btn-primary" %>
+                                            <%= button_tag(:type => 'submit', :class => ' hidden-md hidden-lg btn btn-primary') do %>
+                                                <i class="glyphicon glyphicon-remove"></i>
+                                            <% end %>
+
                                         <% end %>
                                     <% else %>
-                                        <%= link_to image_tag(x.photo.url(:square), class: "avatarchico", :size => "100x50" ), x %>
-                                    <%	 end %>
-                                  </div>
-                                  <div class="col-xs-8 col-sm-5 ">
-                                    <div class="row">
-                                      <%=	link_to x.name, x %>
-                                    </div>
-                                    <div class="row">
-                                      Actividades que sigue <%=	 x.followed_actividades.count %>
-                                    </div>
-                                  </div>
-                                  <div class="col-sm-3">
-                                    <div class="row">
-                                      <div id="follow_form" >
-                                        <% if current_user.following?(user) %>
-                                            <%= form_for(current_user.relationships.find_by(followed_id: user), html: { method: :delete })  do |f| %>
-                                                <%= f.submit "No seguir", class: "hidden-xs hidden-sm btn btn-primary" %>
-
-
-                                                <%= button_tag(:type => 'submit', :class => ' hidden-md hidden-lg btn btn-primary') do %>
-                                                    <i class="glyphicon glyphicon-remove"></i>
-                                                <% end %>
-
-                                            <% end %>
-                                        <% else %>
-                                            <%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
-                                                <div><%= f.hidden_field :followed_id %></div>
-                                                <%= f.submit  "Seguir", class: "hidden-xs hidden-sm btn" %>
-
-
-                                                <%= button_tag(:type => 'submit', :class => 'hidden-md hidden-lg btn') do %>
-                                                    <i class="glyphicon glyphicon-ok"></i>
-                                                <% end %>
-
-
+                                        <%= form_for(current_user.relationships.build(followed_id: x.id)) do |f| %>
+                                            <div><%= f.hidden_field :followed_id %></div>
+                                            <%= f.submit  "Seguir", class: "hidden-xs hidden-sm btn" %>
+                                            <%= button_tag(:type => 'submit', :class => 'hidden-md hidden-lg btn') do %>
+                                                <i class="glyphicon glyphicon-ok"></i>
                                             <% end %>
                                         <% end %>
-                                      </div>
-                                    </div>
+                                    <% end %>
                                   </div>
                                 </div>
-                            <% end %>
+                              </div>
+                            </div>
+                            <div class="row">
+                                <div class="row col-xs-12 hidden-sm hidden-lg hidden-md">
+                                  <small>   Actividades que sigue <%=         x.followed_actividades.count %>     </small>
+                                  <hr>
+                                </div>
+
+                            </div>
+
+                <% end %>
                         <% end %>
                     <% end %>
                 </div>
@@ -148,12 +150,9 @@
                                   <% if current_user.following?(user) %>
                                       <%= form_for(current_user.relationships.find_by(followed_id: user), html: { method: :delete })  do |f| %>
                                           <%= f.submit "No seguir", class: "hidden-xs hidden-sm btn btn-primary" %>
-
-
                                           <%= button_tag(:type => 'submit', :class => ' hidden-md hidden-lg btn btn-primary') do %>
                                                <i class="glyphicon glyphicon-remove"></i>
                                           <% end %>
-
                                       <% end %>
                                   <% else %>
                                       <%= form_for(current_user.relationships.build(followed_id: user.id)) do |f| %>
