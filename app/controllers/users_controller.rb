@@ -71,7 +71,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       sign_in @user
-      redirect_to edit_user_registration_path
+      redirect_to :back
     else
       render 'edit'
     end

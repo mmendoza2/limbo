@@ -333,8 +333,8 @@ ActiveRecord::Schema.define(version: 20140130220209) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer  "lat"
-    t.integer  "lng"
+    t.text     "lat"
+    t.text     "lng"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,6 +1,6 @@
 class AddLatandLeng < ActiveRecord::Migration
   def change
-    add_column :users, :lat, :integer
-    add_column :users, :lng, :integer
+    add_column :users, :lat, :text
+    add_column :users, :lng, :text
   end
 end

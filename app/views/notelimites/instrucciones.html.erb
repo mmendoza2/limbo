@@ -40,19 +40,28 @@
 
         <div class="col-md-9">
             <h1>Que actividades te gustan, <%=	 current_user.name %> ?</h1>
-            <h5 style="color: #000000">Selecciona tu estado y mínimo 3 actividades para poder recomendarte lugares y eventos.
+            <h5 style="color: #000000">Selecciona mínimo 3 actividades para poder recomendarte lugares y eventos.
               <button data-toggle="popover" title="Estamos para ayudarte" data-content="Empieza por seguir actividades que te gustan, dandole click en la actividad" style="border-radius: 15px">?</button>
             </h5>
-          <%= form_for(@user, :html => { :multipart => true }) do |f| %>
 
+
+
+        <%	 if @user.lat.nil? %>
+              <div class="row">
+                <p>Pero primero actualiza tu ubicacón. Mueve el pin a una ubiación cercana a ti y da click en el boton.</p>
+              </div>
+              <%= form_for(@user, :html => { :multipart => true }) do |f| %>
                   <div id="map-canvas" class="thumbnail" style="height:200px"></div>
-
                   <div id="latlong">
-                    <p>Latitude: <input size="20" type="text" id="latbox" name="lat"></p>
-                    <p>Longitude: <input size="20" type="text" id="lngbox" name="lng"></p>
+                    <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
+                    <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
                   </div>
+                  <div class="col-md-4 col-md-offset-4" style="margin-bottom: 10px"><%= f.submit "Actualiza tu ubiación", class: 'btn btn-primary' %></div>
+              <% end %>
+        <%	 else %>
+        <%	 end %>
 
-          <% end %>
+
 
         </div>
 
