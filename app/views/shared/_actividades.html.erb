@@ -1,35 +1,51 @@
 <ul >
 
+      <% @actividades.limit(20).order("RANDOM()").each do |x| %>
 
-  <% @actividad.each do |actividad| %>
-          <li class="actividades">
-            <div class="actividadestitulo"> <%= link_to actividad.actividad, actividad %> </div>
-            <%= link_to image_tag(actividad.photo.url(:medium)), actividad, class: 'actividadesimagen'%>
-            <div class="actividadesarticulo"><%=  actividad.descripcion %> </div>
-            <div class="actividadesfollow">
-              <div class="actividadesbarrafollow">
-                <div class="actividadesfollow">
-                  <div id="follow_form" >
-                    <% if current_user.followingactividad?(actividad) %>
-                        <%= form_for(current_user.relationactividades.find_by(followed_id: actividad), html: { method: :delete }) do |f| %>
-                            <%= f.submit "Siguiendo", class: "btn " %>
+
+          <div class="thumbnail">
+                  <div class="caption">
+                  <%  x.followers.limit(20).order("RANDOM()").each do |y|  %>
+
+
+                          <div>
+                            <% if y.photo_file_name.blank?  %>
+                                <% if y.avatar.blank?  %>
+                                    <%= link_to image_tag("http://imagenes.notelimites.s3.amazonaws.com/users/default_user.png", class: "avatarchico"), y %>
+                                <%	 else %>
+                                    <%= link_to image_tag(y.avatar, class: "avatarchico" ), y %>
+                                <% end %>
+                            <% else %>
+                                <%= link_to image_tag(y.photo.url(:square), class: "avatarchico"), y %>
+                            <%	 end %>
+                          </div>
+
+
+                        <h4><%= y.name %></h4>
+                        <p>is now following <%= x.actividad %>  </p>
+
+
+
+
+                        <% x.micrositios.take(1).each do |estado| %>
+                            <% if estado.photo_file_size? %>
+                                <%= link_to (image_tag estado.photo.url(:medium)), estado, class: "img-responsive nomargin", alt: "Places" %>
+                                <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
+                            <% else %>
+                                <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}"), estado, class: "img-responsive nomargin", alt: "Places" %>
+                                <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
+                            <% end %>
                         <% end %>
-                    <% else %>
-                        <%= form_for(current_user.relationactividades.build(followed_id: actividad.id)) do |f| %>
-                            <div><%= f.hidden_field :followed_id %></div>
-                            <%= f.submit "Seguir", class: "btn  btn-primary" %>
-                        <% end %>
-                    <% end %>
+                            <h3><%= x.actividad %></h3>
+                            <p>...</p>
+
+                  <% end %>
                   </div>
-                </div>
-                <div class="actividadescontador">
-                  <%= actividad.followers.count%>
-                  Usuarios
-                </div>
-              </div>
-            </div>
-          </li>
-  <% end %>
+          </div>
+
+
+      <% end %>
+
 
 
 </ul>
