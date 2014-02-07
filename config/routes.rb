@@ -14,6 +14,7 @@ NoTeLimites::Application.routes.draw do
   match '/users/seleccionusuarios',    to: 'users#editusuarios',    via: 'get'
   match '/index',    to: 'notelimites#index',    via: 'get'
   match '/ayuda',    to: 'notelimites#ayuda',    via: 'get'
+  match '/places',    to: 'notelimites#places',    via: 'get'
   match '/terminos',    to: 'notelimites#terminos',    via: 'get'
   match '/nosotros',   to: 'notelimites#nosotros',   via: 'get'
   match '/contacto', to: 'notelimites#contacto', via: 'get'
