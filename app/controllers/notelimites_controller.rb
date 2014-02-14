@@ -43,6 +43,10 @@ class NotelimitesController < ApplicationController
   end
 
 
+  def instrucciones
+  end
+
+
 
 
 

@@ -5,10 +5,10 @@
   <% @micrositios.limit(20).order("RANDOM()").each do |x| %>
 
 
-          <div class="thumbnail">
-            <div class="caption">
-              <%  x.followers.limit(20).order("RANDOM()").each do |y|  %>
 
+              <%  x.followers.limit(20).order("RANDOM()").each do |y|  %>
+              <div class="thumbnail">
+                <div class="caption">
 
                   <div>
                     <% if y.photo_file_name.blank?  %>
@@ -40,10 +40,11 @@
 
                   <h3><%= x.name %></h3>
                   <p>...</p>
+                </div>
+              </div>
 
               <% end %>
-            </div>
-          </div>
+
 
 
   <% end %>

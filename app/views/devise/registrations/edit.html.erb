@@ -1,13 +1,7 @@
 
-    <section>
-      <h3> Bienvenido a NoTeLimites.com </h3>
-      <%= render 'shared/menu_seleccion_settings' %>
-    </section>
 
 
-
-
-    <div class="col-md-4 ">
+    <div class="col-md-6 col-md-offset-3">
       <div class="row">
         <h1>Configura tu Pérfil</h1>
         <section>
@@ -17,7 +11,7 @@
                 <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :imagen %>
             <%= f.file_field :photo %>
-              <div class="col-md-7">  <%= f.submit "Sube tu foto de Perfil", class: "btn  btn-large btn-primary" %>     </div>
+              <div class="col-md-7">  <%= f.submit "Actualiza tu foto de Perfil", class: "btn  btn-large btn-success" %>     </div>
         <% end %>
         <br>
         <br>
@@ -42,146 +36,5 @@
               <% end %>
               <div class="col-md-7"><%= f.submit "Actualizar", class: 'btn btn-primary' %></div>
         <% end %>
-            <div class="col-md-7">
-              <p>Infeliz? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: 'btn'  %></p>
-            </div>
-        <%= link_to "Back", :back%>
-      </div>
-    </div>
-    <div class="col-md-7 col-md-offset-1">
-      <div class="row">
-        <div class="row">
-            <h3>Usuarios que estás siguiendo</h3>
-            <% @usuarios.each do |actividad| %>
-                <% if current_user.following?(actividad) %>
-                <li class="actividades">
-                  <div class="actividadestitulo"> <%= link_to actividad.name, actividad %> </div>
-                  <%= link_to image_tag(actividad.avatar), actividad, class: 'actividadesimagen'%>
-                  <div class="actividadesarticulo"><%=  actividad.name %> </div>
-                  <div class="actividadesfollow">
-                    <div class="actividadesbarrafollow">
-                      <div class="actividadesfollow">
-                        <div id="follow_form" >
-                              <%= form_for(current_user.relationships.find_by(followed_id: actividad), html: { method: :delete }) do |f| %>
-                                  <%= f.submit "Siguiendo", class: "btn " %>
-                              <% end %>
-                        </div>
-                      </div>
-                      <div class="actividadescontador">
-                        <%= actividad.followers.count%>
-                        Usuarios
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-             <% else %>
-             <% end %>
-            <% end %>
-        </div>
-          <div class="row">
-            <p>Si quieres seguir más usuarios da click <%=	 link_to "aquí", users_seleccionusuarios_path %></p>
-          </div>
-
-       </div>
-       <div class="row">
-        <div class="row">
-         <h3>Estdados que estás siguiendo</h3>
-          <% @estadosalf.each do |estado| %>
-                 <% if current_user.followingestado?(estado) %>
-                  <li class="estados">
-                    <div class="estadostitulo"> <%= link_to estado.estado, estado %> </div>
-                    <%= link_to image_tag(estado.photo.url(:medium)), estado, class: 'estadoimagen'%>
-                    <div class="estadoarticulo"><%=  estado.descripcion %> </div>
-                    <div class="estadofollow">
-
-                      <div class="estadobarrafollow">
-                        <div class="estadofollow">
-                          <div id="follow_form" >
-                                <%= form_for(current_user.relationestados.find_by(followed_id: estado), html: { method: :delete }) do |f| %>
-                                    <%= f.submit "Siguiendo", class: "btn " %>
-                                <% end %>
-                          </div>
-                        </div>
-                        <div class="estadocontador">
-                          <%= estado.followers.count%>
-                          Usuarios
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                 <% else %>
-                 <% end %>
-          <% end %>
-        </div>
-        <div class="row">
-           <p>Si quieres seguir más estados da click <%=	 link_to "aquí", users_seleccionestados_path %></p>
-        </div>
-       </div>
-      <div class="row">
-          <div class="row">
-            <h3>Actividades que estás siguiendo</h3>
-            <% @actividad.each do |actividad| %>
-                <% if current_user.followingactividad?(actividad) %>
-                    <li class="actividades">
-                      <div class="actividadestitulo"> <%= link_to actividad.actividad, actividad %> </div>
-                      <%= link_to image_tag(actividad.photo.url(:medium)), actividad, class: 'actividadesimagen'%>
-                      <div class="actividadesarticulo"><%=  actividad.descripcion %> </div>
-                      <div class="actividadesfollow">
-                        <div class="actividadesbarrafollow">
-                          <div class="actividadesfollow">
-                            <div id="follow_form" >
-                                  <%= form_for(current_user.relationactividades.find_by(followed_id: actividad), html: { method: :delete }) do |f| %>
-                                      <%= f.submit "Siguiendo", class: "btn " %>
-                                  <% end %>
-                            </div>
-                          </div>
-                          <div class="actividadescontador">
-                            <%= actividad.followers.count%>
-                            Usuarios
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                <% else %>
-                <% end %>
-            <% end %>
-          </div>
-          <div class="row">
-              <p>Si quieres seguir más actividades da click <%=	 link_to "aquí", users_seleccionactividades_path %></p>
-          </div>
-      </div>
-      <div class="row">
-        <div class="row">
-            <h3>Lugares que estás siguiendo</h3>
-            <% @micrositios.each do |actividad| %>
-                <% if current_user.followingmicrositio?(actividad) %>
-                <li class="actividades">
-                  <div class="actividadestitulo"> <%= link_to actividad.name, actividad %> </div>
-                  <%= link_to image_tag(actividad.photo.url(:medium)), actividad, class: 'actividadesimagen'%>
-                  <div class="actividadesarticulo"><%=  actividad.descripcion %> </div>
-                  <div class="actividadesfollow">
-                    <div class="actividadesbarrafollow">
-                      <div class="actividadesfollow">
-                        <div id="follow_form" >
-                              <%= form_for(current_user.relationmicrositios.find_by(followed_id: actividad), html: { method: :delete }) do |f| %>
-                                  <%= f.submit "Siguiendo", class: "btn " %>
-                              <% end %>
-                        </div>
-                      </div>
-                      <div class="actividadescontador">
-                        <%= actividad.followers.count%>
-                        Usuarios
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <% else %>
-                <% end %>
-            <% end %>
-        </div>
-        <div class="row">
-            <p>Si quieres seguir más lugares da click <%=	 link_to "aquí", users_seleccionlugares_path %></p>
-        </div>
       </div>
     </div>

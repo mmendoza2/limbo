@@ -57,8 +57,8 @@
               <%= form_for(@user, :html => { :multipart => true }) do |f| %>
                   <div id="map-canvas" class="thumbnail" style="height:200px"></div>
                   <div id="latlong">
-                    <div> <%= f.text_field :lat, class: 'input-sm', id: 'latbox' %></div>
-                    <div> <%= f.text_field :lng, class: 'input-sm', id: 'lngbox' %></div>
+                    <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
+                    <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
                   </div>
                   <div class="col-md-4 col-md-offset-4" style="margin-bottom: 10px"><%= f.submit "Actualiza tu ubiación", class: 'btn btn-primary' %></div>
               <% end %>

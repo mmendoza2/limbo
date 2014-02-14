@@ -1,4 +1,4 @@
-<% provide(:title, "Sign in") %>
+<% provide(:title, "Ingresa") %>
 
 <header id="header" class="site-header">
   <div class="container" style="height: 1000px">
@@ -7,8 +7,8 @@
         <h1><div class="site-title pull-left"> <%= link_to image_tag("LogoNTL.png"), root_path, id: "logo" %></div></h1>
         <div class="user text-right">
           <ul>
-            <li class="user-login" ><%= link_to "Login", new_user_session_path %></li> |
-            <li class="user-regidter" ><%= link_to "Registrate", new_user_registration_path %></li>
+            <li class="user-login" ><%= link_to "Ingresa", new_user_session_path %></li> |
+            <li class="user-regidter" ><%= link_to "Regístrate", new_user_registration_path %></li>
           </ul>
         </div>
             <div class="text-center" >
@@ -40,11 +40,11 @@
                                   <div> <%= f.text_field :username, :placeholder => "Username", class: 'input-sm' %></div>
                                   <div><%= f.password_field :password, :placeholder => "Password", class: 'input-sm'%></div>
                                   <div> <%= f.password_field :password_confirmation, :placeholder => "Password confirmation", class: 'input-sm' %></div>
-                                  <div><%= f.submit "Sign up", class: "btn header-btn-form" %></div>
+                                  <div><%= f.submit "Registrarte", class: "btn header-btn-form" %></div>
                               <% end %>
                           <div  style="color: #ffffff; text-align: left;">
                             <p>
-                              Dándole click a "Sign Up" se considera que estás de acuerdo con los Servicios de NoTeLimites. Por favor toma un tiempo para leer los <%= link_to "Terminos y Condiciones.", terminos_path %>
+                              Dándole click a "Registrarte" se considera que estás de acuerdo con los Servicios de NoTeLimites. Por favor toma un tiempo para leer los <%= link_to "Terminos y Condiciones.", terminos_path %>
                             </p>
                             <br>
                             <br>
