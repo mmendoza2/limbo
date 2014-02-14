@@ -17,7 +17,7 @@
                       <% if estado.photo_file_size? %>
                           <%= link_to (image_tag estado.photo.url(:medium)), estado, class: "img-responsive", alt: "responsive image" %>
                           <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
-                <% else %>
+                  <% else %>
                           <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}"), estado, class: "img-responsive", alt: "responsive image" %>
                           <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
                       <% end %>

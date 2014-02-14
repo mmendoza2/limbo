@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb" afterPath="$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notelimites_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/notelimites_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_actividades.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_actividades.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/actividades/index.html.erb" afterPath="$PROJECT_DIR$/app/views/actividades/index.html.erb" />
     </list>
     <ignored path="notelimites.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,7 +107,7 @@
     <file path="/20140130220209_add_latand_leng.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391132197046" ignored="false" />
     <file path="/application_controller.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391120626527" ignored="false" />
     <file path="/application-363c3a018567c2d0c28a83f84e591d8a.css" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391186382496" ignored="false" />
-    <file path="/_actividades.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1392335952604" ignored="false" />
+    <file path="/_actividades.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1392356695997" ignored="false" />
     <file path="/places.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391722470010" ignored="false" />
     <file path="/20140206212439_add_columnto_micrositios.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391721920769" ignored="false" />
     <file path="$PROJECT_DIR$/../zwopa/app/assets/stylesheets/font-awesome.min.css" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391745552911" ignored="false" />
@@ -149,45 +147,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="instrucciones.html.erb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="55" selection-start="102" selection-end="102" vertical-scroll-proportion="0.09771987">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="46" selection-start="93" selection-end="102" vertical-scroll-proportion="-2.5">
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="notelimites_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/notelimites_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="0" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="101" selection-start="7122" selection-end="7122" vertical-scroll-proportion="-11.875">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -217,10 +176,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/users.css.scss">
+      <file leaf-file-name="home.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/notelimites/home.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="11" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
+            <state line="45" column="58" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-25.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_actividades.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/_actividades.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="3" selection-start="3328" selection-end="3328" vertical-scroll-proportion="0.78013027">
+              <folding>
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#ul#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#ul#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/actividades/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="35" selection-start="309" selection-end="1091" vertical-scroll-proportion="-3.75">
               <folding />
             </state>
           </provider>
@@ -250,17 +232,17 @@
         <option value="$PROJECT_DIR$/app/views/notelimites/home.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/estados/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_actividades.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_micrositios.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/eventos/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/actividades/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/users.css.scss" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/notelimites_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/actividades/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_actividades.html.erb" />
       </list>
     </option>
   </component>
@@ -382,6 +364,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="notelimites" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -453,6 +457,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="registrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actividades" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -924,13 +950,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/notelimites/home.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="58" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_micrositios.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="20" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
@@ -948,13 +967,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="53" selection-start="2885" selection-end="2885" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_actividades.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="60" selection-start="112" selection-end="135" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -983,23 +995,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/actividades/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="72" selection-start="1253" selection-end="1253" vertical-scroll-proportion="0.6357928">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/users.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="11" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="101" selection-start="7122" selection-end="7122" vertical-scroll-proportion="-11.875">
           <folding />
         </state>
       </provider>
@@ -1013,13 +1011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="22.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1027,16 +1018,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/notelimites_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
+        <state line="4" column="55" selection-start="102" selection-end="102" vertical-scroll-proportion="0.09771987">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="46" selection-start="93" selection-end="102" vertical-scroll-proportion="-2.5">
+        <state line="4" column="46" selection-start="93" selection-end="102" vertical-scroll-proportion="0.09771987">
           <folding>
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1044,10 +1035,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/notelimites_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="55" selection-start="102" selection-end="102" vertical-scroll-proportion="0.09771987">
+        <state line="45" column="0" selection-start="772" selection-end="772" vertical-scroll-proportion="1.0014837">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="101" selection-start="7122" selection-end="7122" vertical-scroll-proportion="0.44740972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="22.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/notelimites/home.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="58" selection-start="1166" selection-end="1166" vertical-scroll-proportion="-25.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/actividades/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="35" selection-start="309" selection-end="1091" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_actividades.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="3" selection-start="3328" selection-end="3328" vertical-scroll-proportion="0.78013027">
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#ul#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#ul#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#ul#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
