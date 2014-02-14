@@ -22,7 +22,7 @@
                     <%	 end %>
                   </div>
                   <h4><%= y.name %></h4>
-                  <p>is now following <%= x.name %>  </p>
+                  <p>ahora está siguiendo a <%= x.name %>  </p>
                       <% if x.photo_file_size? %>
                           <%= link_to (image_tag x.photo.url(:medium)), x, class: "img-responsive", alt: "responsive image" %>
                           <div style="font-weight: bold; overflow: hidden"><%= link_to x.name, x		  %> </div>
@@ -60,7 +60,7 @@
         <%         end %>
       </div>
       <h4><%= x.user.name %></h4>
-      <p>creó</p>
+      <p>creó el lugar</p>
 
       <% if x.photo_file_size? %>
           <%= image_tag @micrositio.photo.url(:biggest), class: "img-responsive"  %>

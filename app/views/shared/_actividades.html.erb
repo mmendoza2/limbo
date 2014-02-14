@@ -20,7 +20,7 @@
                                         <%	 end %>
                                       </div>
                                     <h4><%= y.name %></h4>
-                                    <p>is now following <%= x.actividad %>  </p>
+                                    <p>ahora está siguiendo a <%= x.actividad %>  </p>
                                     <% x.micrositios.take(1).each do |estado| %>
                                         <% if estado.photo_file_size? %>
                                             <%= link_to (image_tag estado.photo.url(:medium)), estado, class: "img-responsive nomargin", alt: "Places" %>
