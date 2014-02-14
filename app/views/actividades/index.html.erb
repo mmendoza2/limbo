@@ -8,7 +8,7 @@
 
       <h2>Todas las actividades</h2>
 
-        <% @actividades.take(30).each do |f| %>
+        <% @actividades.limit(30).order("RANDOM()").each do |f| %>
 
             <li>
               <div class="thumbnail col-md-12    " style="margin: 0px">
