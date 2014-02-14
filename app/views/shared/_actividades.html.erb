@@ -4,7 +4,7 @@
 
 
 
-            <%  x.followers.limit(20).order("RANDOM()").each do |y|  %>
+            <%  x.followers.limit(10).order("RANDOM()").each do |y|  %>
                       <div class="thumbnail">
                         <div class="caption">
 
@@ -43,7 +43,7 @@
 
       <% end %>
 
-<% @actividades.limit(10).order("RANDOM()").each do |x| %>
+<% @actividades.limit(5).order("RANDOM()").each do |x| %>
 
     <div class="thumbnail">
         <div class="caption">

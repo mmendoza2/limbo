@@ -6,7 +6,7 @@
 
 
 
-              <%  x.followers.limit(20).order("RANDOM()").each do |y|  %>
+              <%  x.followers.limit(10).order("RANDOM()").each do |y|  %>
               <div class="thumbnail">
                 <div class="caption">
 
@@ -21,15 +21,8 @@
                         <%= link_to image_tag(y.photo.url(:square), class: "avatarchico"), y %>
                     <%	 end %>
                   </div>
-
-
                   <h4><%= y.name %></h4>
                   <p>is now following <%= x.name %>  </p>
-
-
-
-
-
                       <% if x.photo_file_size? %>
                           <%= link_to (image_tag x.photo.url(:medium)), x, class: "img-responsive", alt: "responsive image" %>
                           <div style="font-weight: bold; overflow: hidden"><%= link_to x.name, x		  %> </div>
@@ -49,6 +42,37 @@
 
   <% end %>
 
+
+
+  <% @micrositios.limit(5).order("RANDOM()").each do |x| %>
+
+  <div class="thumbnail">
+    <div class="caption">
+      <div>
+        <% if x.user.photo_file_name.blank?  %>
+            <% if x.user.avatar.blank?  %>
+                <%= link_to image_tag("http://imagenes.notelimites.s3.amazonaws.com/users/default_user.png", class: "avatarchico"), x.user %>
+            <%         else %>
+                <%= link_to image_tag(x.user.avatar, class: "avatarchico"), x.user %>
+            <% end %>
+        <% else %>
+            <%= link_to image_tag(x.user.photo.url(:square), class: "avatarchico"), x.user  %>
+        <%         end %>
+      </div>
+      <h4><%= x.user.name %></h4>
+      <p>creó</p>
+
+      <% if x.photo_file_size? %>
+          <%= image_tag @micrositio.photo.url(:biggest), class: "img-responsive"  %>
+      <% else %>
+          <img src="https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/<%= x.photo_file_name %>" class="img-responsive" >
+      <% end %>
+      <h3><%= x.name %></h3>
+
+    </div>
+  </div>
+
+  <% end %>
 
 
 </ul>
