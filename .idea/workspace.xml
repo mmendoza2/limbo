@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/users.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/users.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb" afterPath="$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/notelimites_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/notelimites_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="notelimites.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +54,7 @@
     <file path="/20130811014304_add_columnto_location.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1376185895007" ignored="false" />
     <file path="/locations_controller.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1376287941645" ignored="false" />
     <file path="/20130812053046_add_distanceto_location.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1376285479905" ignored="false" />
-    <file path="/edit.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1392335260333" ignored="false" />
+    <file path="/edit.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1392355405938" ignored="false" />
     <file path="/20130813210919_create_eventos.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1376429112334" ignored="false" />
     <file path="/a.dummy" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1376429544776" ignored="false" />
     <file path="/notelimites.css.scss" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1380759490341" ignored="false" />
@@ -101,7 +103,7 @@
     <file path="$PROJECT_DIR$/../ntlcom/app/assets/stylesheets/eventos.css.scss" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1380760740805" ignored="false" />
     <file path="$PROJECT_DIR$/../ntlcom/app/assets/stylesheets/custom.css.scss" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1380770656715" ignored="false" />
     <file path="$PROJECT_DIR$/../ntl/app/views/notelimites/home.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1380810119885" ignored="false" />
-    <file path="/instrucciones.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1392334685890" ignored="false" />
+    <file path="/instrucciones.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1392355052693" ignored="false" />
     <file path="/_sidebar.html.erb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1392334436169" ignored="false" />
     <file path="/omniauth_callbacks_controller.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391047242045" ignored="false" />
     <file path="/20140130220209_add_latand_leng.rb" changelist="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" time="1391132197046" ignored="false" />
@@ -147,11 +149,70 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="instrucciones.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="55" selection-start="102" selection-end="102" vertical-scroll-proportion="0.09771987">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="46" selection-start="93" selection-end="102" vertical-scroll-proportion="-2.5">
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notelimites_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/notelimites_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="0" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="101" selection-start="7122" selection-end="7122" vertical-scroll-proportion="0.4709576">
+            <state line="134" column="101" selection-start="7122" selection-end="7122" vertical-scroll-proportion="-11.875">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="22.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_sidebar.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/_sidebar.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="98" selection-start="1705" selection-end="1705" vertical-scroll-proportion="-20.0">
+              <folding>
+                <element signature="e#1661#1683#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,13 +245,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/notelimites_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/notelimites/zwopa.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_sidebar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/notelimites/home.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/estados/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_actividades.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_micrositios.html.erb" />
@@ -200,6 +258,9 @@
         <option value="$PROJECT_DIR$/app/views/actividades/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/users.css.scss" />
         <option value="$PROJECT_DIR$/app/views/users/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/notelimites_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb" />
       </list>
     </option>
   </component>
@@ -281,15 +342,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -324,6 +377,14 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -339,11 +400,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -361,7 +422,69 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="devise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="registrations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -801,33 +924,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="747" selection-end="777" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_sidebar.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="98" selection-start="1705" selection-end="1705" vertical-scroll-proportion="-20.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="18" selection-start="240" selection-end="240" vertical-scroll-proportion="-6.25" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="36" selection-start="1936" selection-end="1936" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/estados/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="0" selection-start="9558" selection-end="9558" vertical-scroll-proportion="5.2791877" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/notelimites/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="58" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
@@ -838,13 +934,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/shared/_micrositios.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="20" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="40" selection-start="43" selection-end="43" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -910,7 +999,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="101" selection-start="7122" selection-end="7122" vertical-scroll-proportion="0.4709576">
+        <state line="134" column="101" selection-start="7122" selection-end="7122" vertical-scroll-proportion="-11.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_sidebar.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="98" selection-start="1705" selection-end="1705" vertical-scroll-proportion="-20.0">
+          <folding>
+            <element signature="e#1661#1683#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="22.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/notelimites_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="0" selection-start="772" selection-end="772" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="46" selection-start="93" selection-end="102" vertical-scroll-proportion="-2.5">
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/notelimites/instrucciones.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="55" selection-start="102" selection-end="102" vertical-scroll-proportion="0.09771987">
           <folding />
         </state>
       </provider>

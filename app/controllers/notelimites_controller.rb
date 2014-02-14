@@ -27,6 +27,7 @@ class NotelimitesController < ApplicationController
   def instrucciones
     @actividades = Actividad.all
   end
+
   def places
     @micrositio = Micrositio.all
 
@@ -42,9 +43,6 @@ class NotelimitesController < ApplicationController
 
   end
 
-
-  def instrucciones
-  end
 
 
 
