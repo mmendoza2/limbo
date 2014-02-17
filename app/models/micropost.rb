@@ -1,10 +1,5 @@
 class Micropost < ActiveRecord::Base
-
-  has_many :relationposts, dependent: :destroy
-  belongs :micrositios, :through => :actimicros
-
-
-
+  belongs_to :user
   default_scope -> { order('created_at DESC') }
   validates :content, presence: true, length: { maximum: 140 }
   validates :user_id, presence: true

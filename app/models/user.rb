@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   has_many :micrositios
   has_many :eventos
-  has_many :relationposts, dependent: :destroy
+  has_many :microposts, dependent: :destroy
   has_many :authorizations
 
     has_many :relationactividadespadre, foreign_key: "follower_id", dependent: :destroy
