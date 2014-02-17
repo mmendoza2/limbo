@@ -1,5 +1,24 @@
+
+<div>
+  <% if @user.photo_file_name.blank?  %>
+      <% if @user.avatar.blank?  %>
+          <%=  image_tag "http://imagenes.notelimites.s3.amazonaws.com/users/default_user.png", class: "avatargrande" %>
+      <%	 else %>
+          <%= image_tag @user.avatar, class: "avatargrande" %>
+      <% end %>
+  <% else %>
+      <%=  image_tag @user.photo.url(:medium), class: "avatargrande"%>
+  <%	 end %>
+</div>
+<h4><%= @user.name %></h4>
+
+
+
+
 <div class="col-md-6">
-  <h3> Randomchat Feed</h3>
+  <h3> Randomchat </h3>
+
+
   <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
   <strong>Microposts</strong> <%= @user.microposts.count %>
   <%= render 'shared/feed' %>
