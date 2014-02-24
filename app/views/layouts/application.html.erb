@@ -36,53 +36,85 @@
 
 
   <% if signed_in? 	  %>
-      <div class="wrapper">
-        <div class="box">
-          <div class="row row-offcanvas row-offcanvas-left">
-
-            <%= render 'layouts/sidebar' %>
-
-            <!-- main right col -->
-            <div class="column col-sm-10 col-xs-11" id="main">
-                <div class="full col-sm-9">
 
 
 
+      <div class="page-container" style="margin-top: 60px">
 
-
-                  <!-- content -->
-                  <div class="row">
-
-                    <div class="col-sm-offset-1 col-sm-10 col-xs-10" style="margin-top: 5px; margin-bottom: 5px">
-                      <% [:notice, :error, :alert].each do |level| %>
-                          <% unless flash[level].blank? %>
-                              <div data-alert="alert" class="alert-message <%= flash_class(level) %> fade in">
-                                <a class="close" href="#">×</a>
-                                <%= content_tag :p, flash[level] %>
-                              </div>
-                          <% end %>
-                      <% end %>
-                    </div>
-
-
-
-
-                    <%= yield %>
-                  </div>
-                </div><!--/row-->
-
-
-                <%= debug(params) if Rails.env.development? %>
-
-
-
+          <!-- top navbar -->
+          <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a href="http://www.notelimites.com"><h3><%=	 image_tag "LogoNTL.png" %> </h3> </a>
             </div>
-            <!-- /main -->
-
           </div>
-        </div>
+
+          <div class="col-sm-12">
+                  <div class="row row-offcanvas row-offcanvas-left">
+
+
+                  <%= render 'layouts/sidebar' %>
+                          <!-- main area -->
+                          <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
+
+                                  <div class="row">
+                                    <!-- content -->
+                                    <div class="row">
+
+                                      <div class="col-sm-offset-1 col-sm-10 col-xs-10" style="margin-top: 5px; margin-bottom: 5px">
+                                        <% [:notice, :error, :alert].each do |level| %>
+                                            <% unless flash[level].blank? %>
+                                                <div data-alert="alert" class="alert-message <%= flash_class(level) %> fade in">
+                                                  <a class="close" href="#">×</a>
+                                                  <%= content_tag :p, flash[level] %>
+                                                </div>
+                                            <% end %>
+                                        <% end %>
+                                      </div>
+
+
+
+
+                                      <%= yield %>
+                                    </div>
+                                  </div><!--/row-->
+
+
+                          </div><!--/.row-->
+                  </div><!--/.container-->
+          </div><!--/.page-container-->
+
+
+
       </div>
 
+
+      <div id="push"></div>
+
+
+
+      <script type='text/javascript'>
+
+          $(document).ready(function() {
+
+              $('[data-toggle=offcanvas]').click(function() {
+                  $('.row-offcanvas').toggleClass('active');
+              });
+
+              $('.btn-toggle').click(function() {
+                  $(this).find('.btn').toggleClass('active').toggleClass('btn-default').toggleClass('btn-primary');
+              });
+
+
+          });
+
+      </script>
+
+      </body>
 
 
 
@@ -90,6 +122,10 @@
   <%  else %>
       <%= yield %>
   <% end %>
+
+
+
+
 
 
 

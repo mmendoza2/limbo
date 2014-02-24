@@ -13,12 +13,8 @@
 <h4><%= @user.name %></h4>
 
 
-
-
 <div class="col-md-6">
-  <h3> Randomchat </h3>
-
-
+  <h3> Randomchat Feed</h3>
   <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />
   <strong>Microposts</strong> <%= @user.microposts.count %>
   <%= render 'shared/feed' %>
@@ -31,7 +27,6 @@
 
 <div class="col-md-6" style="margin-top: 100px">
   <% if @user.microposts.any? %>
-      <%= render 'shared/micropost_form' %>
       <%= will_paginate @microposts %>
   <% end %>
 </div>
