@@ -15,17 +15,7 @@
 //= require jquery
 //= require jquery.ui.all
 //= require jquery_ujs
-//= require bootstrap
+//= require bootstrap.min.js
 //= require_tree .
-
-
-
-
-$(document).ready(function() {
-    $('#follow_form').on('click','.interest-label', function() {
-        $(this).toggleClass('checked');
-    });
-});
-
 
 

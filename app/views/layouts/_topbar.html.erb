@@ -1,0 +1,31 @@
+<!-- top navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top: 0px">
+    <div class="navbar-header">
+
+      <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+
+      <div class="hidden-xs">
+      <%= link_to image_tag("LogoNTL.png", id: "logo", class: "navbar-brand"), root_path %>
+      </div>
+    </div>
+
+  <nav class="hidden-xs">
+    <ul class="nav pull-right" style="margin-right: 100px; padding-top: 05px">
+      <li id="fat-menu" class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <%=  current_user.name %><b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Perfil", current_user %></li>
+          <li><%= link_to "Configuración", edit_user_registration_path(current_user) %></li>
+          <li class="divider"></li>
+          <li>
+            <%= link_to "Salir",  destroy_user_session_path, method: "delete" %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+
+</div>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>NoTeLimites</title>
     <%= favicon_link_tag 'favicon.ico' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
     <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensor=false">
-
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
     <title><%= full_title(yield(:title)) %></title>
@@ -12,109 +12,45 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
   </head>
+
   <body>
-
-  <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-30392244-1']);
-      _gaq.push(['_setDomainName', 'notelimites.com']);
-      _gaq.push(['_setAllowLinker', true]);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-
-
-
-  </script>
-
 
   <% if signed_in? 	  %>
 
-
-
-      <div class="page-container" style="margin-top: 60px">
-
-          <!-- top navbar -->
-          <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a href="http://www.notelimites.com"><h3><%=	 image_tag "LogoNTL.png" %> </h3> </a>
+  <div id="wrapper">
+      <%= render 'layouts/sidebar' %>
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+        <%= render 'layouts/topbar' %>
+        <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                     <div class="col-sm-offset-1 col-sm-10 col-xs-10" style="margin-top: 5px; margin-bottom: 5px">
+                        <% [:notice, :error, :alert].each do |level| %>
+                            <% unless flash[level].blank? %>
+                                <div data-alert="alert" class="alert-message <%= flash_class(level) %> fade in">
+                                  <a class="close" href="#">×</a>
+                                  <%= content_tag :p, flash[level] %>
+                                </div>
+                            <% end %>
+                        <% end %>
+                      </div>
+                   <%= yield %>
             </div>
-          </div>
-
-          <div class="col-sm-12">
-                  <div class="row row-offcanvas row-offcanvas-left">
+        </div>
+  </div>
 
 
-                  <%= render 'layouts/sidebar' %>
-                          <!-- main area -->
-                          <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
+  <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("active");
+      });
+  </script>
 
-                                  <div class="row">
-                                    <!-- content -->
-                                    <div class="row">
-
-                                      <div class="col-sm-offset-1 col-sm-10 col-xs-10" style="margin-top: 5px; margin-bottom: 5px">
-                                        <% [:notice, :error, :alert].each do |level| %>
-                                            <% unless flash[level].blank? %>
-                                                <div data-alert="alert" class="alert-message <%= flash_class(level) %> fade in">
-                                                  <a class="close" href="#">×</a>
-                                                  <%= content_tag :p, flash[level] %>
-                                                </div>
-                                            <% end %>
-                                        <% end %>
-                                      </div>
-
-
-
-
-                                      <%= yield %>
-                                    </div>
-                                  </div><!--/row-->
-
-
-                          </div><!--/.row-->
-                  </div><!--/.container-->
-          </div><!--/.page-container-->
-
-
-
-      </div>
-
-
-      <div id="push"></div>
-
-
-
-      <script type='text/javascript'>
-
-          $(document).ready(function() {
-
-              $('[data-toggle=offcanvas]').click(function() {
-                  $('.row-offcanvas').toggleClass('active');
-              });
-
-              $('.btn-toggle').click(function() {
-                  $(this).find('.btn').toggleClass('active').toggleClass('btn-default').toggleClass('btn-primary');
-              });
-
-
-          });
-
-      </script>
-
-      </body>
 
 
 
@@ -122,11 +58,6 @@
   <%  else %>
       <%= yield %>
   <% end %>
-
-
-
-
-
 
 
   </body>

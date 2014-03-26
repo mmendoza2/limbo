@@ -2,30 +2,16 @@
 
 
 
-<!-- sidebar -->
-<div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
-  <div data-spy="affix" data-offset-top="45" data-offset-bottom="90">
-
-
-
-
-    <ul class="nav" id="lg-menu" >
-      <br>
-      <li><i > <%= link_to  current_user.name, current_user %></i></li>
-      <br>
-      <li class="active"><i ><%= link_to " Descubre", root_path %></i></li>
-      <li><i > <%= link_to "Explora", estados_path %></i></li>
-      <li><i > <%= link_to "Usuarios", users_path %></i></li>
-      <li><i > <%= link_to "Actividades", actividades_path %></i></li>
-      <li><i > <%= link_to "Lugares", micrositios_path %></i></li>
-      <li><i > <%= link_to "Eventos", eventos_path %></i></li>
-      <li><i > <%= link_to "Configuración", edit_user_registration_path %></i></li>
-      <li><i > <%= link_to "Salir",  destroy_user_session_path, method: "delete" %></i></li>
-    </ul>
-
-
-
-
-  </div>
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <li class="active"><i ><%= link_to " Descubre", root_path %></i></li>
+    <li><i > <%= link_to "Explora", estados_path %></i></li>
+    <li><i > <%= link_to "Usuarios", users_path %></i></li>
+    <li><i > <%= link_to "Actividades", actividades_path %></i></li>
+    <li><i > <%= link_to "Lugares", micrositios_path %></i></li>
+    <li><i > <%= link_to "Eventos", eventos_path %></i></li>
+    <li><i > <%= link_to "Configuración", edit_user_registration_path %></i></li>
+    <li><i > <%= link_to "Salir",  destroy_user_session_path, method: "delete" %></i></li>
+  </ul>
 </div>
-

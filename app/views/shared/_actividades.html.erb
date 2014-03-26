@@ -23,10 +23,10 @@
                                     <p>ahora está siguiendo a <%= x.actividad %>  </p>
                                     <% x.micrositios.take(1).each do |estado| %>
                                         <% if estado.photo_file_size? %>
-                                            <%= link_to (image_tag estado.photo.url(:medium)), estado, class: "img-responsive nomargin", alt: "Places" %>
+                                            <%= link_to (image_tag estado.photo.url(:small), class: "img-responsive", alt: x ), estado%>
                                             <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
                                         <% else %>
-                                            <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}"), estado, class: "img-responsive nomargin", alt: "Places" %>
+                                            <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}", class: "img-responsive nomargin", alt: x), estado %>
                                             <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
                                         <% end %>
                                     <% end %>
@@ -51,10 +51,10 @@
           <div>
             <% x.micrositios.take(1).each do |estado| %>
                 <% if estado.photo_file_size? %>
-                    <%= link_to (image_tag estado.photo.url(:medium)), estado, class: "img-responsive", alt: "responsive image" %>
+                    <%= link_to (image_tag estado.photo.url(:medium), class: "img-responsive", alt: x), estado %>
                     <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
                 <% else %>
-                    <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}"), estado, class: "img-responsive", alt: "responsive image" %>
+                    <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}", class: "img-responsive", alt: x ), estado%>
                     <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
                 <% end %>
             <% end %>

@@ -8,17 +8,16 @@
 
       <h2>Todas las actividades</h2>
 
-        <% @actividades.limit(30).order("RANDOM()").each do |f| %>
+        <% @actividades.limit(10).order("RANDOM()").each do |f| %>
 
-            <li>
-              <div class="thumbnail col-md-12    " style="margin: 0px">
+              <div class="thumbnail col-sm-12">
                 <div class="col-md-4" >
                   <% f.micrositios.take(1).each do |estado| %>
                       <% if estado.photo_file_size? %>
-                          <%= link_to (image_tag estado.photo.url(:medium)), estado, class: "img-responsive", alt: "responsive image" %>
+                          <%= link_to (image_tag estado.photo.url(:medium)), estado, class: "img-responsive" %>
                           <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
                   <% else %>
-                          <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}"), estado, class: "img-responsive", alt: "responsive image" %>
+                          <%= link_to (image_tag "https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}"), estado, class: "img-responsive"%>
                           <div style="font-weight: bold; overflow: hidden"><%= link_to estado.name, estado		  %> </div>
                       <% end %>
                   <% end %>
@@ -39,10 +38,10 @@
                             <li class="thumbnail" style="width: 120px">
 
                               <% if estado.photo_file_size? %>
-                                  <%= link_to (image_tag estado.photo.url(:smallest)), estado, class: "img-responsive", alt: "responsive image" %>
+                                  <%= link_to (image_tag estado.photo.url(:smallest), class: "img-responsive", alt: estado), estado %>
                                   <div class="caption" style="font-weight: bold; overflow: hidden; color: #000000"><%=  estado.name	  %> </div>
                               <% else %>
-                                  <%= link_to image_tag("https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}",:size => "100"), estado, class: "img-responsive", alt: "responsive image" %>
+                                  <%= link_to image_tag("https://s3.amazonaws.com/imagenes.notelimites/micrositios/photos/sitios/big/#{estado.photo_file_name}",:size => "100", class: "img-responsive", alt: estado), estado%>
                                   <div class="caption" style="font-weight: bold; overflow: hidden; color: #000000"><%=  estado.name  %> </div>
                               <% end %>
                             </li>
@@ -80,7 +79,6 @@
                   </div>
                 </div>
               </div>
-            </li>
 
         <% end %>
 

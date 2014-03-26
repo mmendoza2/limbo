@@ -59,6 +59,9 @@ NoTeLimites::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  config.assets.precompile += %w( search.js)
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -77,19 +80,21 @@ NoTeLimites::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+
+
   # devise
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => 'notelimites.com',
-      :user_name            => 'ntl@notelimites.com',
-      :password             => 'NTL12wolmen',
+      :domain               => 'adsmex.com',
+      :user_name            => 'mmendoza2@adsmex.com',
+      :password             => 'manumanu',
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
 
   # Specify what domain to use for mailer URLs
-  config.action_mailer.default_url_options = { :host => 'https://notelimites.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'https://adsmex.herokuapp.com/' }
 
 
   config.paperclip_defaults = {
