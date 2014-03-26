@@ -22,10 +22,11 @@ gem 'turbolinks', '2.2.1'
 gem 'jbuilder', '1.2.0'
 gem 'jquery-ui-rails', '4.1.1'
 gem 'koala', '1.9.0'
+gem 'pg', '0.17.1'
+
 
 
 group :development, :test do
-gem 'pg', '0.17.1'
 gem 'rspec-rails', '2.13.1'
 # The following optional lines are part of the advanced setup.
 gem 'guard-rspec', '2.5.0'
