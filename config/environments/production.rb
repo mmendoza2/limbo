@@ -87,14 +87,14 @@ NoTeLimites::Application.configure do
   config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => 'adsmex.com',
-      :user_name            => 'mmendoza2@adsmex.com',
-      :password             => 'manumanu',
+      :domain               => 'notelimites.com',
+      :user_name            => 'ntl@notelimites.com',
+      :password             => 'NTL12wolmen',
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
 
   # Specify what domain to use for mailer URLs
-  config.action_mailer.default_url_options = { :host => 'https://adsmex.herokuapp.com/' }
+  config.action_mailer.default_url_options = {host: 'localhost:3000'}
 
 
   config.paperclip_defaults = {

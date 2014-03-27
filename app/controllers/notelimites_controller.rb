@@ -6,9 +6,6 @@ class NotelimitesController < ApplicationController
       @eventos = Evento.all
       @actividades = Actividad.all
       @users = User.all
-
-
-
   end
 
   def ayuda

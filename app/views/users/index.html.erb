@@ -9,6 +9,7 @@
         <th> <%= link_to "name", :sort => "Name" %>  </th>
         <th> <%= link_to "email", :sort => "Email" %>  </th>
         <th> <%= link_to "username", :sort => "Username" %>  </th>
+        <th> <%= link_to "admin", :sort => "admin" %>  </th>
         <th> <%= link_to "created_at", :sort => "Created_at" %>  </th>
       </tr>
 
@@ -18,6 +19,7 @@
             <td> <%=x.name %></td>
             <td> <%=x.email %></td>
             <td> <%=x.username %></td>
+            <td> <%=x.admin %></td>
             <td> <%=x.created_at %></td>
 
           </tr>
