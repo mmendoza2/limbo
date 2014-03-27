@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   has_many :authorizations
 
 
+  has_many :relationcategorias, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_categorias, through: :relationcategorias, source: :followed
+
     has_many :relationactividadespadre, foreign_key: "follower_id", dependent: :destroy
     has_many :followed_actividadespadre, through: :relationactividadespadre, source: :followed
 
@@ -184,6 +187,16 @@ class User < ActiveRecord::Base
       def unfollowactividadpadre!(other_user)
         relationactividadespadre.find_by(followed_id: other_user.id).destroy!
       end
+
+  def followingcategoria?(other_user)
+    relationcategorias.find_by(followed_id: other_user.id)
+  end
+  def followcategoria!(other_user)
+    relationcategorias.create!(followed_id: other_user.id)
+  end
+  def unfollowcategoria!(other_user)
+    relationcategorias.find_by(followed_id: other_user.id).destroy!
+  end
 
 
 

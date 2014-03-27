@@ -1,5 +1,6 @@
 class CategoriasController < ApplicationController
   before_filter :authenticate_user!
+  before_action :admin_user,     only: :destroy
 
   # GET /actividades
   # GET /actividades.json
@@ -10,6 +11,8 @@ class CategoriasController < ApplicationController
   # GET /actividades/1
   # GET /actividades/1.json
   def show
+    @categoria = Categoria.friendly.find(params[:id])
+
   end
 
   # GET /actividades/new
@@ -60,7 +63,7 @@ class CategoriasController < ApplicationController
   def destroy
     @categoria.destroy
     respond_to do |format|
-      format.html { redirect_to actividadespadre_url }
+      format.html { redirect_to categorias_url }
       format.json { head :no_content }
     end
   end

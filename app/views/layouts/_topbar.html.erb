@@ -1,3 +1,4 @@
+
 <!-- top navbar -->
 <div class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top: 0px">
     <div class="navbar-header">
@@ -10,20 +11,30 @@
     </div>
 
   <nav class="hidden-xs">
-    <ul class="nav pull-right" style="margin-right: 100px; padding-top: 05px">
-      <li id="fat-menu" class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <%=  current_user.name %><b class="caret"></b>
-        </a>
-        <ul class="dropdown-menu">
-          <li><%= link_to "Perfil", current_user %></li>
-          <li><%= link_to "Configuración", edit_user_registration_path(current_user) %></li>
-          <li class="divider"></li>
-          <li>
-            <%= link_to "Salir",  destroy_user_session_path, method: "delete" %>
-          </li>
-        </ul>
-      </li>
+    <ul class="nav pull-right" style="margin-right: 100px; padding-top: 20px">
+
+          <ul class="list-inline pull-left" style="margin-right: 200px">
+              <li ><i><%= image_tag("social.png", class: "icono-pr")%></i> <%= link_to "Social" , categorias_social_path %></li>
+              <li ><i><%= image_tag("ecoturismo.png", class: "icono-pr")%></i> <%= link_to "Ecoturismo", categorias_ecoturismo_path %></li>
+              <li ><i><%= image_tag("turismo.png", class: "icono-pr")%></i> <%= link_to "Turismo", categorias_turismo_path %></li>
+              <li ><i><%= image_tag("alternativo.png", class: "icono-pr")%></i> <%= link_to "Alternativo", categorias_alternativo_path %></li>
+
+          </ul>
+          <ul class="pull-left">
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <%=  current_user.name %><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Perfil", current_user %></li>
+                  <li><%= link_to "Configuración", edit_user_registration_path(current_user) %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Salir",  destroy_user_session_path, method: "delete" %>
+                  </li>
+                </ul>
+              </li>
+          </ul>
     </ul>
   </nav>
 

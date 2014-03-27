@@ -1,6 +1,5 @@
 NoTeLimites::Application.routes.draw do
 
-  resources :search_suggestionns
 
   root to: 'notelimites#home'
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
@@ -21,6 +20,11 @@ NoTeLimites::Application.routes.draw do
   match '/contacto', to: 'notelimites#contacto', via: 'get'
   match '/instrucciones', to: 'notelimites#instrucciones', via: 'get'
   match '/micrositios', to: 'micrositios#index', via: 'get'
+  match '/categorias/social', to: 'categorias#show', defaults: {:id => '1'}, via: 'get'
+  match '/categorias/ecoturismo', to: 'categorias#show', defaults: {:id => '3'}, via: 'get'
+  match '/categorias/alternativo', to: 'categorias#show', defaults: {:id => '2'}, via: 'get'
+  match '/categorias/turismo', to: 'categorias#show', defaults: {:id => '4'}, via: 'get'
+
 
   resources :users do
     member do
@@ -48,6 +52,12 @@ NoTeLimites::Application.routes.draw do
     end
   end
   resources :actividadespadre do
+    member do
+      get :following, :followers
+    end
+  end
+
+  resources :categorias do
     member do
       get :following, :followers
     end

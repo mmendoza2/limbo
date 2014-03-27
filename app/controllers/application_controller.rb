@@ -24,8 +24,9 @@ class ApplicationController < ActionController::Base
 
   end
 
-
-
+  def categoria
+  @categoria = Categoria.all
+  end
 
 
   protected
