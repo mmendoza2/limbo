@@ -157,10 +157,11 @@ a.carousel-control:hover {
 #logo {
     float: left;
     width: 260px;
-    margin-right: 10px;
+    height: auto;
+    margin-left: 20px;
     vertical-align: text-top;
-    padding-top: 3px;
-    margin-top: 2px;
+    padding-top: 10px;
+    margin-top: 0px;
 }
 
 #logo:hover {

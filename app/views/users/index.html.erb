@@ -1,7 +1,36 @@
 
 
+<% if current_user.admin = "t"  %>
 
-<h1>Usuarios</h1>
+    <table class="table table-hover">
+
+      <tr>
+        <th> <%= link_to "id", :sort => "Id" %>  </th>
+        <th> <%= link_to "name", :sort => "Name" %>  </th>
+        <th> <%= link_to "email", :sort => "Email" %>  </th>
+        <th> <%= link_to "username", :sort => "Username" %>  </th>
+        <th> <%= link_to "created_at", :sort => "Created_at" %>  </th>
+      </tr>
+
+      <% @user.each do |x|  %>
+          <tr>
+            <td> <%=x.id %></td>
+            <td> <%=x.name %></td>
+            <td> <%=x.email %></td>
+            <td> <%=x.username %></td>
+            <td> <%=x.created_at %></td>
+
+          </tr>
+      <% end  %>
+
+    </table>
+
+
+
+<% else  %>
+
+
+    <h1>Usuarios</h1>
 
 
 <div class="row ">
@@ -201,8 +230,7 @@
 
 
 
-
-
+<% end  %>
 
 
 
