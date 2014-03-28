@@ -3,17 +3,17 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation" style="padding-top: 0px">
     <div class="navbar-header">
 
-      <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
 
       <div class="hidden-xs">
       <%= link_to image_tag("LogoNTL.png", id: "logo", class: "navbar-brand"), root_path %>
       </div>
+
     </div>
 
   <nav class="hidden-xs">
     <ul class="nav pull-right" style="margin-right: 100px; padding-top: 20px">
 
-          <ul class="list-inline pull-left" style="margin-right: 200px">
+          <ul class="list-inline pull-left hidden-xs hidden-sm hidden-md" style="margin-right: 50px">
               <li ><i><%= image_tag("social.png", class: "icono-pr")%></i> <%= link_to "Social" , categorias_social_path %></li>
               <li ><i><%= image_tag("ecoturismo.png", class: "icono-pr")%></i> <%= link_to "Ecoturismo", categorias_ecoturismo_path %></li>
               <li ><i><%= image_tag("turismo.png", class: "icono-pr")%></i> <%= link_to "Turismo", categorias_turismo_path %></li>
@@ -23,6 +23,15 @@
           <ul class="pull-left">
               <li id="fat-menu" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <% if current_user.photo_file_name.blank?  %>
+                      <% if current_user.avatar.blank?  %>
+                          <%= link_to image_tag("http://imagenes.notelimites.s3.amazonaws.com/users/default_user.png", class: "avatarchiquito"), current_user %>
+                      <%	 else %>
+                          <%= link_to image_tag("http://graph.facebook.com/#{current_user.uid}/picture?type=square", class: "avatarchiquito"), current_user %>
+                      <% end %>
+                  <% else %>
+                      <%= link_to image_tag(current_user.photo.url(:square), class: "avatarchiquito"), current_user  %>
+                  <%	 end %>
                   <%=  current_user.name %><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">

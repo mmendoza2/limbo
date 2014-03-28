@@ -22,8 +22,8 @@ NoTeLimites::Application.routes.draw do
   match '/micrositios', to: 'micrositios#index', via: 'get'
   match '/categorias/social', to: 'categorias#show', defaults: {:id => '1'}, via: 'get'
   match '/categorias/ecoturismo', to: 'categorias#show', defaults: {:id => '3'}, via: 'get'
-  match '/categorias/alternativo', to: 'categorias#show', defaults: {:id => '2'}, via: 'get'
-  match '/categorias/turismo', to: 'categorias#show', defaults: {:id => '4'}, via: 'get'
+  match '/categorias/alternativo', to: 'categorias#show', defaults: {:id => '4'}, via: 'get'
+  match '/categorias/turismo', to: 'categorias#show', defaults: {:id => '2'}, via: 'get'
 
 
   resources :users do
