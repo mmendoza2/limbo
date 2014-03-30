@@ -12,6 +12,8 @@ class CategoriasController < ApplicationController
   # GET /actividades/1.json
   def show
     @categoria = Categoria.friendly.find(params[:id])
+    @eventos = Evento.all
+    @micrositios = Micrositio.all
 
   end
 

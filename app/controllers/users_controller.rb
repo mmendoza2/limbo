@@ -38,6 +38,14 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
+  def editcategorias
+    @micrositios = Micrositio.all
+    @estadosalf = Estado.order("estado")
+    @actividad = Actividad.all
+    @actividadpadres = Actividadpadre.all
+    @categorias = Categoria.all
+  end
+
   def editestados
     @micrositios = Micrositio.all
     @estadosalf = Estado.order("estado")

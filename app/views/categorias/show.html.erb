@@ -1,5 +1,69 @@
 <div class="row" style="margin-bottom: 20px;  ">
   <div class="col-md-5">
-    <h1 style="color: #090909"><%= @categoria.name %> </h1>
+    <h1 style="color: #090909"><%= @categoria.name.capitalize %> </h1>
   </div>
+
+    <div class="col-md-2 " style="padding-top: 40px">
+      <%= render 'follow_form' %>
+    </div>
+
+    <div class="col-md-4" style="padding-top: 40px">
+      <div class="fb-like" data-href="<%=request.original_url%>" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="box_count" data-action="recommend" data-show-faces="true" data-send="false"></div>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="NTLmx" data-lang="es" data-size="large">Twittear</a>
+      <div class="g-plusone" data-annotation="inline" data-width="120"></div>
+    </div>
+</div>
+
+
+
+<div class="row" style="margin-bottom: 20px">
+  <div class="col-md-7 ">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="overflow:hidden" >
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="inner-item ">
+            <img src="https://s3.amazonaws.com/imagenes.notelimites/actividades/photos/sitios/big/<%= @categoria.actividades.first.photo_file_name %>" width="100%"  alt="<%=@categoria.actividades.first.actividad %>">
+          </div>
+          <div class="carousel-caption">
+            <h3>   <%=	 @categoria.actividades.first.actividad %>  </h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="inner-item">
+            <img src="https://s3.amazonaws.com/imagenes.notelimites/actividades/photos/sitios/big/<%= @categoria.actividades.second.photo_file_name %>" width="100%"  alt="<%=@categoria.actividades.first.actividad %>">
+          </div>
+          <div class="carousel-caption">
+            <h3>   <%= @categoria.actividades.second.actividad %>  </h3>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="inner-item">
+            <img src="https://s3.amazonaws.com/imagenes.notelimites/actividades/photos/sitios/big/<%= @categoria.actividades.third.photo_file_name %>" width="100%"  alt="<%=@categoria.actividades.first.actividad %>">
+          </div>
+          <div class="carousel-caption">
+            <h3>   <%=	 @categoria.actividades.third.actividad %>  </h3>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left glyphicons-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right glyphicons-chevron-right"></span>
+      </a>
+    </div>
   </div>
+</div>

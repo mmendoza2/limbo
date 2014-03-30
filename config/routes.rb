@@ -76,6 +76,7 @@ NoTeLimites::Application.routes.draw do
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :relationeventos, only: [:create, :destroy]
+  resources :relationcategorias, only: [:create, :destroy]
   resources :relationmicrositios, only: [:create, :destroy]
   resources :relationestados, only: [:create, :destroy]
   resources :relationactividades, only: [:create, :destroy]

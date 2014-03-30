@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327212545) do
+ActiveRecord::Schema.define(version: 20140330212851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -243,6 +243,17 @@ ActiveRecord::Schema.define(version: 20140327212545) do
   add_index "relationactividadespadre", ["followed_id"], name: "index_relationactividadespadre_on_followed_id", using: :btree
   add_index "relationactividadespadre", ["follower_id", "followed_id"], name: "index_relationactividadespadre_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationactividadespadre", ["follower_id"], name: "index_relationactividadespadre_on_follower_id", using: :btree
+
+  create_table "relationcategorias", force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationcategorias", ["followed_id"], name: "index_relationcategorias_on_followed_id", using: :btree
+  add_index "relationcategorias", ["follower_id", "followed_id"], name: "index_relationcategorias_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "relationcategorias", ["follower_id"], name: "index_relationcategorias_on_follower_id", using: :btree
 
   create_table "relationestados", force: true do |t|
     t.integer  "follower_id"

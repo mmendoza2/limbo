@@ -1,5 +1,6 @@
 class Categoria < ActiveRecord::Base
-
+  has_many :eventos
+  has_many :micrositios
   has_many :actividades
 
   has_many :reverse_relationcategorias, foreign_key: "followed_id",
