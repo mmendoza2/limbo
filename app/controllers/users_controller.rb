@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.paginate(page: params[:page])
     @user = User.order(params[:sort])
+
   end
 
   def show
@@ -113,7 +114,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo, :lat, :lng)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo, :lat, :lng, :admin)
     end
 
     # Before filters
