@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="1330543415">
-    <data-source source="LOCAL" name="Rails notelimites: production" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="3247824b-b934-4f50-bc7c-b36ab561ef16">
+    <data-source source="LOCAL" name="Rails notelimites: production" uuid="3247824b-b934-4f50-bc7c-b36ab561ef16">
+      <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/production</jdbc-url>
       <libraries>
@@ -13,9 +14,10 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails notelimites: development" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="76a74c44-2fd5-45c6-bfc2-9b27baa85d99">
+    <data-source source="LOCAL" name="Rails notelimites: development" uuid="76a74c44-2fd5-45c6-bfc2-9b27baa85d99">
+      <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://127.0.0.1/development</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/ntlcom_dev</jdbc-url>
       <user-name>Meme</user-name>
       <libraries>
         <library>
@@ -26,7 +28,8 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="Rails notelimites: test" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="a0a496b6-2f0b-44f0-9844-f10a7e470465">
+    <data-source source="LOCAL" name="Rails notelimites: test" uuid="a0a496b6-2f0b-44f0-9844-f10a7e470465">
+      <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/test</jdbc-url>
       <libraries>
