@@ -48,6 +48,10 @@
 
   <div id="wrapper">
       <%= render 'layouts/sidebar' %>
+    <div id="sidebarr" class="hidden-sm hidden-xs hidden-lg"  >
+      <%= render 'layouts/sidebarright' %>
+    </div>
+
         <!-- Page content -->
         <div id="page-content-wrapper">
 
@@ -59,6 +63,8 @@
         </div>
         <!-- Keep all page content within the page-content inset div! -->
             <div class="page-content inset">
+
+                <div class="col-md-10">
                      <div class="col-sm-offset-1 col-sm-10 col-xs-10" style="margin-top: 5px; margin-bottom: 5px">
                         <% [:notice, :error, :alert].each do |level| %>
                             <% unless flash[level].blank? %>
@@ -68,11 +74,18 @@
                                 </div>
                             <% end %>
                         <% end %>
-                      </div>
+                     </div>
+
                    <%= yield %>
+
+                 </div>
+
             </div>
         </div>
+
+
   </div>
+
 
 
   <script>

@@ -3,12 +3,14 @@
 <div class="navbar navbar-fixed-top" role="navigation" style="padding-top: 0px; background-color: #f5f5f5">
     <div class="navbar-header">
 
-
       <div class="hidden-xs">
       <%= link_to image_tag("LogoNTL.png", id: "logo", class: "navbar-brand"), root_path %>
       </div>
 
     </div>
+
+
+  <div class="container">
 
   <nav class="hidden-xs">
     <ul class="nav pull-right" style="margin-right: 100px; padding-top: 20px">
@@ -18,14 +20,9 @@
             <button class="topbtn1"> <li > <i><%= image_tag("ecoturismo.png", class: "icono-pr")%></i> <%= link_to "Ecoturismo", categorias_ecoturismo_path %></li></button>
             <button class="topbtn1">  <li ><i><%= image_tag("turismo.png", class: "icono-pr")%></i> <%= link_to "Turismo", categorias_turismo_path %></li></button>
             <button class="topbtn1">  <li ><i><%= image_tag("alternativo.png", class: "icono-pr")%></i> <%= link_to "Alternativo", categorias_alternativo_path %></li></button>
-
           </ul>
           <ul class="pull-left">
-
-
-
-
-            <li id="fat-menu" class="dropdown">
+         <li id="fat-menu" class="dropdown">
 
 
               <% if current_user.photo_file_name.blank?  %>
@@ -54,5 +51,6 @@
     </ul>
   </nav>
 
+  </div>
 
 </div>
