@@ -11,6 +11,7 @@ class ActividadesController < ApplicationController
     @eventos = Evento.all
     @estadosalf = Estado.order("estado")
     @estado = Estado.all
+
   end
 
   # GET /actividades/1

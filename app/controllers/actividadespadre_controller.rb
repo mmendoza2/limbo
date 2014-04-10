@@ -6,6 +6,7 @@ class ActividadespadreController < ApplicationController
   # GET /actividades.json
   def index
     @actividadespadre = Actividadpadre.all
+
   end
 
   # GET /actividades/1

@@ -11,7 +11,6 @@ class MicrositiosController < ApplicationController
   # GET /micrositios.json
   def index
     @micrositios = Micrositio.all
-
   end
 
   # GET /micrositios/1
