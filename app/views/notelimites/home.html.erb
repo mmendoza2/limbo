@@ -12,25 +12,17 @@
 
 
 <% if signed_in? %>
-
-
-      <div class="col-md-5 col-lg-4 col-sm-4 col-xs-12" style="padding: 0px; padding-left: -10px">
-       <%=	 render 'shared/actividades' %>
-
-      </div>
-
-    <div class="col-md-5 col-lg-4 col-sm-4 col-xs-12"  style="padding: 0px">
-
-
+<div class="col-md-12">
+    <ul class="col-md-6 col-lg-6 col-sm-6 col-xs-12" style="padding-left: 3px">
+      <%=	 render 'shared/actividades' %>
+    </ul>
+    <ul class="col-md-6 col-lg-6 col-sm-6 col-xs-12"  style="padding-left: 3px">
       <%=	 render 'shared/micrositios' %>
-    </div>
+    </ul>
 
 
-    <div class="hidden-md col-lg-4 col-sm-4 col-xs-12"  style="padding: 0px">
 
-
-      <%=	 render 'shared/usuarios' %>
-    </div>
+</div>
 
 
 

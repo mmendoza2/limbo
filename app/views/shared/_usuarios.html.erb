@@ -1,12 +1,5 @@
 
-
-<ul >
-
-
 <% @users.limit(10).order("RANDOM()").each do |x| %>
-
-
-
     <div class="thumbnail">
       <div class="caption">
 
@@ -27,13 +20,5 @@
 
       </div>
     </div>
-
-
-
-
-
 <% end %>
 
-
-
-</ul>
