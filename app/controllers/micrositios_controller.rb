@@ -1,5 +1,4 @@
 class MicrositiosController < ApplicationController
-  before_filter :authenticate_user!
   before_action :correct_user,   only: :destroy
   before_action :set_micrositio, only: [:show, :edit, :update, :destroy]
 

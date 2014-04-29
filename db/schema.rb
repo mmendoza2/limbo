@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330212851) do
+ActiveRecord::Schema.define(version: 20140422205954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,21 @@ ActiveRecord::Schema.define(version: 20140330212851) do
     t.string   "country"
     t.string   "country_code"
     t.string   "distance"
+  end
+
+  create_table "mensajes", force: true do |t|
+    t.integer  "sender"
+    t.integer  "receiver"
+    t.integer  "long"
+    t.integer  "lat"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.string   "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "slug"
+    t.text     "mapa"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "microposts", force: true do |t|
