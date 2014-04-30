@@ -9,12 +9,12 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <a data-toggle="collapse"  href="#collapseFour">
-                  Sigue a otros usuarios
+                <a data-toggle="collapse"  href="#collapseFive">
+                  Usuarios
                 </a>
               </h4>
             </div>
-            <div id="collapseFour" class="panel-collapse collapse in">
+            <div id="collapseFive" class="panel-collapse collapse in">
               <div class="panel-body">
                 <div class="row" style="margin-top: -15px; margin-bottom: -15px">
                   <table class="table table-hover">
@@ -23,32 +23,24 @@
                       <th> <%= link_to "id", :sort => "Id" %>  </th>
                       <th> <%= link_to "name", :sort => "Name" %>  </th>
                       <th> <%= link_to "email", :sort => "Email" %>  </th>
-                      <th> <%= link_to "username", :sort => "Username" %>  </th>
 
-
-                      <th> <%= link_to "admin", :sort => "admin" %>  </th>
                       <th> <%= link_to "created_at", :sort => "Created_at" %>  </th>
+                      <th> <%= link_to "current_sign_in_at", :sort => "current_sign_in_at" %>  </th>
+                      <th> <%= link_to "last_sign_in_at", :sort => "last_sign_in_at" %>  </th>
                     </tr>
 
-                    <% @user.each do |x|  %>
+                    <% @user.limit(100).each do |x|  %>
                         <tr>
                           <td> <%=x.id %></td>
                           <td> <%=x.name %></td>
                           <td> <%=x.email %></td>
-                          <td> <%=x.username %></td>
-                          <td> <%=x.admin %></td>
-                          <td>
-                            <%= form_for(x, :html => { :multipart => true }) do |f| %>
-                                <%= render 'shared/error_messages', object: f.object %>
-
-                                <%= f.label "admin?" %>
-                                <%= f.check_box :admin %>
-
-                                <%= f.submit "Submit", class: "button small radius" %>
-                            <% end %>
-                          </td>
-
                           <td> <%=x.created_at %></td>
+                          <td> <%=x.current_sign_in_at %></td>
+                          <td> <%=x.last_sign_in_at %></td>
+
+
+
+
 
                         </tr>
                     <% end  %>
@@ -65,6 +57,83 @@
       </div>
     </div>
 
+    <div class="row ">
+      <div class="col-sm-12 col-xs-12 ">
+
+        <div class="panel-group" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse"  href="#collapseFour">
+                  Sigue a otros usuarios
+                </a>
+              </h4>
+            </div>
+            <div id="collapseFour" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <div class="row" style="margin-top: -15px; margin-bottom: -15px">
+                  <table class="table table-hover">
+
+                    <tr>
+                      <th> <%= link_to "id", :sort => "Id" %>  </th>
+                      <th> <%= link_to "name", :sort => "Name" %>  </th>
+                      <th> <%= link_to "email", :sort => "Email" %>  </th>
+                      <th> <%= link_to "admin", :sort => "admin" %>  </th>
+                      <th> <%= link_to "editor", :sort => "editor" %>  </th>
+                      <th> <%= link_to "editor_estado", :sort => "editor_estado" %>  </th>
+                    </tr>
+
+                    <% @user.limit(100).each do |x|  %>
+                        <tr>
+                          <td> <%=x.id %></td>
+                          <td> <%=x.name %></td>
+                          <td> <%=x.email %></td>
+                          <td>
+                            <%= form_for(x, :html => { :multipart => true }) do |f| %>
+                                <%= render 'shared/error_messages', object: f.object %>
+
+                                <%= f.label "admin?" %>
+                                <%= f.check_box :admin %>
+
+                                <%= f.submit "Submit", class: "button small radius" %>
+                            <% end %>
+                          </td>
+                          <td>
+                            <%= form_for(x, :html => { :multipart => true }) do |f| %>
+                                <%= render 'shared/error_messages', object: f.object %>
+
+                                <%= f.label "editor?" %>
+                                <%= f.check_box :editor %>
+
+                                <%= f.submit "Submit", class: "button small radius" %>
+                            <% end %>
+                          </td>
+                          <td>
+                            <%= form_for(x, :html => { :multipart => true }) do |f| %>
+                                <%= render 'shared/error_messages', object: f.object %>
+
+                                <%= f.label "editor_estado" %>
+                                <%= f.collection_select :editor_estado, Estado.order(:estado), :id, :estado, id: "estadoselect"  %>
+
+                                <%= f.submit "Submit", class: "button small radius" %>
+                            <% end %>
+                          </td>
+
+
+                        </tr>
+                    <% end  %>
+
+                  </table>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
 
 
@@ -102,7 +171,7 @@
                       <% @friends_using_app = @friends.find_all {|x| x['installed'] == true}    %>
                       <% @friends_id = @friends_using_app.map {|x| x['id']}  %>
                       <% @show_friends = @users.find_all{|x| x[:uid] = @friends_id} %>
-                      <% @show_friends.each do |x| %>
+                      <% @show_friends.limit(20).each do |x| %>
                           <%	 if x == current_user %>
                           <%	 else %>
 
@@ -186,7 +255,7 @@
               <div id="collapseThree" class="panel-collapse collapse in">
                 <div class="panel-body">
                   <div class="row" style="margin-top: -15px; margin-bottom: -15px">
-                    <%    @users.limit(50).order("RANDOM()").each do |user|          %>
+                    <%    @users.limit(20).order("RANDOM()").each do |user|          %>
 
                         <div class="row wrapusers" >
                           <div class="col-xs-4    col-sm-2">

@@ -4,13 +4,41 @@
 
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
-  <ul class="sidebar-nav">
-    <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("social.png", class: "icono-pr"), categorias_social_path %></i></li>
-    <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("ecoturismo.png", class: "icono-pr"), categorias_ecoturismo_path%></i>  </li>
-    <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("turismo.png", class: "icono-pr"), categorias_turismo_path%></i>   </li>
-    <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("alternativo.png", class: "icono-pr"), categorias_alternativo_path%></i>   </li>
-    <li class="active"><i ><%= link_to " Descubre", root_path %></i></li>
-    <li><i > <%= link_to "Explora", estados_path %></i></li>
-    <li><i > <%= link_to "Usuarios", users_path %></i></li>
-  </ul>
+
+
+
+  <%	 if current_user.admin? or current_user.editor? %>
+
+      <ul class="sidebar-nav">
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("social.png", class: "icono-pr"), categorias_social_path %></i></li>
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("ecoturismo.png", class: "icono-pr"), categorias_ecoturismo_path%></i>  </li>
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("turismo.png", class: "icono-pr"), categorias_turismo_path%></i>   </li>
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("alternativo.png", class: "icono-pr"), categorias_alternativo_path%></i>   </li>
+        <li class="active"><i ><%= link_to " Descubre", root_path %></i></li>
+        <li><i > <%= link_to "Explora", estados_path %></i></li>
+        <li><i > <%= link_to "Usuarios", users_path %></i></li>
+
+
+         <li style="margin-top: 100px"><button style="padding-left: 20px; padding-right: 20px"><i > <%= link_to "Agregar evento", new_evento_path %></i></button></li>
+         <li style="margin-top: 10px"><button style="padding-left: 20px; padding-right: 30px"><i > <%= link_to "Agregar lugar", new_micrositio_path %></i></button></li>
+      </ul>
+
+
+
+
+<%	 else %>
+
+      <ul class="sidebar-nav">
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("social.png", class: "icono-pr"), categorias_social_path %></i></li>
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("ecoturismo.png", class: "icono-pr"), categorias_ecoturismo_path%></i>  </li>
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("turismo.png", class: "icono-pr"), categorias_turismo_path%></i>   </li>
+        <li class="hidden-md hidden-lg" ><i><%= link_to image_tag("alternativo.png", class: "icono-pr"), categorias_alternativo_path%></i>   </li>
+        <li class="active"><i ><%= link_to " Descubre", root_path %></i></li>
+        <li><i > <%= link_to "Explora", estados_path %></i></li>
+        <li><i > <%= link_to "Usuarios", users_path %></i></li>
+      </ul>
+
+
+  <%	 end %>
+
 </div>
