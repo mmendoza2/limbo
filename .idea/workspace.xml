@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/sitemap/index.xml.haml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/sitemap_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/notelimites.iml" afterPath="$PROJECT_DIR$/.idea/notelimites.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" afterPath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sitemap/index.xml.haml" afterPath="$PROJECT_DIR$/app/views/sitemap/index.xml.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="notelimites.iws" />
@@ -36,21 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/micrositios/show.html.erb">
+      <file leaf-file-name="index.xml.haml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/sitemap/index.xml.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.958333" vertical-offset="1996" max-vertical-offset="2865">
-              <caret line="149" column="0" selection-start-line="149" selection-start-column="0" selection-end-line="149" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1545">
-              <caret line="3" column="78" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.07450331" vertical-offset="0" max-vertical-offset="604">
+              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -60,57 +43,7 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/sitemap_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_usuarios.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/shared/_usuarios.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="450">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1185">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.xml.haml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/sitemap/index.xml.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.18072289" vertical-offset="0" max-vertical-offset="581">
-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
-              <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schema.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/schema.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2977" max-vertical-offset="5790">
-              <caret line="232" column="26" selection-start-line="232" selection-start-column="26" selection-end-line="232" selection-end-column="26" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,8 +115,8 @@
         <option value="$PROJECT_DIR$/app/views/micrositios/show.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/sitemap/index.xml" />
-        <option value="$PROJECT_DIR$/app/controllers/sitemap_controller.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/controllers/sitemap_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/sitemap/index.xml.haml" />
       </list>
     </option>
@@ -306,6 +239,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static_pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -536,11 +491,11 @@
       <recent name="$PROJECT_DIR$/app/views/layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/static_pages" />
       <recent name="$PROJECT_DIR$/app/views/layouts" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets/principal" />
       <recent name="$PROJECT_DIR$/app/assets/stylesheets" />
       <recent name="$PROJECT_DIR$/app/assets/javascripts" />
-      <recent name="$PROJECT_DIR$/app/assets/stylesheets/jquery" />
     </key>
   </component>
   <component name="RunManager" selected="Rails.Development: notelimites">
@@ -1171,14 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sitemap_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
@@ -1187,10 +1134,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sitemap_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="604">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sitemap/index.xml.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18072289" vertical-offset="0" max-vertical-offset="581">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.07450331" vertical-offset="0" max-vertical-offset="604">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
           <folding />
         </state>
       </provider>
