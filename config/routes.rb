@@ -1,6 +1,8 @@
 NoTeLimites::Application.routes.draw do
 
 
+  get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
+
   root to: 'notelimites#home'
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   match '/users/auth/facebook' => 'devise/omniauth_callbacks#passthru',  via: 'get'
@@ -82,7 +84,6 @@ NoTeLimites::Application.routes.draw do
   resources :relationestados, only: [:create, :destroy]
   resources :relationactividades, only: [:create, :destroy]
   resources :relationactividadespadre, only: [:create, :destroy]
-
 
 
 
