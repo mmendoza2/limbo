@@ -11,7 +11,7 @@ body {
 
 /* top menu */
 .topbtn{
-  height: 66px;
+  height: 68px;
   margin-top: -27px;
   border:1px solid #cacaca; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:14px; display:inline-block;font-weight:bold; color: #FFFFFF;
   background-color: #E6E6E6; background-image: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#CCCCCC));
@@ -23,6 +23,28 @@ body {
 }
 
 .topbtn:hover{
+  border:1px solid #b3b3b3;
+  background-color: #cdcdcd; background-image: -webkit-gradient(linear, left top, left bottom, from(#cdcdcd), to(#b3b3b3));
+  background-image: -webkit-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: -moz-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: -ms-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: -o-linear-gradient(top, #cdcdcd, #b3b3b3);
+  background-image: linear-gradient(to bottom, #cdcdcd, #b3b3b3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#cdcdcd, endColorstr=#b3b3b3);
+}
+
+.topbtn0{
+  height: 71px;
+  margin-top: -27px;
+  border:1px solid #cacaca; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px;font-size:14px; display:inline-block;font-weight:bold; color: #FFFFFF;
+  background-color: #E6E6E6; background-image: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#CCCCCC));
+  background-image: -webkit-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: -moz-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: -ms-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: -o-linear-gradient(top, #E6E6E6, #CCCCCC);
+  background-image: linear-gradient(to bottom, #E6E6E6, #CCCCCC);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#E6E6E6, endColorstr=#CCCCCC);
+}
+
+.topbtn0:hover{
   border:1px solid #b3b3b3;
   background-color: #cdcdcd; background-image: -webkit-gradient(linear, left top, left bottom, from(#cdcdcd), to(#b3b3b3));
   background-image: -webkit-linear-gradient(top, #cdcdcd, #b3b3b3);
@@ -57,6 +79,10 @@ body {
 .icono-pr{
   width: 35px;
   margin-top: -10px;
+}
+.icono-pr2{
+  width: 35px;
+  margin-top: -11px;
 }
 
 
@@ -535,3 +561,24 @@ aside {
   font-weight: bold;
 }
 
+
+
+.ingresaya{
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  padding-bottom: 20px;
+  padding-top: 10px;
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #a6c7ed;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.ingresaya:hover{
+  -webkit-box-shadow: 5px 5px 8px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    5px 5px 8px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         5px 5px 8px 0px rgba(50, 50, 50, 0.75);
+}

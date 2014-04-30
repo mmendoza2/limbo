@@ -1,7 +1,7 @@
 <ul >
 
   <%	@users = User.all  %>
-  <% @users.limit(10).order("RANDOM()").each do |x| %>
+  <% @users.limit(15).order("RANDOM()").each do |x| %>
 
       <li style="font-size: 11px; margin-left: -25px; margin-bottom: 10px; ">
 

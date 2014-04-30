@@ -16,6 +16,9 @@
 </script>
 
 
+<% if signed_in?   %>
+    <% if current_user.editor? or current_user.admin?  %>
+
 
     <h1>Nuevo Evento</h1>
 
@@ -72,5 +75,12 @@
       </div>
     </div>
 
+    <%	 else %>
 
+       <h2>Necesitas permisos para poder crear eventos</h2>
+        <%=	 link_to "o puedes ver como promocionarte aquí", promocionate_path %>
+    <%	 end %>
+<%	 else %>
+    <%=	 render "shared/ingresa" %>
 
+<%	 end %>

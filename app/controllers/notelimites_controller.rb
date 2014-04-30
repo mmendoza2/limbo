@@ -21,6 +21,10 @@ class NotelimitesController < ApplicationController
   def terminos
   end
 
+  def promocionate
+  end
+
+
   def instrucciones
     @actividades = Actividad.all
   end

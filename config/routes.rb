@@ -16,6 +16,7 @@ NoTeLimites::Application.routes.draw do
   match '/places',    to: 'notelimites#places',    via: 'get'
   match '/zwopa',    to: 'notelimites#zwopa',    via: 'get'
   match '/terminos',    to: 'notelimites#terminos',    via: 'get'
+  match '/promocionate',    to: 'notelimites#promocionate',    via: 'get'
   match '/nosotros',   to: 'notelimites#nosotros',   via: 'get'
   match '/contacto', to: 'notelimites#contacto', via: 'get'
   match '/instrucciones', to: 'notelimites#instrucciones', via: 'get'
