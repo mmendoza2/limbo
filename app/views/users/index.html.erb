@@ -29,7 +29,7 @@
                       <th> <%= link_to "last_sign_in_at", :sort => "last_sign_in_at" %>  </th>
                     </tr>
 
-                    <% @user.limit(100).each do |x|  %>
+                    <% @user.limit(50).each do |x|  %>
                         <tr>
                           <td> <%=x.id %></td>
                           <td> <%=x.name %></td>
@@ -83,7 +83,7 @@
                       <th> <%= link_to "editor_estado", :sort => "editor_estado" %>  </th>
                     </tr>
 
-                    <% @user.limit(100).each do |x|  %>
+                    <% @user.limit(50).each do |x|  %>
                         <tr>
                           <td> <%=x.id %></td>
                           <td> <%=x.name %></td>
@@ -171,7 +171,7 @@
                       <% @friends_using_app = @friends.find_all {|x| x['installed'] == true}    %>
                       <% @friends_id = @friends_using_app.map {|x| x['id']}  %>
                       <% @show_friends = @users.find_all{|x| x[:uid] = @friends_id} %>
-                      <% @show_friends.limit(20).each do |x| %>
+                      <% @show_friends.each do |x| %>
                           <%	 if x == current_user %>
                           <%	 else %>
 
