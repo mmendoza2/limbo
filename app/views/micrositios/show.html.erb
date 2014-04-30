@@ -1,4 +1,6 @@
 
+<%=	 render "shared/ingresa" %>
+
 
 <script>
     $(document).ready(function () {
@@ -116,7 +118,7 @@
                       <h4 style="color: #000000"> Actividades Relacionadas</h4>
                       <ul class="list-inline ">
                     <%	 @micrositio.actividades.each do |p| %>
-                        <li> <%=link_to p.actividad, p.actividad %>  </li>
+                        <li> <%=link_to p.actividad, p %>  </li>
                       <%	 end %>
                       </ul>
                     </div>

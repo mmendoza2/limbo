@@ -1,9 +1,10 @@
+<%	 if signed_in? %>
 
 
 
 
 
-  <div class="row " >
+    <div class="row " >
     <div class="col-md-12"  >
 
       <h2>Todas las actividades</h2>
@@ -86,3 +87,9 @@
 
     </div>
   </div>
+<% else %>
+
+
+    <%=	 render "shared/ingresa" %>
+
+<% end %>
