@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" afterPath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" />
     </list>
     <ignored path="notelimites.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +54,8 @@
       <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.397351" vertical-offset="150" max-vertical-offset="1545">
-              <caret line="26" column="77" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.44701988" vertical-offset="150" max-vertical-offset="1545">
+              <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -1246,8 +1245,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.397351" vertical-offset="150" max-vertical-offset="1545">
-          <caret line="26" column="77" selection-start-line="26" selection-start-column="77" selection-end-line="26" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.44701988" vertical-offset="150" max-vertical-offset="1545">
+          <caret line="28" column="74" selection-start-line="28" selection-start-column="74" selection-end-line="28" selection-end-column="74" />
           <folding />
         </state>
       </provider>
