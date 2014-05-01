@@ -6,6 +6,7 @@ class CategoriasController < ApplicationController
   # GET /actividades.json
   def index
     @categoria = Categoria.all
+    @actividades = Actividad.all
   end
 
   # GET /actividades/1
@@ -14,6 +15,7 @@ class CategoriasController < ApplicationController
     @categoria = Categoria.friendly.find(params[:id])
     @eventos = Evento.all
     @micrositios = Micrositio.all
+    @actividades = Actividad.all
 
   end
 
