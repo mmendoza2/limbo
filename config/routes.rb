@@ -1,4 +1,4 @@
-NoTeLimites::Application.routes.draw do
+Limbo::Application.routes.draw do
 
 
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }

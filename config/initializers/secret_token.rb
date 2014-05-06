@@ -19,4 +19,4 @@ def secure_token
   end
 end
 
-NoTeLimites::Application.config.secret_key_base = secure_token
+Limbo::Application.config.secret_key_base = secure_token

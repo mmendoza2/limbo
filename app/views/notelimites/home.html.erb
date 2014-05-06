@@ -1,28 +1,6 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=182819485154177";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
 
 
 <% if signed_in? %>
-    <div class="col-md-12">
-        <ul class="col-md-6 col-lg-6 col-sm-6 col-xs-12" style="padding-left: 3px">
-          <%=	 render 'shared/actividades' %>
-        </ul>
-        <ul class="col-md-6 col-lg-6 col-sm-6 col-xs-12"  style="padding-left: 3px">
-          <%=	 render 'shared/micrositios' %>
-        </ul>
-
-
-
-    </div>
 
 
 
@@ -30,110 +8,6 @@
 
 
 
-
-
-
-    <header id="header" class="site-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1><div class="site-title pull-left"> <%= link_to image_tag("LogoNTL.png"), root_path, id: "logo" %></div></h1>
-            <div class="user text-right">
-              <ul>
-              <li class="user-login" ><%= link_to "Ingresa", new_user_session_path %></li> |
-              <li class="user-regidter" ><%= link_to "Regístrate", new_user_registration_path %></li>
-              </ul>
-            </div>
-          </div><!-- /span12 -->
-        </div><!-- /row-fluid -->
-
-
-
-        <div class="row">
-          <div class="col-md-12">
-            <% [:notice, :error, :alert].each do |level| %>
-                <% unless flash[level].blank? %>
-                    <div data-alert="alert" class="alert-message <%= flash_class(level) %> fade in">
-                      <a class="close" href="#">×</a>
-                      <%= content_tag :p, flash[level] %>
-                    </div>
-                <% end %>
-            <% end %>
-
-                <div class="header-description">
-
-                      <h2 style="font-size: 58px">NoTeLimites te ayudará a conocer México.</h2>
-
-                      <div class="header-btn"><%= link_to "Comienza a Explorar", new_user_registration_path %></div>
-                </div><!-- /header-description -->
-
-            <div class="header-features">
-              <div class="row">
-                <div class="col-md-6">
-                      <h3> &nbsp; Cuentanos tus intereses</h3>
-                      <p>Nostros te recomendamos los mejores lugares a donde ir y las mejores cosas que hacer en México</p>
-                </div>
-                <div class="col-md-6 col-xs-12">
-                  <div class="table-responsive">
-                    <table class="table">
-                      <h3> Dale like en Facebook</h3>
-                      <div class="fb-like-box" data-href="http://www.facebook.com/notelimites" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="400px"></div>
-                    </table>
-                  </div>
-                </div>
-
-
-
-              </div>
-
-            </div><!-- /header-features -->
-
-          </div><!-- /span12 -->
-        </div><!-- /row-fluid -->
-      </div><!-- /container -->
-    </header>
-
-
-
-
-    <section id="features" class="features">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-md-3">
-            <div class="feature">
-              <i class="icon-globe icon-2x pull-left"></i>
-              <h4>Descubre</h4>
-              <p>Descubre todos los lugares, actividades y eventos que existen en México.</p>
-            </div>
-          </div><!-- /span3 -->
-
-          <div class="col-md-3">
-            <div class="feature">
-              <i class="icon-wrench icon-2x pull-left"></i>
-              <h4>Conoce</h4>
-              <p>Conoce lugares que nunca antes habías visto.</p>
-            </div>
-          </div><!-- /span3 -->
-
-          <div class="col-md-3">
-            <div class="feature">
-              <i class="icon-desktop icon-2x pull-left"></i>
-              <h4>Disfruta</h4>
-              <p>Disfruta todo lo que México tiene para ti</p>
-            </div>
-          </div><!-- /span3 -->
-
-          <div class="col-md-3">
-            <div class="feature">
-              <i class="icon-thumbs-up icon-2x pull-left"></i>
-              <h4>Comparte</h4>
-              <p>Comparte con tus amigos todo lo que sabes acerca de México y sus lugares.</p>
-            </div>
-          </div><!-- /span3 -->
-        </div><!-- /row-fluid -->
-      </div><!-- /container -->
-    </section>
 
 
 <% end %>

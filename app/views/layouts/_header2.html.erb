@@ -1,17 +1,11 @@
-<title>Limbo</title>
+<title>NoTeLimites</title>
 <%= favicon_link_tag 'favicon.ico' %>
 <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
 <script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensor=false">
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
 <title><%= full_title(yield(:title)) %></title>
-<% if signed_in? 	  %>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-<%  else %>
-    <%= stylesheet_link_tag "principal/custom"%>
-    <%= stylesheet_link_tag "bootstrap"%>
-    <%= stylesheet_link_tag "notelimites"%>
-<%  end %>
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 <%= render 'layouts/shim' %>
@@ -21,7 +15,6 @@
 
 
 
-<!-- Emp -->
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];

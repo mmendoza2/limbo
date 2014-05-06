@@ -5,16 +5,9 @@
   <div class="container" style="height: 1000px">
     <div class="row">
       <div class="col-md-12">
-        <h1><div class="site-title pull-left"> <%= link_to image_tag("LogoNTL.png"), root_path, id: "logo" %></div></h1>
-        <div class="user text-right">
-          <ul>
-            <li class="user-login" ><%= link_to "Ingresa", new_user_session_path %></li> |
-            <li class="user-regidter" ><%= link_to "Regístrate", new_user_registration_path %></li>
-          </ul>
-        </div>
             <div class="text-center" >
               <br>
-              <h2 style="color: #ffffff; font-weight: 100; font-size: 40px" >¡Únete a NoTeLimites.com hoy!</h2>
+              <h2 style="color: #ffffff; font-weight: 100; font-size: 40px" >Welcome to Limbo</h2>
               <br>
               <% [:notice, :error, :alert].each do |level| %>
                   <% unless flash[level].blank? %>
@@ -27,13 +20,13 @@
             </div>
             <section>
               <div class="text-center  ">
-                  <i class="icon-facebook-sign"></i>  <%= link_to "Registrate con Facebook", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
+                  <i class="icon-facebook-sign"></i>  <%= link_to "Please sign in", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
               </div>
               <div class="row text-center" >
 
                 <%= devise_error_messages! %>
                 <div class="col-md-4 col-md-offset-4" >
-                  <h2 class="text-center" style="color: #ffffff; font-weight: 100" >Ó registrate con tu E-mail... </h2>
+                  <h2 class="text-center" style="color: #ffffff; font-weight: 100" >Or create an account </h2>
                       <div class="col-md-10 col-md-offset-1 " >
                               <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
                                   <div> <%= f.text_field :name, :autofocus => true, :placeholder => "Nombre", class: 'input-sm' %></div>
@@ -45,7 +38,7 @@
                               <% end %>
                           <div  style="color: #ffffff; text-align: left;">
                             <p>
-                              Dándole click a "Regístrate" se considera que estás de acuerdo con los Servicios de NoTeLimites. Por favor toma un tiempo para leer los <%= link_to "Terminos y Condiciones.", terminos_path %>
+                              Dándole click a "Regístrate" se considera que estás de acuerdo con los Servicios de Limbo. Por favor toma un tiempo para leer los <%= link_to "Terminos y Condiciones.", terminos_path %>
                             </p>
                             <br>
                             <br>
