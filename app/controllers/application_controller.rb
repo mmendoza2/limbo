@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     if @user.followed_actividades.count >= 3
     root_path
     else
-    instrucciones_path
+    root_path
     end
 
   end
