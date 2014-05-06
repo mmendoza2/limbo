@@ -95,7 +95,7 @@ body {
     font-weight: 300;
 
     width: 100%;
-    min-height: 600px;
+    min-height: auto;
     background: #f1f1ee; /* Old browsers */
     background: -moz-linear-gradient(top, #f1f1ee 0%, #f1f1ee 300px, #ffffff 480px, #ffffff 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1ee), color-stop(37%,#f1f1ee), color-stop(60%,#ffffff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
@@ -660,10 +660,18 @@ footer a:link {color: #fbfbfb !important;}
                         responsive fix
 **************************************************************/
 /* Large desktop */
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
+    .site-header {
+      min-height: 1100px;
+    }
+    }
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
+    .site-header {
+      min-height: 780px;
+    }
+
     .header-description h2 {
         font-size: 83px;
         line-height: 65px;
