@@ -3,7 +3,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: ntlcom_dev
+  database: limbo_dev
   username:  Meme
   password:
   host: localhost

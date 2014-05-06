@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-NoTeLimites::Application.load_tasks
+Limbo::Application.load_tasks
