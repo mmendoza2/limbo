@@ -230,12 +230,12 @@ Devise.setup do |config|
 
 
   if Rails.env.development?
-     config.omniauth :facebook, '626384007393278', 'c8e03770698ac3fa74828538c16dceb9',
+     config.omniauth :facebook, '755987457757762', '4e27e9e404e59c013a8a77294097a0fc',
                   scope: "email, publish_stream, user_friends ",
                   :secure_image_url => 'true',
                   :image_size => 'large'
   else
-    config.omniauth :facebook, '182819485154177', 'd0a0ccde76db8a64187351ffa7f8d465',
+    config.omniauth :facebook, '755918064431368', 'd56e90da6206e8fb93f08a0ffac5422f',
                 scope: "email, publish_stream, user_friends ",
                 :secure_image_url => 'true',
                 :image_size => 'large'

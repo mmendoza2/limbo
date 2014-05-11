@@ -177,15 +177,14 @@ a.carousel-control:hover {
 
 
 .site-header {
-  background: #7c58a0; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  #7c58a0 0%, #593e73 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7c58a0), color-stop(100%,#593e73)); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover,  #7c58a0 0%,#593e73 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover,  #7c58a0 0%,#593e73 100%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover,  #7c58a0 0%,#593e73 100%); /* IE10+ */
-  background: radial-gradient(ellipse at center,  #7c58a0 0%,#593e73 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7c58a0', endColorstr='#593e73',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  background: #8e7e9e; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #8e7e9e 1%, #593e73 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#8e7e9e), color-stop(100%,#593e73)); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #8e7e9e 1%,#593e73 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #8e7e9e 1%,#593e73 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #8e7e9e 1%,#593e73 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center, #8e7e9e 1%,#593e73 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8e7e9e', endColorstr='#593e73',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     -webkit-background-size:cover;
     -moz-background-size:cover;
     background-size:cover;
@@ -662,14 +661,14 @@ footer a:link {color: #fbfbfb !important;}
 /* Large desktop */
 @media (min-width: 1200px) {
     .site-header {
-      min-height: 1100px;
+      min-height: 1200px;
     }
     }
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
     .site-header {
-      min-height: 780px;
+      min-height: 640px;
     }
 
     .header-description h2 {
@@ -690,6 +689,9 @@ footer a:link {color: #fbfbfb !important;}
     body {
         padding: 0;
     }
+  .site-header {
+    min-height: 1000px;
+  }
     .container {
         padding-left: 20px;
         padding-right: 20px;
