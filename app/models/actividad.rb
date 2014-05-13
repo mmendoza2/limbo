@@ -21,6 +21,6 @@ class Actividad < ActiveRecord::Base
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/jpg' ]
 
   extend FriendlyId
-  friendly_id :actividad, use: :slugged
+  friendly_id :name, use: :slugged
 
 end

@@ -21,7 +21,7 @@
         <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
       </div>
         <%= f.label :actividad_id %>
-      <%= f.collection_select :actividad_id, Actividad.order(:actividad), :id, :actividad, id: "actividadselect"  %>
+      <%= f.collection_select :actividad_id, Actividad.order(:name), :id, :name, id: "actividadselect"  %>
 
 
       <%= f.label :name %>

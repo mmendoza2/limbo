@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140513162839) do
   end
 
   create_table "actividades", force: true do |t|
-    t.string   "actividad"
+    t.string   "name"
     t.string   "actividadpadre"
     t.integer  "tagid"
     t.integer  "catid"

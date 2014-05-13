@@ -23,7 +23,7 @@ class ActividadesController < ApplicationController
 
   # GET /actividades/new
   def new
-    @actividad = Actividad.friendly.find(params[:id])
+    @actividad = Actividad.new
   end
 
   # GET /actividades/1/edit
@@ -35,6 +35,7 @@ class ActividadesController < ApplicationController
   # POST /actividades
   # POST /actividades.json
   def create
+
     @actividad = Actividad.new(actividad_params)
 
     respond_to do |format|
@@ -82,6 +83,6 @@ class ActividadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def actividad_params
-      params[:actividad].permit(:actividad, :photo, :descripcion)
+      params[:actividad].permit(:name)
     end
 end
