@@ -20,8 +20,11 @@
         <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
         <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
       </div>
+        <%= f.label :actividad_id %>
+      <%= f.collection_select :actividad_id, Actividad.order(:actividad), :id, :actividad, id: "actividadselect"  %>
 
-        <%= f.label :name %>
+
+      <%= f.label :name %>
         <%= f.text_field :name %>
 
         <%= f.label :descripcion %>
@@ -31,7 +34,7 @@
         <%= f.file_field :photo %>
 
 
-        <%= f.submit "Sube el antro", class: "btn btn-large btn-primary" %>
+        <%= f.submit "Sube tu lugar", class: "btn btn-large btn-primary" %>
 
     <% end %>
 

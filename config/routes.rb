@@ -24,10 +24,9 @@ Limbo::Application.routes.draw do
   match '/instrucciones', to: 'notelimites#instrucciones', via: 'get'
   match '/micrositios', to: 'micrositios#index', via: 'get'
   match '/actividades/nightclubs', to: 'actividades#show', defaults: {:id => '1'}, via: 'get'
-  match '/categorias/social', to: 'categorias#show', defaults: {:id => '2'}, via: 'get'
-  match '/categorias/ecoturismo', to: 'categorias#show', defaults: {:id => '1'}, via: 'get'
-  match '/categorias/alternativo', to: 'categorias#show', defaults: {:id => '4'}, via: 'get'
-  match '/categorias/turismo', to: 'categorias#show', defaults: {:id => '3'}, via: 'get'
+  match '/actividades/bars', to: 'actividades#show', defaults: {:id => '2'}, via: 'get'
+  match '/actividades/restaurants', to: 'actividades#show', defaults: {:id => '3'}, via: 'get'
+
 
 
   resources :users do
