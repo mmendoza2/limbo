@@ -22,10 +22,6 @@
 
     <div id="wrapper">
       <%= render 'layouts/sidebar' %>
-      <div id="sidebarr" class="hidden-sm hidden-xs hidden-md"  >
-        <%= render 'layouts/sidebarright' %>
-      </div>
-
       <!-- Page content -->
       <div id="page-content-wrapper">
 
@@ -39,7 +35,7 @@
         <div class="page-content inset">
 
 
-          <div class="col-md-10 col-sm-12 col-lg-10">
+          <div class="col-md-12 col-sm-12 col-lg-12">
             <div class="col-sm-offset-1 col-sm-10 col-xs-10" style="margin-top: 5px; margin-bottom: 5px">
               <% [:notice, :error, :alert].each do |level| %>
                   <% unless flash[level].blank? %>

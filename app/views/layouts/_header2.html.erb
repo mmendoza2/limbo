@@ -1,9 +1,12 @@
 <title>NoTeLimites</title>
 <%= favicon_link_tag 'favicon.ico' %>
 <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
-<script type="text/javascript"  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensor=false">
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensor=false">
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
+<script type="text/javascript"
+        src="http://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensorr=false">
+</script>
 <title><%= full_title(yield(:title)) %></title>
 <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
