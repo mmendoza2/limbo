@@ -3,9 +3,6 @@ class MicrositiosController < ApplicationController
   before_action :set_micrositio, only: [:show, :edit, :update, :destroy]
 
 
-
-
-
   # GET /micrositios
   # GET /micrositios.json
   def index
