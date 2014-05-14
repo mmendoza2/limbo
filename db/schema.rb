@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20140513162839) do
 
   create_table "actividades", force: true do |t|
     t.string   "name"
-    t.string   "actividadpadre"
     t.integer  "tagid"
     t.integer  "catid"
     t.integer  "tagparent"
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140513162839) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "actividadpadre_id"
+    t.integer  "actividad_id"
     t.string   "slug"
     t.integer  "categoria_id"
   end
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20140513162839) do
   end
 
   create_table "categoria", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

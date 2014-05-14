@@ -1,13 +1,16 @@
 class Micrositio < ActiveRecord::Base
   belongs_to :user
   belongs_to :estado
-  has_one :actividad
+  has_and_belongs_to_many :actividad
 
   has_many :reverse_relationmicrositios, foreign_key: "followed_id",
            class_name:  "Relationmicrositio",
            dependent:   :destroy
   has_many :followers, through: :reverse_relationmicrositios, source: :follower
 
+  validates :actividad_id, presence: true
+  validates :lat, presence: true
+  validates :lng, presence: true
   validates :user_id, presence: true
   validates :name, presence: true
   validates :descripcion, presence: true
