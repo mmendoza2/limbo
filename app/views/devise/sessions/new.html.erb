@@ -2,22 +2,13 @@
 <% provide(:title, "Sign in") %>
 
 <header id="header" class="site-header">
-  <div class="container" style="height: 1000px">
+  <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1><div class="site-title pull-left"> <%= link_to image_tag("LogoNTL.png"), root_path, id: "logo" %></div></h1>
-        <div class="user text-right">
-          <ul>
-            <li class="user-login" ><%= link_to "Ingresa", new_user_session_path %></li> |
-            <li class="user-regidter" ><%= link_to "Regístrate", new_user_registration_path %></li>
-          </ul>
-        </div>
         <div class="text-center" >
           <br>
-          <h2 style="color: #ffffff; font-weight: 100; font-size: 40px" >¡Ingresa a NoTeLimites.com!</h2>
+          <h2 style="color: #ffffff; font-weight: 100; font-size: 40px" >Welcome to Limbo</h2>
           <br>
-
-
           <% [:notice, :error, :alert].each do |level| %>
               <% unless flash[level].blank? %>
                   <div data-alert="alert" class="alert-message <%= flash_class(level) %> fade in">
@@ -26,15 +17,15 @@
                   </div>
               <% end %>
           <% end %>
-
         </div>
         <section>
           <div class="text-center  ">
-            <i class="icon-facebook-sign"></i>  <%= link_to "Ingresa con Facebook", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
+            <i class="icon-facebook-sign"></i>  <%= link_to "Please sign in", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
           </div>
           <div class="row text-center" >
 
             <%= devise_error_messages! %>
+
             <div class="col-md-4 col-md-offset-4" >
               <h2 class="text-center" style="color: #ffffff; font-weight: 100" >Ó ingresa con tu E-mail... </h2>
               <div class="col-md-10 col-md-offset-1 " >
@@ -52,13 +43,15 @@
                </div>
              </div>
           </div>
-          </section>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- /span12 -->
+        </section>
+      </div><!-- /span12 -->
+    </div><!-- /row-fluid -->
+  </div><!-- /container -->
 
 
 </header>
+
+
+
+
 
