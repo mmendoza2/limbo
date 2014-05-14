@@ -16,7 +16,7 @@
         <%= render 'shared/error_messages', object: f.object %>
 
       <div class="col-md-12">  <p>Ubicación del lugar</p></div>
-      <div id="map-canvas" class="thumbnail" style="height: 200px"></div>
+      <div id="map-canvas" class="thumbnail col-md-12" style="height: 200px"></div>
       <div id="latlong">
         <div> <%= f.text_field :lat, class: 'input-sm', id: 'latbox' %></div>
         <div> <%= f.text_field :lng, class: 'input-sm', id: 'lngbox' %></div>
