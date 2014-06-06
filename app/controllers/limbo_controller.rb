@@ -1,7 +1,13 @@
-class NotelimitesController < ApplicationController
+class LimboController < ApplicationController
 
 
   def home
+      if signed_in?
+      else
+        redirect_to(new_user_registration_path)
+      end
+
+
       @micrositios = Micrositio.all
       @eventos = Evento.all
       @actividades = Actividad.all

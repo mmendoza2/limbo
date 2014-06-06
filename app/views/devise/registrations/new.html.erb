@@ -20,7 +20,7 @@
             </div>
             <section>
               <div class="text-center  ">
-                  <i class="icon-facebook-sign"></i>  <%= link_to "Please sign in", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
+                  <i class="icon-facebook-sign"></i>  <%= link_to "Please Login with Facebook", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
               </div>
               <div class="row text-center" >
 
@@ -38,7 +38,9 @@
                               <% end %>
                           <div  style="color: #ffffff; text-align: left;">
 
+
                             <br>
+                            <%= render "devise/shared/links" %>
                             <br>
                             <br>
                           </div>

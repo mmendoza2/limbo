@@ -3,7 +3,7 @@ Limbo::Application.routes.draw do
 
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
 
-  root to: 'notelimites#home'
+  root to: 'limbo#home'
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
   match '/users/auth/facebook' => 'devise/omniauth_callbacks#passthru',  via: 'get'
   match 'auth/:provider/callback', to: 'sessions#create',   via: 'get'
@@ -13,15 +13,15 @@ Limbo::Application.routes.draw do
   match '/users/seleccionactividades',    to: 'users#editactividades',    via: 'get'
   match '/users/seleccionlugares',    to: 'users#editlugares',    via: 'get'
   match '/users/seleccionusuarios',    to: 'users#editusuarios',    via: 'get'
-  match '/index',    to: 'notelimites#index',    via: 'get'
+  match '/index',    to: 'limbo#index',    via: 'get'
   match '/ayuda',    to: 'info#ayuda',    via: 'get'
-  match '/places',    to: 'notelimites#places',    via: 'get'
+  match '/places',    to: 'limbo#places',    via: 'get'
   match '/zwopa',    to: 'info#zwopa',    via: 'get'
   match '/terminos',    to: 'info#terminos',    via: 'get'
   match '/promocionate',    to: 'info#promocionate',    via: 'get'
   match '/nosotros',   to: 'info#nosotros',   via: 'get'
   match '/contacto', to: 'info#contacto', via: 'get'
-  match '/instrucciones', to: 'notelimites#instrucciones', via: 'get'
+  match '/instrucciones', to: 'limbo#instrucciones', via: 'get'
   match '/micrositios', to: 'micrositios#index', via: 'get'
   match '/actividades/nightclubs', to: 'actividades#show', defaults: {:id => '1'}, via: 'get'
   match '/actividades/bars', to: 'actividades#show', defaults: {:id => '2'}, via: 'get'
@@ -84,14 +84,5 @@ Limbo::Application.routes.draw do
   resources :relationestados, only: [:create, :destroy]
   resources :relationactividades, only: [:create, :destroy]
   resources :relationactividadespadre, only: [:create, :destroy]
-
-
-
-
-
-
-
-
-
 
 end
