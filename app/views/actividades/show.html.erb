@@ -81,15 +81,16 @@
 
 
 
+
               <ul class="col-md-10 col-lg-8 col-sm-10 col-xs-12" style="padding: 0px">
                 <% place['results'].each do |result| %>
                     <li class="thumbnail" style="overflow: hidden">
-
-
-                      <br/>
-                      <%=   result['photos']	%>
-
-
+                      <%	 if result['photos'].nil?  %>
+                      <%	else  %>
+                          <% result['photos'].each do |f| %>
+                           <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{f['photo_reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs")  %>
+                            <% end %>
+                      <%	end  %>
                         <div class="caption">
                           <h3><%= link_to result['name'], micrositio_path %> </h3>
                           <div class="row">
