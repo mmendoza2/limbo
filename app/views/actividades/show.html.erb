@@ -1,5 +1,4 @@
 <script>
-
     function initialize() {
         var myLatlng = new google.maps.LatLng(23.634501,-102.55278399999997);
         var mapOptions = {
@@ -21,18 +20,14 @@
         });
     }
     google.maps.event.addDomListener(window, 'load', initialize);
-
 </script>
-
-
 <%	 if signed_in? %>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
-
   <div class="row micrositiotitulocontendedor">
     <div class="col-md-4 col-sm-6 hidden-xs">
 
-      <h1 style="color: #ffffff"><%=	@actividad.name %> </h1>
+      <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
     </div>
     <div class="visible-xs col-xs-4">
       <h1 style="color: #ffffff; font-size: 16px"><%=	@actividad.name %> </h1>
@@ -70,69 +65,49 @@
         <div class="col-md-4 col-md-offset-4" style="margin-bottom: 10px"><%= f.submit "Update", class: 'btn btn-primary' %></div>
     <% end %>
 <%	 else %>
+
+
+    <div class="row">
+      <p><%=	 link_to "Do you want to change your location?", edit_user_registration_path(current_user) %> </p>
+    </div>
+      <%	 place = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{current_user.lat},#{current_user.lng}&radius=100000&types=#{@actividad.name}&sensor=false&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %>
+      <ul class="col-md-10 col-lg-8 col-sm-10 col-xs-12" style="padding: 0px">
         <div class="row">
-          <p><%=	 link_to "Do you want to change your location?", edit_user_registration_path(current_user) %> </p>
+        <% place['results'].each do |result| %>
+          <div class="col-md-4">
+              <%	 if result['photos'].nil?  %>
+              <%	else  %>
+                  <% result['photos'].each do |f| %>
+                    <div class="img-responsive" style="height: 100px; overflow: hidden">
+                      <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference=#{f['photo_reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs")  %>
+                    </div>
+                    <% end %>
+              <%	end  %>
+          </div>
+            <div class="col-md-8">
+              <div class="col-md-8">
+                  <%= form_for(@micrositio) do |f| %>
+                      <%= f.hidden_field :name, value: result['name'] %>
+                      <%= f.hidden_field :reference, value: result['reference'] %>
+                      <%= f.submit result['name'], class: "h4" %>
+                  <% end %>
+              </div>
+              <div class="col-md-4">
+                <%	placeinside = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/details/json?reference=#{result['reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %>
+
+
+                <p style="height: 100px; overflow: hidden">
+                    <% result['types'].each do |types| %>
+                           <%= types%>
+                        <br/>
+                    <% end  %>
+                </p>
+                <%= placeinside['rating']	  %>
+              </div>
+            </div>
+        <% end  %>
         </div>
-
-
-
-        <%	 place = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{current_user.lat},#{current_user.lng}&radius=100000&types=#{@actividad.name}&sensor=false&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %>
-
-
-
-
-
-              <ul class="col-md-10 col-lg-8 col-sm-10 col-xs-12" style="padding: 0px">
-                <% place['results'].each do |result| %>
-                    <li class="thumbnail" style="overflow: hidden">
-                      <%	 if result['photos'].nil?  %>
-                      <%	else  %>
-                          <% result['photos'].each do |f| %>
-                           <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{f['photo_reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs")  %>
-                            <% end %>
-                      <%	end  %>
-                        <div class="caption">
-                          <h3><%= link_to result['name'], micrositio_path %> </h3>
-                          <div class="row">
-                            <div class="col-md-3">
-
-                            </div>
-                            <div class="col-md-12">
-                              <p style="height: 100px; overflow: hidden">
-                                <% result['types'].each do |types| %>
-
-                                       <%= types%>
-                                    <br/>
-
-                                <% end  %>
-                              </p>
-                            </div>
-                          </div>
-
-                        </div>
-                    </li>
-                <% end  %>
-              </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </ul>
 <%	 end %>
 
 
