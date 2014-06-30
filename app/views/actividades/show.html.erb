@@ -74,7 +74,7 @@
       <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
         <div class="row">
         <% place['results'].each do |result| %>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
               <%	 if result['photos'].nil?  %>
               <%	else  %>
                   <% result['photos'].each do |f| %>
@@ -84,15 +84,15 @@
                     <% end %>
               <%	end  %>
             </div>
-            <div class="col-md-5">
-              <div class="col-md-8">
+            <div class="col-md-5 col-sm-5">
+              <div class="col-md-9 col-sm-9">
                   <%= form_for(@micrositio) do |f| %>
                       <%= f.hidden_field :name, value: result['name'] %>
                       <%= f.hidden_field :reference, value: result['reference'] %>
-                      <%= f.submit result['name'], class: "h4" %>
+                      <%= f.submit result['name'], class: "h6" %>
                   <% end %>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-3 col-sm-3">
                 <%	placeinside = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/details/json?reference=#{result['reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %>
 
 
@@ -106,7 +106,7 @@
 
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-3">
               <h5> Rating</h5>
               <%= placeinside['result']['rating']	  %>
             </div>
