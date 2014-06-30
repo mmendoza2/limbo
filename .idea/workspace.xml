@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/actividad.rb" afterPath="$PROJECT_DIR$/app/models/actividad.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/actividades_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/actividades_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/micrositio.rb" afterPath="$PROJECT_DIR$/app/models/micrositio.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/micrositios/new.html.erb" afterPath="$PROJECT_DIR$/app/views/micrositios/new.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/actividades/show.html.erb" afterPath="$PROJECT_DIR$/app/views/actividades/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" afterPath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="notelimites.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +31,8 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8333333" vertical-offset="1005" max-vertical-offset="2085">
-              <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.9234234" vertical-offset="1050" max-vertical-offset="2160">
+              <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -58,7 +52,12 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="450">
               <caret line="2" column="32" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1404162552000" expanded="true" signature="228:711" placeholder="..." />
+                <marker date="1404162552000" expanded="true" signature="263:610" placeholder="..." />
+                <marker date="1404162552000" expanded="true" signature="296:601" placeholder="..." />
+                <marker date="1404162552000" expanded="true" signature="645:704" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1013,14 +1012,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="450">
           <caret line="2" column="32" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1404162552000" expanded="true" signature="228:711" placeholder="..." />
+            <marker date="1404162552000" expanded="true" signature="263:610" placeholder="..." />
+            <marker date="1404162552000" expanded="true" signature="296:601" placeholder="..." />
+            <marker date="1404162552000" expanded="true" signature="645:704" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8333333" vertical-offset="1005" max-vertical-offset="2085">
-          <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.9234234" vertical-offset="1050" max-vertical-offset="2160">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
