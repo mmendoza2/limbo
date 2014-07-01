@@ -75,12 +75,11 @@
    </div>
 
     <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb}&type=place&center=#{current_user.lat},#{current_user.lng}&distance=10000&access_token=#{current_user.oauth_token}").read) %>
-      <% fbplace['data'].each do |result| %>
+      <% fbplace['data'].first(7).each do |result| %>
          <%	fbplacein = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{result['id']}?&access_token=#{current_user.oauth_token}").read) %>
             <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
               <div class="row">
                     <div class="col-md-3 col-sm-3">
-
                       <%	 if fbplacein['cover'].nil?  %>
                       <%	else  %>
                             <div class="img-responsive" style="height: 100px; overflow: hidden">
@@ -111,12 +110,10 @@
               </div>
             </ul>
         <%	 end %>
-
-
    <%	 place = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{current_user.lat},#{current_user.lng}&radius=100000&types=#{@actividad.namegoogle}&sensor=false&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %>
       <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
         <div class="row">
-        <% place['results'].each do |result| %>
+        <% place['results'].first(7).each do |result| %>
             <div class="col-md-3 col-sm-3">
               <%	 if result['photos'].nil?  %>
               <%	else  %>
