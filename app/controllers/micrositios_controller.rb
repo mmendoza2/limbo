@@ -79,7 +79,7 @@ class MicrositiosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def micrositio_params
-      params.require(:micrositio).permit(:name,  :descripcion, :photo, :reference, :actividad_id, :lat, :lng)
+      params.require(:micrositio).permit(:name,  :descripcion, :photo, :reference, :actividad_id, :lat, :lng, :referencefb)
     end
 
 

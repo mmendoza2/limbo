@@ -8,7 +8,6 @@ class Micrositio < ActiveRecord::Base
            dependent:   :destroy
   has_many :followers, through: :reverse_relationmicrositios, source: :follower
 
-  validates :reference, presence: true
 
 
 

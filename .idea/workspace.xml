@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/micrositio.rb" afterPath="$PROJECT_DIR$/app/models/micrositio.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/micrositios_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/micrositios_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/actividades/show.html.erb" afterPath="$PROJECT_DIR$/app/views/actividades/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" afterPath="$PROJECT_DIR$/app/views/micrositios/show.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="notelimites.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8198198" vertical-offset="1494" max-vertical-offset="2610">
-              <caret line="136" column="234" selection-start-line="136" selection-start-column="234" selection-end-line="136" selection-end-column="234" />
+            <state vertical-scroll-proportion="-9.0" vertical-offset="1074" max-vertical-offset="2610">
+              <caret line="86" column="35" selection-start-line="81" selection-start-column="19" selection-end-line="86" selection-end-column="35" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -52,6 +55,30 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/micrositios/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.9" vertical-offset="0" max-vertical-offset="1485">
+              <caret line="3" column="101" selection-start-line="3" selection-start-column="101" selection-end-line="3" selection-end-column="101" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="micrositio.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/micrositio.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="custom.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
           <provider selected="true" editor-type-id="text-editor">
@@ -62,23 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/micrositios/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="915">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="micrositios_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="micrositios_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/micrositios_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.73623186" vertical-offset="707" max-vertical-offset="1410">
+              <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
               <folding />
             </state>
           </provider>
@@ -103,7 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/layouts/_googleanalytics.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/actividades.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/eventos.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/info.html.erb" />
@@ -145,15 +159,16 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/micrositios.js.coffee" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header2.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/micrositios_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/actividad.rb" />
         <option value="$PROJECT_DIR$/app/controllers/actividades_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/micrositios/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/models/micrositio.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-        <option value="$PROJECT_DIR$/app/views/micrositios/show.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20140701025251_addcolumnsto_actividades.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20140701164757_addcolumntomicro.rb" />
         <option value="$PROJECT_DIR$/app/views/actividades/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/micrositio.rb" />
+        <option value="$PROJECT_DIR$/app/views/micrositios/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/micrositios_controller.rb" />
       </list>
     </option>
   </component>
@@ -274,7 +289,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,7 +311,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,20 +699,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/locales/devise.en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="581">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="591">
@@ -1001,14 +1006,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/micrositio.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/principal/custom.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6396396" vertical-offset="10149" max-vertical-offset="13680">
@@ -1041,36 +1038,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/micrositios_controller.rb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140701164757_addcolumntomicro.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140701025251_addcolumnsto_actividades.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04411765" vertical-offset="0" max-vertical-offset="680">
+          <caret line="2" column="45" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5880">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/micrositio.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/micrositios/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="915">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.9" vertical-offset="0" max-vertical-offset="1485">
+          <caret line="3" column="101" selection-start-line="3" selection-start-column="101" selection-end-line="3" selection-end-column="101" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140701025251_addcolumnsto_actividades.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8198198" vertical-offset="1494" max-vertical-offset="2610">
-          <caret line="136" column="234" selection-start-line="136" selection-start-column="234" selection-end-line="136" selection-end-column="234" />
+        <state vertical-scroll-proportion="-9.0" vertical-offset="1074" max-vertical-offset="2610">
+          <caret line="86" column="35" selection-start-line="81" selection-start-column="19" selection-end-line="86" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1084,6 +1099,14 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#ul#1;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/micrositios_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73623186" vertical-offset="707" max-vertical-offset="1410">
+          <caret line="81" column="122" selection-start-line="81" selection-start-column="122" selection-end-line="81" selection-end-column="122" />
+          <folding />
         </state>
       </provider>
     </entry>

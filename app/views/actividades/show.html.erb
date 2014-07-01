@@ -90,7 +90,7 @@
                       <div class="col-md-7 col-sm-9">
                         <%= form_for(@micrositio) do |f| %>
                             <%= f.hidden_field :name, value: result['name'] %>
-                            <%= f.hidden_field :reference, value: result['id'] %>
+                            <%= f.hidden_field :referencefb, value: result['id'] %>
                             <%= f.submit result['name'], class: "h6" %>
                         <% end %>
                       </div>
