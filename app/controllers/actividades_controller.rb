@@ -19,6 +19,7 @@ class ActividadesController < ApplicationController
     @actividades = Actividad.all
     @actividad = Actividad.friendly.find(params[:id])
     @micrositio = Micrositio.new
+    @micrositios = Micrositio.all
   end
 
   # GET /actividades/new

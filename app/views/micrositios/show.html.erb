@@ -17,6 +17,9 @@
         </div>
         <div class="col-md-6 col-xs-12">
           <h1> <%= place['name']	  %></h1>
+          <div class="col-md-6" style="padding-top: 40px">
+            <%= render 'follow_form' if signed_in? %>
+          </div>
         </div>
       </div>
       <div class="row" style="margin-top: 20px">
@@ -46,6 +49,10 @@
         </div>
         <div class="col-md-6 col-xs-12">
           <h1> <%= place['result']['name']	  %></h1>
+
+          <div class="col-md-6" style="padding-top: 40px">
+            <%= render 'follow_form' if signed_in? %>
+          </div>
         </div>
       </div>
       <div class="row" style="margin-top: 20px">

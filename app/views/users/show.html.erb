@@ -1,7 +1,6 @@
 
 
-<div>
-  <% if @user.photo_file_name.blank?  %>
+<div class="col-md-3 hidden-xs hidden-sm">  <% if @user.photo_file_name.blank?  %>
       <% if @user.avatar.blank?  %>
           <%=  image_tag "http://imagenes.notelimites.s3.amazonaws.com/users/default_user.png", class: "avatargrande" %>
       <%	 else %>
@@ -10,21 +9,36 @@
   <% else %>
       <%=  image_tag @user.photo.url(:medium), class: "avatargrande"%>
   <%	 end %>
+  <h4><%= @user.name %></h4>
 </div>
-<h4><%= @user.name %></h4>
 
 
-<div class="col-md-6">
+
+<div class="col-md-9 col-xs-12  ">
+  <h1 class="col-md-offset-4" style="margin-top: -15px">Follow Places</h1>
+  <hr/>
+  <ul>
+  <%	current_user.followed_micrositios.each do |x|  %>
+     <li>
+       <div class="row">
+         <div class="col-md-4">
+             <%= link_to x.name, x %>
+         </div>
+         <div class="col-md-8">
+
+             <%	 if x.reference.nil?  %>
+              <%=	image_tag(x.photo_file_name, :class => "img-responsive") %>
+             <% else  %>
+              <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{x.photo_file_name}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs", :class => "img-responsive")	  %>
+             <% end  %>
+
+         </div>
+       </div>
+    </li>
+    <% end  %>
+  </ul>
 </div>
 
 <div>
 </div>
-
-
-
-<div class="col-md-6" style="margin-top: 100px">
-  <% if @user.microposts.any? %>
-  <% end %>
-</div>
-
 

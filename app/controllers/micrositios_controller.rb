@@ -31,7 +31,7 @@ class MicrositiosController < ApplicationController
   # POST /micrositios
   # POST /micrositios.json
   def create
-    @micrositio = current_user.micrositios.build(micrositio_params)
+    @micrositio = current_user.micrositios.find_or_create_by(micrositio_params)
     respond_to do |format|
       if @micrositio.save
         format.html { redirect_to @micrositio, notice: '¡El Micrositio fue creado exitosamente!.' }
@@ -79,7 +79,7 @@ class MicrositiosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def micrositio_params
-      params.require(:micrositio).permit(:name,  :descripcion, :photo, :reference, :actividad_id, :lat, :lng, :referencefb)
+      params.require(:micrositio).permit(:name,  :descripcion, :photo, :reference, :actividad_id, :lat, :lng, :referencefb, :photo_file_name)
     end
 
 

@@ -73,7 +73,6 @@
           <p><%=	 link_to "Do you want to change your location?", edit_user_registration_path(current_user) %> </p>
         </div>
    </div>
-
     <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb}&type=place&center=#{current_user.lat},#{current_user.lng}&distance=10000&access_token=#{current_user.oauth_token}").read) %>
       <% fbplace['data'].first(7).each do |result| %>
          <%	fbplacein = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{result['id']}?&access_token=#{current_user.oauth_token}").read) %>
@@ -89,11 +88,23 @@
                     </div>
                     <div class="col-md-7 col-sm-7">
                       <div class="col-md-7 col-sm-9">
-                        <%= form_for(@micrositio) do |f| %>
-                            <%= f.hidden_field :name, value: result['name'] %>
-                            <%= f.hidden_field :referencefb, value: result['id'] %>
-                            <%= f.submit result['name'], class: "h6" %>
-                        <% end %>
+
+
+                                <%= form_for(@micrositio) do |f| %>
+
+                                    <%= f.hidden_field :name, value: result['name'] %>
+                                    <%= f.hidden_field :referencefb, value: result['id'] %>
+
+                                    <%	 if fbplacein['cover'].nil?  %>
+                                    <%	else  %>
+                                        <%= f.hidden_field :photo_file_name, value: fbplacein['cover']['source'] %>
+                                    <% end %>
+
+
+                                    <%= f.submit result['name'], class: "h6" %>
+                                <% end %>
+
+
                       </div>
                       <div class="col-md-5 col-sm-3">
                         <p style="height: 100px; overflow: hidden">
@@ -127,9 +138,16 @@
             <div class="col-md-7 col-sm-7">
                   <div class="col-md-7 col-sm-9">
                       <%= form_for(@micrositio) do |f| %>
+
                           <%= f.hidden_field :name, value: result['name'] %>
                           <%= f.hidden_field :reference, value: result['reference'] %>
-                          <%= f.submit result['name'], class: "h6" %>
+                            <%	 if result['photos'].nil?  %>
+                            <%	else  %>
+                            <% result['photos'].each do |x| %>
+                                 <%= f.hidden_field :photo_file_name, value: x['photo_reference'] %>
+                            <% end %>
+                            <% end %>
+                        <%= f.submit result['name'], class: "h6" %>
                       <% end %>
                   </div>
                   <div class="col-md-5 col-sm-3">
