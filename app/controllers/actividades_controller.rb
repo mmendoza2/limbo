@@ -83,6 +83,6 @@ class ActividadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def actividad_params
-      params[:actividad].permit(:name)
+      params[:actividad].permit(:name, :namefb, :namegoogle)
     end
 end
