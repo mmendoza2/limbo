@@ -1,6 +1,5 @@
 
 
-<%	 if @micrositio.reference.nil?  %>
     <%	place = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{@micrositio.referencefb}?&access_token=#{current_user.oauth_token}").read) %>
 
     <div class="col-md-12">
@@ -34,57 +33,7 @@
 
     </div>
 
-<%	else  %>
 
-    <%	place = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/details/json?reference=#{@micrositio.reference}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %>
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-md-6 col-xs-12">
-          <div class="img-responsive">
-            <%	 if place['result']['photos'].nil?  %>
-            <%	else  %>
-                <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=#{place['result']['photos'][0]['photo_reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs")  %>
-            <%	end  %>
-          </div>
-        </div>
-        <div class="col-md-6 col-xs-12">
-          <h1> <%= place['result']['name']	  %></h1>
-
-          <div class="col-md-6" style="padding-top: 40px">
-            <%= render 'follow_form' if signed_in? %>
-          </div>
-        </div>
-      </div>
-      <div class="row" style="margin-top: 20px">
-        <div class="col-md-6 col-xs-12">
-          <div class="comentariosfbmicrositio">
-            <div class="fb-comments" data-href="<%=request.original_url%>" data-numposts="10" data-width= "400"></div>
-          </div>
-        </div>
-        <div class="col-md-6 col-xs-12">
-        </div>
-      </div>
-      <div class="row">
-        <%	 if place['result']['photos'].nil?  %>
-        <%	else  %>
-            <%	place['result']['photos'].each do |photo|  %>
-                <ul class="inline">
-
-                  <%	 if photo['photo_reference'] == place['result']['photos'][0]['photo_reference'] %>
-                  <%	else  %>
-                      <li>    <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=300&photoreference=#{photo['photo_reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs")  %>
-                      </li>
-                      </ul>
-                  <%	end  %>
-            <%	end  %>
-        <%	end  %>
-      </div>
-    </div>
-
-
-
-
-<%	end  %>
 
 
 

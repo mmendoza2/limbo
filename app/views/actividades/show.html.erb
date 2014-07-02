@@ -73,16 +73,15 @@
           <p><%=	 link_to "Do you want to change your location?", edit_user_registration_path(current_user) %> </p>
         </div>
    </div>
-    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb}&type=place&center=#{current_user.lat},#{current_user.lng}&distance=10000&access_token=#{current_user.oauth_token}").read) %>
+    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,category_list,picture.width(150)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}").read) %>
       <% fbplace['data'].first(7).each do |result| %>
-         <%	fbplacein = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{result['id']}?&access_token=#{current_user.oauth_token}").read) %>
             <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
               <div class="row">
                     <div class="col-md-3 col-sm-3">
-                      <%	 if fbplacein['cover'].nil?  %>
+                      <%	 if result['picture'].nil?  %>
                       <%	else  %>
                             <div class="img-responsive" style="height: 100px; overflow: hidden">
-                              <%= image_tag(fbplacein['cover']['source'])  %>
+                              <%= image_tag(result['picture']['data']['url'])  %>
                             </div>
                       <%	end  %>
                     </div>
@@ -95,9 +94,9 @@
                                     <%= f.hidden_field :name, value: result['name'] %>
                                     <%= f.hidden_field :referencefb, value: result['id'] %>
 
-                                    <%	 if fbplacein['cover'].nil?  %>
+                                    <%	 if result['picture'].nil?  %>
                                     <%	else  %>
-                                        <%= f.hidden_field :photo_file_name, value: fbplacein['cover']['source'] %>
+                                        <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
                                     <% end %>
 
 
@@ -121,52 +120,7 @@
               </div>
             </ul>
         <%	 end %>
-   <%	 place = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{current_user.lat},#{current_user.lng}&radius=100000&types=#{@actividad.namegoogle}&sensor=false&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %>
-      <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
-        <div class="row">
-        <% place['results'].first(7).each do |result| %>
-            <div class="col-md-3 col-sm-3">
-              <%	 if result['photos'].nil?  %>
-              <%	else  %>
-                  <% result['photos'].each do |f| %>
-                    <div class="img-responsive" style="height: 100px; overflow: hidden">
-                      <%= image_tag("https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&photoreference=#{f['photo_reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs")  %>
-                    </div>
-                    <% end %>
-              <%	end  %>
-            </div>
-            <div class="col-md-7 col-sm-7">
-                  <div class="col-md-7 col-sm-9">
-                      <%= form_for(@micrositio) do |f| %>
 
-                          <%= f.hidden_field :name, value: result['name'] %>
-                          <%= f.hidden_field :reference, value: result['reference'] %>
-                            <%	 if result['photos'].nil?  %>
-                            <%	else  %>
-                            <% result['photos'].each do |x| %>
-                                 <%= f.hidden_field :photo_file_name, value: x['photo_reference'] %>
-                            <% end %>
-                            <% end %>
-                        <%= f.submit result['name'], class: "h6" %>
-                      <% end %>
-                  </div>
-                  <div class="col-md-5 col-sm-3">
-                 <!--   <%	placeinside = ActiveSupport::JSON.decode(open("https://maps.googleapis.com/maps/api/place/details/json?reference=#{result['reference']}&sensor=true&key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs").read) %> -->
-                    <p style="height: 100px; overflow: hidden">
-                        <% result['types'].each do |types| %>
-                               <%= types%>
-                            <br/>
-                        <% end  %>
-                    </p>
-                  </div>
-            </div>
-            <div class="col-md-2 col-sm-2">
-              <h5> Rating</h5>
-              <!--        <%= placeinside['result']['rating']	  %>  -->
-            </div>
-        <% end  %>
-        </div>
-      </ul>
 <%	 end %>
 
 
