@@ -21,6 +21,9 @@
     }
     google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+
+
+
 <%	 if signed_in? %>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -73,10 +76,15 @@
           <p><%=	 link_to "Do you want to change your location?", edit_user_registration_path(current_user) %> </p>
         </div>
    </div>
-    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,category_list,picture.width(150)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}").read) %>
-      <% fbplace['data'].first(7).each do |result| %>
+
+
+
+
+    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,category_list,picture.width(150)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=20").read) %>
+<div id="mostrando1">
+      <% fbplace['data'].each do |result| %>
             <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
-              <div class="row">
+              <div id="lugares" class="row">
                     <div class="col-md-3 col-sm-3">
                       <%	 if result['picture'].nil?  %>
                       <%	else  %>
@@ -87,23 +95,15 @@
                     </div>
                     <div class="col-md-7 col-sm-7">
                       <div class="col-md-7 col-sm-9">
-
-
                                 <%= form_for(@micrositio) do |f| %>
-
                                     <%= f.hidden_field :name, value: result['name'] %>
                                     <%= f.hidden_field :referencefb, value: result['id'] %>
-
                                     <%	 if result['picture'].nil?  %>
                                     <%	else  %>
                                         <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
                                     <% end %>
-
-
                                     <%= f.submit result['name'], class: "h6" %>
                                 <% end %>
-
-
                       </div>
                       <div class="col-md-5 col-sm-3">
                         <p style="height: 100px; overflow: hidden">
@@ -119,15 +119,10 @@
                     </div>
               </div>
             </ul>
-        <%	 end %>
+   <%	 end %>
+</div>
 
 <%	 end %>
-
-
-
-
-
-
 
 
 <% else %>
