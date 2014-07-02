@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/actividades.js.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/actividades/show.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/will_paginate_extensions.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/actividades/show.html.erb" afterPath="$PROJECT_DIR$/app/views/actividades/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="notelimites.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,8 +41,8 @@
       <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6846847" vertical-offset="774" max-vertical-offset="2100">
-              <caret line="82" column="286" selection-start-line="82" selection-start-column="286" selection-end-line="82" selection-end-column="286" />
+            <state vertical-scroll-proportion="0.34684685" vertical-offset="999" max-vertical-offset="2100">
+              <caret line="82" column="285" selection-start-line="82" selection-start-column="285" selection-end-line="82" selection-end-column="285" />
               <folding>
                 <element signature="n#style#0;n#ul#0;n#div#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#2;n#!!top" expanded="true" />
@@ -1018,8 +1014,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6846847" vertical-offset="774" max-vertical-offset="2100">
-          <caret line="82" column="286" selection-start-line="82" selection-start-column="286" selection-end-line="82" selection-end-column="286" />
+        <state vertical-scroll-proportion="0.34684685" vertical-offset="999" max-vertical-offset="2100">
+          <caret line="82" column="285" selection-start-line="82" selection-start-column="285" selection-end-line="82" selection-end-column="285" />
           <folding>
             <element signature="n#style#0;n#ul#0;n#div#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#ul#0;n#div#2;n#!!top" expanded="true" />

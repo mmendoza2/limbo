@@ -80,7 +80,7 @@
 
 
 
-    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,category_list,picture.width(150)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=20").read) %>
+    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,category_list,picture.width(150)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
 <div id="mostrando1">
       <% fbplace['data'].each do |result| %>
             <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
