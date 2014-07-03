@@ -27,7 +27,7 @@
 <%	 if signed_in? %>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="row micrositiotitulocontendedor">
+  <div class="row" style="background-color: mediumpurple; border-radius: 3px; padding: 15px; margin-bottom: 10px; margin-top: -20px; margin-left: -40px; margin-right: -40px">
     <div class="col-md-4 col-sm-6 hidden-xs">
 
       <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
@@ -52,16 +52,9 @@
   </div>
 </div>
 
-
-
-
-
-
     <% if current_user.lat.nil? %>
-
         <%	fbuser = ActiveSupport::JSON.decode(open("https://graph.facebook.com/me?fields=location&access_token=#{current_user.oauth_token}").read) %>
         <%	fbloc = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{fbuser['location']['id']}").read) %>
-
         <div class="col-md-12">
           <div class="row">
             <h4>Please confirm your current city</h4>
@@ -72,16 +65,13 @@
               <%= f.submit fbloc['location']['name'], class: "h6" %>
           <% end %>
         </div>
-
-   
     <% else %>
-
         <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,category_list,picture.width(150)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
         <div id="mostrando1">
           <% fbplace['data'].each do |result| %>
               <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
-                <div id="lugares" class="row">
-                  <div class="col-md-3 col-sm-3">
+                <div class="row" style="margin-bottom: -10px; margin-left: -20px; margin-right: -20px">
+                  <div class="col-md-3 col-sm-3 col-xs-6">
                     <%	 if result['picture'].nil?  %>
                     <%	else  %>
                         <div class="img-responsive" style="height: 100px; overflow: hidden">
@@ -89,8 +79,8 @@
                         </div>
                     <%	end  %>
                   </div>
-                  <div class="col-md-7 col-sm-7">
-                    <div class="col-md-7 col-sm-9">
+                  <div class="col-md-7 col-sm-7 col-xs-6" style="padding: 0 !important;">
+                    <div class="col-md-7 col-sm-9 col-xs-12" style="padding: 0 !important;">
                       <%= form_for(@micrositio) do |f| %>
                           <%= f.hidden_field :name, value: result['name'] %>
                           <%= f.hidden_field :referencefb, value: result['id'] %>
@@ -101,7 +91,7 @@
                           <%= f.submit result['name'], class: "h6" %>
                       <% end %>
                     </div>
-                    <div class="col-md-5 col-sm-3">
+                    <div class="col-md-5 col-sm-3 col-xs-12" style="padding: 0 !important;">
                       <p style="height: 100px; overflow: hidden">
                         <% result['category_list'].each do |types| %>
                             <%= types['name'] %>
@@ -110,10 +100,11 @@
                       </p>
                     </div>
                   </div>
-                  <div class="col-md-2 col-sm-2">
+                  <div class="col-md-2 col-sm-2 hidden-xs">
                     <h5> Rating</h5>
                   </div>
                 </div>
+                <hr/>
               </ul>
           <%	 end %>
         </div>
