@@ -27,7 +27,7 @@
 <%	 if signed_in? %>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="row" style="background-color: mediumpurple; border-radius: 3px; padding: 15px; margin-bottom: 10px; margin-top: -20px; margin-left: -40px; margin-right: -40px">
+  <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px; margin-bottom: 10px; margin-top: -20px; margin-left: -40px; margin-right: -40px">
     <div class="col-md-4 col-sm-6 hidden-xs">
 
       <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
@@ -74,13 +74,13 @@
                   <div class="col-md-3 col-sm-3 col-xs-6">
                     <%	 if result['picture'].nil?  %>
                     <%	else  %>
-                        <div class="img-responsive" style="height: 100px; overflow: hidden">
+                        <div class="img-responsive" style="height: 140px; overflow: hidden">
                           <%= image_tag(result['picture']['data']['url'])  %>
                         </div>
                     <%	end  %>
                   </div>
                   <div class="col-md-7 col-sm-7 col-xs-6" style="padding: 0 !important;">
-                    <div class="col-md-7 col-sm-9 col-xs-12" style="padding: 0 !important;">
+                    <div class="col-md-6 col-sm-9 col-xs-12" style="padding: 0 !important;">
                       <%= form_for(@micrositio) do |f| %>
                           <%= f.hidden_field :name, value: result['name'] %>
                           <%= f.hidden_field :referencefb, value: result['id'] %>
@@ -91,7 +91,7 @@
                           <%= f.submit result['name'], class: "h6" %>
                       <% end %>
                     </div>
-                    <div class="col-md-5 col-sm-3 col-xs-12" style="padding: 0 !important;">
+                    <div class="col-md-5 col-md-offset-1 col-sm-3 col-xs-12" style="padding: 0 !important;">
                       <p style="height: 100px; overflow: hidden">
                         <% result['category_list'].each do |types| %>
                             <%= types['name'] %>

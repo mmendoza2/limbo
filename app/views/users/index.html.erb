@@ -16,7 +16,7 @@
             <div class="panel-heading">
               <h4 class="panel-title">
                 <a data-toggle="collapse"  href="#collapseOne">
-                  Sigue a tus amigos de Facebook en NoTeLimites.com
+                  <p>Your friends in LIMBO</p>
                 </a>
               </h4>
             </div>
@@ -27,16 +27,7 @@
 
                     <% if  x.nil? %>
                       <div class="text-center" style="margin: 10px">
-                          <%	 if current_user.uid.nil? %>
-                         <small>  <p>Intenta conectar tu cuenta con facebook para ver si tienes amigos en NoTeLimites.com </p> <i class="icon-facebook-sign"></i>  <%= link_to "Link con Facebook", user_omniauth_authorize_path(:facebook), class: " btn btn-lg btn-primary" %>
-                           <p>O invita a tus amigos de facebook</p>                                                 </small>
 
-                            <div class="col-xs-offset-4 col-xs-4">
-
-                          <%	 else %>
-
-                            <small> <p> No hay amigos que mostrar. Como quiera puedes seguir a usuarios destacados </p>    </small>
-                          <%	 end %>
                       </div>
                     <% else  %>
 
