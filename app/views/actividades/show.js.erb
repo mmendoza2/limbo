@@ -1,9 +1,0 @@
-
-
-
-$('#lugares').append('<%= j render(@pp) %>');
-<% if @pp %>
-$('.pagination').replaceWith('<%= j will_paginate(@pp) %>');
-<% else %>
-$('.pagination').remove();
-<% end %>

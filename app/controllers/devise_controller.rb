@@ -3,13 +3,10 @@ class DeviseController < Devise.parent_controller.constantize
   include Devise::Controllers::ScopedViews
 
   helper DeviseHelper
-
   helpers = %w(resource scope_name resource_name signed_in_resource
                resource_class resource_params devise_mapping)
   hide_action *helpers
   helper_method *helpers
-
-
 
   prepend_before_filter :assert_is_devise_resource!
   respond_to :html if mimes_for_respond_to.empty?

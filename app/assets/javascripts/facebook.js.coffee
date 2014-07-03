@@ -12,17 +12,3 @@ jQuery ->
     cache: true
 
 
-window.fbAsyncInit = ->
-  FB.init(appId: 'YOUR-APP-ID', cookie: true)
-
-  $('#sign_in').click (e) ->
-    e.preventDefault()
-    FB.login (response) ->
-      window.location = '/auth/facebook/callback' if response.authResponse
-      scope: "email,publish_stream,user_friends"
-
-  $('#sign_out').click (e) ->
-    FB.getLoginStatus (response) ->
-      FB.logout() if response.authResponse
-    true
-

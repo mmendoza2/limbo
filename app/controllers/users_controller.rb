@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     @microposts = @user.microposts.paginate(page: params[:page])
     @eventos = @user.eventos.paginate(page: params[:page])
     @micrositios = @user.micrositios.paginate(page: params[:page])
-
   end
 
   def new
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Bienvenido a la Red Social de Turismo NoTeLimites.com!"
-      redirect_to @user
+      redirect_to :back
     else
       render 'new'
     end
@@ -112,7 +111,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo, :lat, :lng, :admin)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo, :lat, :lng, :admin, :estado_id)
     end
 
     # Before filters

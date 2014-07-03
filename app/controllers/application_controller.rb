@@ -12,11 +12,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
-
   def after_sign_in_path_for(resource)
     @user ||= current_user
-    if @user.followed_actividades.count >= 3
+    if current_user.estado_id.nil?
     root_path
     else
     root_path
@@ -25,19 +23,16 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def categoria
-  @categoria = Categoria.all
-  end
 
 
   protected
 
   def configure_permitted_parameters
-
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :avatar
     devise_parameter_sanitizer.for(:sign_up) << :lat
     devise_parameter_sanitizer.for(:sign_up) << :lng
+    devise_parameter_sanitizer.for(:sign_up) << :estado_id
 
   end
 end

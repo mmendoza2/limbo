@@ -44,6 +44,9 @@
         <div class="row">
           <p>¿Quiéres modificar tu ubicación para recomendarte lugares cercanos?.</p>
         </div>
+
+
+
         <%= form_for(@user, :html => { :multipart => true }) do |f| %>
             <div id="map-canvas" class="thumbnail" style="height:200px"></div>
             <div id="latlong">
