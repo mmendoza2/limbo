@@ -6,7 +6,7 @@
 
     <% if current_user.lat.nil? %>
 
-        <%	fbuser = ActiveSupport::JSON.decode(open("https://graph.facebook.com/me?fields=location&access_token=#{current_user.oauth_token}").read) %>
+        <%	fbuser = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{current.user.uid}?fields=location&access_token=#{current_user.oauth_token}").read) %>
         <%	fbloc = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{fbuser['location']['id']}").read) %>
 
         <div class="col-md-12">
