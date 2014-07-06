@@ -89,21 +89,22 @@
         <% end %>
     <% else %>
 
-        <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,category_list,picture.width(150)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
+        <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
         <div id="mostrando1">
           <% fbplace['data'].each do |result| %>
               <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
                 <div class="row" style="margin-bottom: -10px; margin-left: -20px; margin-right: -20px">
-                  <div class="col-md-3 col-sm-3 col-xs-6">
+                  <div class="col-md-2 col-sm-2 col-xs-4">
                     <%	 if result['picture'].nil?  %>
                     <%	else  %>
-                        <div class="img-responsive" style="height: 140px; overflow: hidden">
-                          <%= image_tag(result['picture']['data']['url'])  %>
+                        <div class="img-responsive" style="height: 110px; overflow: hidden">
+
+                          <%=  image_tag(result['picture']['data']['url']) %>
                         </div>
                     <%	end  %>
                   </div>
-                  <div class="col-md-7 col-sm-7 col-xs-6" style="padding: 0 !important;">
-                    <div class="col-md-6 col-sm-9 col-xs-12" style="padding: 0 !important;">
+                  <div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0 !important;">
+                    <div class="col-md-3 col-sm-6 col-xs-12" style="padding: 0 !important; ">
                       <%= form_for(@micrositio) do |f| %>
                           <%= f.hidden_field :name, value: result['name'] %>
                           <%= f.hidden_field :referencefb, value: result['id'] %>
@@ -114,17 +115,36 @@
                           <%= f.submit result['name'], class: "h6" %>
                       <% end %>
                     </div>
-                    <div class="col-md-5 col-md-offset-1 col-sm-3 col-xs-12" style="padding: 0 !important;">
-                      <p style="height: 100px; overflow: hidden">
-                        <% result['category_list'].each do |types| %>
-                            <%= types['name'] %>
-                            <br/>
-                        <% end  %>
-                      </p>
+                    <div class="col-md-5 col-md-offset-1 col-sm-3 col-xs-12" style="padding: 0 !important;overflow: hidden">
+                      <h5>Friends attending today</h5>
+                      <h5>Rating</h5>
+                    </div>
+                    <div class="col-md-4 col-md-offset-1 col-sm-3 col-xs-12" style="padding: 0 !important;">
+                            <h5>Friends that have been here</h5>
                     </div>
                   </div>
                   <div class="col-md-2 col-sm-2 hidden-xs">
-                    <h5> Rating</h5>
+                    <h5> Distance</h5>
+                    <%	 if result['location'].nil? %>
+                    <%	else  %>
+
+                        <%	distance = ActiveSupport::JSON.decode(open("http://maps.googleapis.com/maps/api/distancematrix/json?origins=#{current_user.lat},#{current_user.lng}&destinations=#{result['location']['latitude']},#{result['location']['longitude']}&sensor=false").read) %>
+
+
+
+                                <%	 if distance.nil?  %>
+                                <%	else  %>
+
+                                <%= distance['rows'][0]['elements'][0]['distance']['text']  %>
+
+                        <% end %>
+
+                  <% end %>
+
+
+
+
+
                   </div>
                 </div>
                 <hr/>
