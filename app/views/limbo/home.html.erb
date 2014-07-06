@@ -3,23 +3,44 @@
 
 <% if signed_in? %>
 
-
     <% if current_user.lat.nil? %>
+        <script>
+            $(document).ready(function () {
 
-        <%	fbuser = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{current_user.uid}?fields=location&access_token=#{current_user.oauth_token}").read) %>
-        <%	fbloc = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{fbuser['location']['id']}").read) %>
 
-        <div class="col-md-12">
-          <div class="row">
-            <h4>Please confirm your current city</h4>
-          </div>
-          <%= form_for(current_user) do |f| %>
-              <%= f.hidden_field :lat, value: fbloc['location']['latitude'] %>
-              <%= f.hidden_field :lng, value: fbloc['location']['longitude'] %>
-              <%= f.submit fbloc['location']['name'], class: "h6" %>
-          <% end %>
+                var myLatlng = new google.maps.LatLng(23.634501,-102.55278399999997);
+                var mapOptions = {
+                    zoom: 4,
+                    center: myLatlng
+                }
+                var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+                // Place a draggable marker on the map
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    draggable:true,
+                    title:"Your location!"
+                });
+
+                google.maps.event.addListener(marker, 'dragend', function (event) {
+                    document.getElementById("latbox").value = this.getPosition().lat();
+                    document.getElementById("lngbox").value = this.getPosition().lng();
+                });
+
+            });
+        </script>
+        <div class="row">
+          <p>Please update your location to continue</p>
         </div>
-
+        <%= form_for(current_user, :html => { :multipart => true }) do |f| %>
+            <div id="map-canvas" class="thumbnail" style="height:200px"></div>
+            <div id="latlong">
+              <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
+              <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
+            </div>
+            <div class="col-md-7 " style="margin-bottom: 10px"><%= f.submit "Update your location", class: 'btn btn-large btn-primary' %></div>
+        <% end %>
     <% else %>
     <% end %>
 
