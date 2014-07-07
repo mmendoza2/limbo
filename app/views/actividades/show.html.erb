@@ -27,7 +27,7 @@
 <%	 if signed_in? %>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px; margin-bottom: 10px; margin-top: -20px; margin-left: -40px; margin-right: -40px">
+  <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px; margin-bottom: 20px; margin-top: -20px; margin-left: -40px; margin-right: -40px">
     <div class="col-md-6 col-sm-6 hidden-xs">
       <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
     </div>
@@ -78,8 +78,8 @@
         <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
         <div id="mostrando1">
           <% fbplace['data'].each do |result| %>
-              <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
-                <div class="row" style="margin-bottom: -10px; margin-left: -20px; margin-right: -20px">
+              <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px" >
+                <div class="row" style="margin-bottom: -10px; margin-left: -20px; margin-right: -20px; margin-bottom: -20px; margin-top: -10px">
                   <div class="col-md-2 col-sm-2 col-xs-4">
                     <%	 if result['picture'].nil?  %>
                     <%	else  %>
@@ -89,7 +89,7 @@
                     <%	end  %>
                   </div>
                   <div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0 !important;">
-                        <div class="col-md-3 col-sm-6 col-xs-12" style="padding: 0 !important; ">
+                        <div class="col-md-3 col-sm-6 col-xs-12 hidden-xs" style="padding: 0 !important; text-align: center ">
                           <%= form_for(@micrositio) do |f| %>
                               <%= f.hidden_field :name, value: result['name'] %>
                               <%= f.hidden_field :referencefb, value: result['id'] %>
@@ -99,36 +99,42 @@
                               <% end %>
                               <%= f.submit result['name'], class: "h6" %>
                           <% end %>
-                          <p><%= result['location']['city'] %></p>
                         </div>
-                        <div class="col-md-5 col-sm-3 col-xs-12" style="padding: 0 !important; text-align: center">
+                        <div class="col-md-5 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
                           <h6>Friends attending today</h6>
                         </div>
-                        <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 0 !important; text-align: center">
+                        <div class="col-md-4 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
                           <h6>Friends that have been here</h6>
                           <p><%= number_with_delimiter(result['checkins']) %></p>
                         </div>
+                        <div class="col-xs-12 visible-xs" style="padding:0 !important; margin-top: -10px; ">
+                          <div style="margin-top: 10px; margin-bottom: -15px">
+                          <%= form_for(@micrositio) do |f| %>
+                              <%= f.hidden_field :name, value: result['name'] %>
+                              <%= f.hidden_field :referencefb, value: result['id'] %>
+                              <%	 if result['picture'].nil?  %>
+                              <%	else  %>
+                                  <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
+                              <% end %>
+                              <%= f.submit result['name'], class: "btn-success" %>
+                           <% end %>
+                          </div>
+                          <h6 style="font-size: 10px"><%= result['location']['city'] %></h6>
+                          <h6 style="font-size: 10px">Friends attending today</h6>
+                          <h6 style="font-size: 10px">Friends that have been here: <%= number_with_delimiter(result['checkins']) %> </h6>
+                          <%	distance = ActiveSupport::JSON.decode(open("http://maps.googleapis.com/maps/api/distancematrix/json?origins=#{current_user.lat},#{current_user.lng}&destinations=#{result['location']['latitude']},#{result['location']['longitude']}&sensor=false").read) %>
+                          <%	 if distance.nil?  %>
+                          <%	else  %>
+                          <h6 style="font-size: 10px"> Distance  <%= distance['rows'][0]['elements'][0]['distance']['text']  %></h6>
+                          <% end %>
+                        </div>
                   </div>
-                  <div class="col-md-2 col-sm-2 hidden-xs">
+                  <div class="col-md-2 col-sm-2 hidden-xs  ">
                     <h6> Distance</h6>
-
-
-                        <%	distance = ActiveSupport::JSON.decode(open("http://maps.googleapis.com/maps/api/distancematrix/json?origins=#{current_user.lat},#{current_user.lng}&destinations=#{result['location']['latitude']},#{result['location']['longitude']}&sensor=false").read) %>
-
-
-
                                 <%	 if distance.nil?  %>
                                 <%	else  %>
-
                                 <%= distance['rows'][0]['elements'][0]['distance']['text']  %>
-
-
-                  <% end %>
-
-
-
-
-
+                        <% end %>
                   </div>
                 </div>
                 <hr/>
