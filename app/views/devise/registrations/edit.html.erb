@@ -24,11 +24,24 @@
 
     });
 </script>
+<div class="col-md-12 ">
 
+<div class="row">
+  <p>Update your location.</p>
+</div>
 
-    <div class="col-md-6 col-md-offset-3">
+<%= form_for(@user, :html => { :multipart => true }) do |f| %>
+    <div id="map-canvas" class="thumbnail" style="height:200px"></div>
+    <div id="latlong">
+      <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
+      <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
+    </div>
+    <div class="col-md-7 " style="margin-bottom: 10px"><%= f.submit "Update your location", class: 'btn btn-large btn-primary' %></div>
+<% end %>
+</div>
+
+    <div class="col-md-6 ">
       <div class="row">
-        <h1>Configura tu Pérfil</h1>
         <section>
           <%= render 'shared/avatar' %>
         </section>
@@ -36,25 +49,12 @@
                 <%= render 'shared/error_messages', object: f.object %>
             <%= f.label :imagen %>
             <%= f.file_field :photo %>
-              <div class="col-md-7">  <%= f.submit "Actualiza tu foto de Perfil", class: "btn  btn-large btn-success" %>     </div>
+              <div class="col-md-7">  <%= f.submit "Update your photo", class: "btn  btn-large btn-success" %>     </div>
         <% end %>
         <br>
         <br>
 
-        <div class="row">
-          <p>¿Quiéres modificar tu ubicación para recomendarte lugares cercanos?.</p>
-        </div>
 
-
-
-        <%= form_for(@user, :html => { :multipart => true }) do |f| %>
-            <div id="map-canvas" class="thumbnail" style="height:200px"></div>
-            <div id="latlong">
-              <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
-              <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
-            </div>
-            <div class="col-md-7 " style="margin-bottom: 10px"><%= f.submit "Actualiza tu ubiación", class: 'btn btn-large btn-primary' %></div>
-        <% end %>
 
         <br>
         <br>

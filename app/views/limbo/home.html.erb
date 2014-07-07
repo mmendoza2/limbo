@@ -6,15 +6,12 @@
     <% if current_user.lat.nil? %>
         <script>
             $(document).ready(function () {
-
-
                 var myLatlng = new google.maps.LatLng(23.634501,-102.55278399999997);
                 var mapOptions = {
                     zoom: 4,
                     center: myLatlng
                 }
                 var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
                 // Place a draggable marker on the map
                 var marker = new google.maps.Marker({
                     position: myLatlng,
@@ -22,19 +19,19 @@
                     draggable:true,
                     title:"Your location!"
                 });
-
                 google.maps.event.addListener(marker, 'dragend', function (event) {
                     document.getElementById("latbox").value = this.getPosition().lat();
                     document.getElementById("lngbox").value = this.getPosition().lng();
                 });
-
             });
         </script>
+
+
         <div class="row">
           <p>Please update your location to continue</p>
         </div>
         <%= form_for(current_user, :html => { :multipart => true }) do |f| %>
-            <div id="map-canvas" class="thumbnail" style="height:200px"></div>
+            <div id="map-canvas" class="thumbnail" style="height:400px"></div>
             <div id="latlong">
               <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
               <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
