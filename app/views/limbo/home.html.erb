@@ -1,5 +1,6 @@
 
 
+<%	loc = ActiveSupport::JSON.decode(open("https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDskhqd4ok1InUhAkKJj3hqXfNj2ylgdlU").read) %>
 
 <% if signed_in? %>
 
