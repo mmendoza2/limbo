@@ -1,6 +1,8 @@
 Limbo::Application.routes.draw do
 
 
+  resources :reserervations
+
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
 
   root to: 'limbo#home'

@@ -31,6 +31,16 @@
           </div>
           <div class="col-md-6" style="padding-top: 40px">
             <%= render 'follow_form' if signed_in? %>
+
+            <%= form_for(@reservation) do |f| %>
+                <%= f.hidden_field :name, value: result['name'] %>
+                <%= f.hidden_field :referencefb, value: result['id'] %>
+                <%	 if result['picture'].nil?  %>
+                <%	else  %>
+                    <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
+                <% end %>
+                <%= f.submit result['name'], class: "h6" %>
+            <% end %>
           </div>
         </div>
 

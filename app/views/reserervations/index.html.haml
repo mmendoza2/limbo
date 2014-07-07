@@ -1,0 +1,17 @@
+%h1 Listing reserervations
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @reserervations.each do |reserervation|
+    %tr
+      %td= link_to 'Show', reserervation
+      %td= link_to 'Edit', edit_reserervation_path(reserervation)
+      %td= link_to 'Destroy', reserervation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Reserervation', new_reserervation_path

@@ -1,5 +1,5 @@
 class Micrositio < ActiveRecord::Base
-  belongs_to :user
+
   belongs_to :estado
   has_and_belongs_to_many :actividad
 

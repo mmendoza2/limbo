@@ -28,27 +28,13 @@
 
 <div class="col-md-12 col-sm-12 col-xs-12">
   <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px; margin-bottom: 10px; margin-top: -20px; margin-left: -40px; margin-right: -40px">
-    <div class="col-md-4 col-sm-6 hidden-xs">
-
+    <div class="col-md-6 col-sm-6 hidden-xs">
       <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
     </div>
-    <div class="visible-xs col-xs-4">
-      <h1 style="color: #ffffff; font-size: 16px"><%=	@actividad.name %> </h1>
+    <div class="visible-xs col-xs-6">
+      <h1 style="color: #ffffff; font-size: 16px"><%=	@actividad.slug.capitalize %> </h1>
     </div>
-    <div class="col-md-8 col-sm-6 col-xs-8" style="padding-top: 15px">
-          <div class="col-md-4 col-sm-6 col-xs-10 col-xs-offset-1" >
-            <%= render 'follow_form' %>
-          </div>
-          <div class="col-md-3 col-sm-6 hidden-xs">
-            <div class="fb-like" data-href="<%=request.original_url%>" data-height="The pixel height of the plugin" data-colorscheme="light" data-layout="box_count" data-action="recommend" data-show-faces="true" data-send="false"></div>
-          </div>
-          <div class="col-md-3 col-sm-6 hidden-xs  " >
-            <a href="https://twitter.com/share" class="twitter-share-button" data-via="NTLmx" data-lang="es" data-size="large">Twittear</a>
-          </div>
-          <div class="col-md-2 col-sm-6 hidden-xs">
-            <div class="g-plusone" data-annotation="inline" data-width="120"></div>
-          </div>
-    </div>
+
   </div>
 </div>
 
@@ -89,7 +75,7 @@
         <% end %>
     <% else %>
 
-        <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
+        <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
         <div id="mostrando1">
           <% fbplace['data'].each do |result| %>
               <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px">
@@ -98,35 +84,34 @@
                     <%	 if result['picture'].nil?  %>
                     <%	else  %>
                         <div class="img-responsive" style="height: 110px; overflow: hidden">
-
                           <%=  image_tag(result['picture']['data']['url']) %>
                         </div>
                     <%	end  %>
                   </div>
                   <div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0 !important;">
-                    <div class="col-md-3 col-sm-6 col-xs-12" style="padding: 0 !important; ">
-                      <%= form_for(@micrositio) do |f| %>
-                          <%= f.hidden_field :name, value: result['name'] %>
-                          <%= f.hidden_field :referencefb, value: result['id'] %>
-                          <%	 if result['picture'].nil?  %>
-                          <%	else  %>
-                              <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
+                        <div class="col-md-3 col-sm-6 col-xs-12" style="padding: 0 !important; ">
+                          <%= form_for(@micrositio) do |f| %>
+                              <%= f.hidden_field :name, value: result['name'] %>
+                              <%= f.hidden_field :referencefb, value: result['id'] %>
+                              <%	 if result['picture'].nil?  %>
+                              <%	else  %>
+                                  <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
+                              <% end %>
+                              <%= f.submit result['name'], class: "h6" %>
                           <% end %>
-                          <%= f.submit result['name'], class: "h6" %>
-                      <% end %>
-                    </div>
-                    <div class="col-md-5 col-md-offset-1 col-sm-3 col-xs-12" style="padding: 0 !important;overflow: hidden">
-                      <h5>Friends attending today</h5>
-                      <h5>Rating</h5>
-                    </div>
-                    <div class="col-md-4 col-md-offset-1 col-sm-3 col-xs-12" style="padding: 0 !important;">
-                            <h5>Friends that have been here</h5>
-                    </div>
+                          <p><%= result['location']['city'] %></p>
+                        </div>
+                        <div class="col-md-5 col-sm-3 col-xs-12" style="padding: 0 !important; text-align: center">
+                          <h6>Friends attending today</h6>
+                        </div>
+                        <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 0 !important; text-align: center">
+                          <h6>Friends that have been here</h6>
+                          <p><%= number_with_delimiter(result['checkins']) %></p>
+                        </div>
                   </div>
                   <div class="col-md-2 col-sm-2 hidden-xs">
-                    <h5> Distance</h5>
-                    <%	 if result['location'].nil? %>
-                    <%	else  %>
+                    <h6> Distance</h6>
+
 
                         <%	distance = ActiveSupport::JSON.decode(open("http://maps.googleapis.com/maps/api/distancematrix/json?origins=#{current_user.lat},#{current_user.lng}&destinations=#{result['location']['latitude']},#{result['location']['longitude']}&sensor=false").read) %>
 
@@ -137,7 +122,6 @@
 
                                 <%= distance['rows'][0]['elements'][0]['distance']['text']  %>
 
-                        <% end %>
 
                   <% end %>
 
