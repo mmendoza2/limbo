@@ -35,7 +35,7 @@
 
   <div class="row">
     <%= form_for(current_user, :html => { :multipart => true }) do |f| %>
-        <div id="map-canvas" class="thumbnail" style="height:400px"></div>
+        <div id="map-canvas" class="thumbnail" style="height:250px"></div>
         <div id="latlong">
           <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
           <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
