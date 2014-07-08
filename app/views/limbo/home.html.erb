@@ -1,8 +1,4 @@
-
-
-
 <% if signed_in? %>
-
     <% if current_user.lat.nil? %>
         <script>
             $(document).ready(function () {
@@ -25,8 +21,6 @@
                 });
             });
         </script>
-
-
         <div class="row">
           <p>Please update your location to continue</p>
         </div>
@@ -40,12 +34,7 @@
         <% end %>
     <% else %>
     <% end %>
-
 <% else %>
-
-
-
-
     <header id="header" class="site-header">
       <div class="container">
           <div class="col-md-12">
