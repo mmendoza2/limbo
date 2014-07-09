@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     @user ||= current_user
-    if current_user.estado_id.nil?
+    if current_user.lat.nil?
     root_path
     else
     root_path
@@ -32,7 +32,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :avatar
     devise_parameter_sanitizer.for(:sign_up) << :lat
     devise_parameter_sanitizer.for(:sign_up) << :lng
-    devise_parameter_sanitizer.for(:sign_up) << :estado_id
-
   end
 end

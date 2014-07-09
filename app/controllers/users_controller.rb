@@ -23,7 +23,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      flash[:success] = "Bienvenido a la Red Social de Turismo NoTeLimites.com!"
       redirect_to :back
     else
       render 'new'
@@ -111,7 +110,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo, :lat, :lng, :admin, :estado_id)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :photo, :lat, :lng, :admin)
     end
 
     # Before filters

@@ -34,7 +34,7 @@ class MicrositiosController < ApplicationController
     @micrositio = current_user.micrositios.find_or_create_by(micrositio_params)
     respond_to do |format|
       if @micrositio.save
-        format.html { redirect_to @micrositio, notice: '¡El Micrositio fue creado exitosamente!.' }
+        format.html { redirect_to @micrositio }
         format.json { render action: 'show', status: :created, location: @micrositio }
       else
         format.html { render action: 'new' }
