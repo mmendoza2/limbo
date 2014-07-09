@@ -2,8 +2,8 @@
 
 
 <%	 if signed_in? %>
-    <div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px; margin-bottom: 20px; margin-top: -20px;">
+    <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px">
+      <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px;  margin-top: -10px; ">
         <div class="col-md-6 col-sm-6 hidden-xs">
           <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
         </div>
@@ -13,9 +13,10 @@
       </div>
     </div>
     <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="border: 1px solid #d3d6db; " >
           <% fbplace['data'].each do |result| %>
-              <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12"  >
-                <div class="row" style="margin-bottom: -10px;  margin-top: -10px">
+
+                <div class="row" style="margin-bottom: -15px;  margin-top: -10px">
                   <div class="col-md-2 col-sm-2 col-xs-4">
                     <%	 if result['picture'].nil?  %>
                     <%	else  %>
@@ -56,8 +57,8 @@
                            <% end %>
                           </div>
                           <h6 style="font-size: 10px"><%= result['location']['city'] %></h6>
-                          <h6 style="font-size: 10px">Friends attending today</h6>
-                          <h6 style="font-size: 10px">Friends that have been here: <%= number_with_delimiter(result['checkins']) %> </h6>
+                          <h6 style="font-size: 10px">Friends attending </h6>
+                          <h6 style="font-size: 10px">Have been here: <%= number_with_delimiter(result['checkins']) %> </h6>
                           <%	distance = ActiveSupport::JSON.decode(open("http://maps.googleapis.com/maps/api/distancematrix/json?origins=#{current_user.lat},#{current_user.lng}&destinations=#{result['location']['latitude']},#{result['location']['longitude']}&sensor=false").read) %>
                           <%	 if distance.nil?  %>
                           <%	else  %>
@@ -74,8 +75,10 @@
                   </div>
                 </div>
                 <hr/>
-              </ul>
+
           <%	 end %>
+
+        </div>
 
 <% else %>
     <%=	 render "shared/ingresa" %>
