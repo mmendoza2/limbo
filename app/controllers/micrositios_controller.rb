@@ -48,7 +48,7 @@ class MicrositiosController < ApplicationController
   def update
     respond_to do |format|
       if @micrositio.update(micrositio_params)
-        format.html { redirect_to @micrositio, notice: 'Micrositio was successfully updated.' }
+        format.html { redirect_to @micrositio}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
