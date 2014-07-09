@@ -1,85 +1,21 @@
-<script>
-    function initialize() {
-        var myLatlng = new google.maps.LatLng(23.634501,-102.55278399999997);
-        var mapOptions = {
-            zoom: 4,
-            center: myLatlng
-        }
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-        // Place a draggable marker on the map
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            draggable:true,
-            title:"Your location!"
-        });
-        google.maps.event.addListener(marker, 'dragend', function (event) {
-            document.getElementById("latbox").value = this.getPosition().lat();
-            document.getElementById("lngbox").value = this.getPosition().lng();
-        });
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
 
 
 
 <%	 if signed_in? %>
-
-<div class="col-md-12 col-sm-12 col-xs-12">
-  <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px; margin-bottom: 20px; margin-top: -20px; margin-left: -40px; margin-right: -40px">
-    <div class="col-md-6 col-sm-6 hidden-xs">
-      <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
-    </div>
-    <div class="visible-xs col-xs-6">
-      <h1 style="color: #ffffff; font-size: 16px"><%=	@actividad.slug.capitalize %> </h1>
-    </div>
-
-  </div>
-</div>
-
-    <% if current_user.lat.nil? %>
-        <script>
-            $(document).ready(function () {
-                var myLatlng = new google.maps.LatLng(23.634501,-102.55278399999997);
-                var mapOptions = {
-                    zoom: 4,
-                    center: myLatlng
-                }
-                var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-                // Place a draggable marker on the map
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    draggable:true,
-                    title:"Your location!"
-                });
-                google.maps.event.addListener(marker, 'dragend', function (event) {
-                    document.getElementById("latbox").value = this.getPosition().lat();
-                    document.getElementById("lngbox").value = this.getPosition().lng();
-                });
-
-            });
-        </script>
-        <div class="row">
-          <p>Please update your location to continue</p>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px; margin-bottom: 20px; margin-top: -20px;">
+        <div class="col-md-6 col-sm-6 hidden-xs">
+          <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
         </div>
-        <%= form_for(current_user, :html => { :multipart => true }) do |f| %>
-            <div id="map-canvas" class="thumbnail" style="height:200px"></div>
-            <div id="latlong">
-              <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
-              <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
-            </div>
-            <div class="col-md-7 " style="margin-bottom: 10px"><%= f.submit "Update your location", class: 'btn btn-large btn-primary' %></div>
-        <% end %>
-    <% else %>
-
-        <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
-        <div id="mostrando1">
+        <div class="visible-xs col-xs-6">
+          <h1 style="color: #ffffff; font-size: 16px"><%=	@actividad.slug.capitalize %> </h1>
+        </div>
+      </div>
+    </div>
+    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
           <% fbplace['data'].each do |result| %>
-              <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding: 0px" >
-                <div class="row" style="margin-bottom: -10px; margin-left: -20px; margin-right: -20px; margin-bottom: -20px; margin-top: -10px">
+              <ul class="col-md-12 col-lg-12 col-sm-12 col-xs-12"  >
+                <div class="row" style="margin-bottom: -10px;  margin-top: -10px">
                   <div class="col-md-2 col-sm-2 col-xs-4">
                     <%	 if result['picture'].nil?  %>
                     <%	else  %>
@@ -140,22 +76,7 @@
                 <hr/>
               </ul>
           <%	 end %>
-        </div>
-
-
-
-
-
-    <% end %>
-
-
-
-
 
 <% else %>
-
     <%=	 render "shared/ingresa" %>
-
-
-
 <% end %>

@@ -1,5 +1,4 @@
-
-
+<%	 if signed_in? %>
     <%	place = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{@micrositio.referencefb}?fields=picture.width(250),photos,likes,hours,name,posts,location,were_here_count,talking_about_count,description&access_token=#{current_user.oauth_token}").read) %>
     <div class="col-md-12">
       <div class="row">
@@ -100,13 +99,9 @@
 
     </div>
 
-
-
-
-
-
-
-
+<% else %>
+    <%=	 render "shared/ingresa" %>
+<% end %>
 
 
 
