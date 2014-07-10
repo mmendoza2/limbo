@@ -1,6 +1,5 @@
 class Micrositio < ActiveRecord::Base
 
-  belongs_to :estado
   has_and_belongs_to_many :actividad
 
   has_many :reverse_relationmicrositios, foreign_key: "followed_id",

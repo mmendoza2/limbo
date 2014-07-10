@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710005155) do
+ActiveRecord::Schema.define(version: 20140710011507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 20140710005155) do
     t.integer  "estado_id"
     t.integer  "actividad_id"
     t.string   "referencefb"
+    t.string   "name"
   end
 
   add_index "eventos", ["slug"], name: "index_eventos_on_slug", using: :btree
