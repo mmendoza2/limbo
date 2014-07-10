@@ -20,8 +20,6 @@ class MicrositiosController < ApplicationController
   # GET /micrositios/new
   def new
     @micrositio = Micrositio.new
-    @estados = Estado.all
-
   end
 
   # GET /micrositios/1/edit

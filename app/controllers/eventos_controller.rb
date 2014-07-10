@@ -1,5 +1,6 @@
 class EventosController < ApplicationController
   before_action :admin_user,     only: :destroy
+  before_action :set_evento, only: [:show, :edit, :update, :destroy]
 
 
   # GET /eventos
@@ -31,10 +32,10 @@ class EventosController < ApplicationController
   # POST /eventos
   # POST /eventos.json
   def create
-    @evento = current_user.eventos.build(evento_params)
+    @evento = current_user.eventos.find_or_create_by(evento_params)
     respond_to do |format|
       if @evento.save
-        format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
+        format.html { redirect_to @evento}
         format.json { render action: 'show', status: :created, location: @evento }
       else
         format.html { render action: 'new' }
@@ -78,7 +79,7 @@ class EventosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
-      params[:evento].permit(:nombre, :descripcion, :photo, :precio, :fecha, :artista, :urloficial, :estado)
+      params[:evento].permit(:nombre, :descripcion, :photo, :precio, :fecha, :artista, :urloficial, :estado, :referencefb, :photo_file_name)
     end
 
 

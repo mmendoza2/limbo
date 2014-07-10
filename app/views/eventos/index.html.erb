@@ -1,6 +1,3 @@
-<h1>Events</h1>
-
-
 
 <%	 if signed_in? %>
     <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px">
@@ -12,12 +9,12 @@
         </div>
       </div>
     </div>
-    <%	fbevents = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=summer&type=event&fields=cover,name,location&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}").read) %>
+    <%	fbevents = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=summer&type=event&fields=cover,name,location&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=20").read) %>
     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="border: 1px solid #d3d6db; " >
       <% fbevents['data'].each do |result| %>
 
           <div class="row" style="margin-bottom: -15px;  margin-top: -10px">
-            <div class="col-md-2 col-sm-2 col-xs-4">
+            <div class="col-md-3 col-sm-3 col-xs-4">
               <%	 if result['cover'].nil?  %>
               <%	else  %>
                   <div class="img-responsive" style="height: 110px; overflow: hidden">
@@ -25,7 +22,7 @@
                   </div>
               <%	end  %>
             </div>
-            <div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0 !important;">
+            <div class="col-md-7 col-sm-7 col-xs-8" style="padding: 0 !important;">
               <div class="col-md-3 col-sm-6 col-xs-12 hidden-xs" style="padding: 0 !important; text-align: center ">
                 <%= form_for(@evento) do |f| %>
                     <%= f.hidden_field :name, value: result['name'] %>
@@ -38,7 +35,7 @@
                 <% end %>
               </div>
               <div class="col-md-5 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
-                <h6>Friends attending today</h6>
+                <h6>Attending</h6>
               </div>
               <div class="col-md-4 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
                 <h6>Friends that have been here</h6>
