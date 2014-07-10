@@ -79,7 +79,7 @@ class EventosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def evento_params
-      params[:evento].permit(:nombre, :descripcion, :photo, :precio, :fecha, :artista, :urloficial, :estado, :referencefb, :photo_file_name)
+      params[:evento].permit(:name, :descripcion, :photo, :precio, :fecha, :artista, :urloficial, :estado, :referencefb, :photo_file_name)
     end
 
 

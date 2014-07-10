@@ -1,54 +1,32 @@
 
 
 <%	friends = ActiveSupport::JSON.decode(open("https://graph.facebook.com/#{current_user.uid}/friends?fields=picture.width(60).height(60),name&access_token=#{current_user.oauth_token}").read) %>
-<h1>Usuarios</h1>
-<div class="row ">
-  <div class="col-sm-8 col-xs-12 col-sm-offset-2 col-xs-offset-0 ">
-    <div class="panel-group" id="accordion">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse"  href="#collapseOne">
-                  <p>Your friends in LIMBO</p>
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in ">
-              <div class="panel-body">
-                <div class="row" style="margin-top: -15px; margin-bottom: -15px">
+<h1>Users</h1>
+<div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-sm-10 col-sm-offset-1 col-xs-12" style="border: 1px solid #d3d6db; " >
                     <% friends['data'].each do |x|  %>
-                        <% if  x.nil? %>
-                          <div class="text-center" style="margin: 10px">
-                          </div>
-                        <% else  %>
-                                <div class="row wrapusers" >
-                                  <div class="col-xs-4    col-sm-2">
-                                  <%= link_to image_tag(x['picture']['data']['url'], class: "avatarchico" ), x %>
-                                  </div>
-                                  <div class="col-xs-5 col-sm-5 ">
-                                    <div class="row">
-                                      <%=	link_to x['name'], x %>
-                                    </div>
-                                    <div class="row hidden-xs">
-                                    </div>
-                                  </div>
-                                  <div class="col-sm-3 col-xs-3">
-                                  </div>
-                                </div>
-                                <div class="row">
-                                    <div class="row col-xs-12 hidden-sm hidden-lg hidden-md">
-                                      <hr>
-                                    </div>
-                                </div>
-                        <% end %>
+                      <div class="row" >
+                            <% if  x.nil? %>
+
+                                <h4>You have no friends, you are a loser.</h4>
+
+                            <% else  %>
+                              <div class="col-xs-4 col-md-2    col-sm-4">
+                              <%= link_to image_tag(x['picture']['data']['url'], class: "avatarmedio" ), x %>
+                              </div>
+                              <div class="col-xs-8 col-md-10    col-sm-8 ">
+                                  <%=	link_to x['name'], x %>
+                              </div>
+
+                            <% end %>
+
+                      </div>
+                    <hr/>
                     <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-  </div>
+
+
+
+
+
 </div>
 
 
