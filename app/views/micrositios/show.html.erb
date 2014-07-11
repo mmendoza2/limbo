@@ -13,9 +13,7 @@
           </div>
         </div>
         <div class="col-md-7 col-xs-12">
-
           <h1> <%= place['name']	  %></h1>
-
           <h4> <%= place['location']['street']	  %></h4>
           <h4> <%= place['location']['city']	  %></h4>
           <h4> <%= place['location']['country']	  %></h4>
@@ -59,29 +57,9 @@
                           <% place['photos']['data'].first(4).each do |x|  %>
                       <div class="row">
                               <div class="img-responsive" style="overflow: hidden">
-                                <%	 if x['images'][5].nil?  %>
-                                    <%	 if x['images'][4].nil? %>
-                                       <%	 if x['images'][3].nil? %>
-                                             <%	 if x['images'][2].nil? %>
-                                                <%	 if x['images'][1].nil? %>
-                                                    <%	 if x['images'][0].nil? %>
-                                                    <%	 else %>
-                                                        <%= image_tag(x['images'][0]['source'])  %>
-                                                    <%	 end %>
-                                                <%	 else %>
-                                                    <%= image_tag(x['images'][1]['source'])  %>
-                                                <%	 end %>
-                                             <%	 else %>
-                                                <%= image_tag(x['images'][2]['source'])  %>
-                                             <%	 end %>
-                                       <%	 else %>
-                                            <%= image_tag(x['images'][3]['source'])  %>
-                                       <%	 end %>
-                                    <%	 else %>
-                                        <%= image_tag(x['images'][4]['source'])  %>
-                                    <%	 end %>
+                                <%	 if x['source'].nil?  %>
                                 <%	 else %>
-                                    <%= image_tag(x['images'][5]['source'])  %>
+                                    <%= image_tag(x['source'], class: "micrositiophotos")  %>
                                 <%	 end %>
                               </div>
                       </div>
@@ -96,7 +74,7 @@
                   <div class="row">
                      <div class="col-md-4 col-xs-4">
                        <div class="img-responsive" style="overflow: hidden; height: 100px">
-                        <%= image_tag(x['picture'])  %>
+                        <%= image_tag(x['picture'], class: "micrositiopostphotos")  %>
                        </div>
                      </div>
                     <div class="col-md-8 col-xs-8">
@@ -112,8 +90,6 @@
     <div class="col-md-12 col-sm-12 col-xs-12 border" >
       <div class="fb-comments" data-href="<%=request.original_url%>" data-numposts="10" data-width= "280"></div>
     </div>
-
-
 <% else %>
     <%=	 render "shared/ingresa" %>
 <% end %>
