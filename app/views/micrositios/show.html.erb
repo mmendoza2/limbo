@@ -63,6 +63,14 @@
                                     <%	 if x['images'][4].nil? %>
                                        <%	 if x['images'][3].nil? %>
                                              <%	 if x['images'][2].nil? %>
+                                                <%	 if x['images'][1].nil? %>
+                                                    <%	 if x['images'][0].nil? %>
+                                                    <%	 else %>
+                                                        <%= image_tag(x['images'][0]['source'])  %>
+                                                    <%	 end %>
+                                                <%	 else %>
+                                                    <%= image_tag(x['images'][1]['source'])  %>
+                                                <%	 end %>
                                              <%	 else %>
                                                 <%= image_tag(x['images'][2]['source'])  %>
                                              <%	 end %>
