@@ -87,7 +87,7 @@
 }
 
 .inset {
-  padding: 5px;
+  padding: 0px;
 }
 
 @media (max-width:767px) {
