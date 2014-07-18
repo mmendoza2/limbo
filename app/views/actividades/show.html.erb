@@ -1,6 +1,4 @@
 
-
-
 <%	 if signed_in? %>
     <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px">
       <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px;  margin-top: -10px; ">
@@ -13,90 +11,105 @@
       </div>
     </div>
     <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
-        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="border: 1px solid #d3d6db; " >
-          <% fbplace['data'].each do |result| %>
+    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="border: 1px solid #d3d6db; " >
+      <% fbplace['data'].each do |result| %>
 
-                <div class="row" style="margin-bottom: -15px;  margin-top: -10px">
-                  <div class="col-md-2 col-sm-2 col-xs-4">
-                    <%	 if result['picture'].nil?  %>
-                    <%	else  %>
-                        <div class="img-responsive" style="height: 110px; overflow: hidden">
-                          <%=  image_tag(result['picture']['data']['url']) %>
-                        </div>
-                    <%	end  %>
-                  </div>
-                  <div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0 !important;">
-                        <div class="col-md-3 col-sm-6 col-xs-12 hidden-xs" style="padding: 0 !important; text-align: center ">
-                          <%= form_for(@micrositio) do |f| %>
-                              <%= f.hidden_field :name, value: result['name'] %>
-                              <%= f.hidden_field :referencefb, value: result['id'] %>
-                              <%	 if result['picture'].nil?  %>
-                              <%	else  %>
-                                  <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
-                              <% end %>
-                              <%= f.submit result['name'], class: "btn-success" %>
+            <div class="row" style="margin-bottom: -15px;  margin-top: -10px">
+              <div class="col-md-2 col-sm-2 col-xs-4">
+                <%	 if result['picture'].nil?  %>
+                <%	else  %>
+                    <div class="img-responsive hidden-xs" style="height: 110px; overflow: hidden">
+                      <%=  image_tag(result['picture']['data']['url']) %>
+                    </div>
+                    <div class="img-responsive visible-xs" style="height: 80px; overflow: hidden">
+                      <%=  image_tag(result['picture']['data']['url'], class: "photolistaxs") %>
+                    </div>
+                <%	end  %>
+              </div>
+              <div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0 !important;">
+                    <div class="col-md-3 col-sm-6 col-xs-12 hidden-xs" style="padding: 0 !important; text-align: center ">
+                      <%= form_for(@micrositio) do |f| %>
+                          <%= f.hidden_field :name, value: result['name'] %>
+                          <%= f.hidden_field :referencefb, value: result['id'] %>
+                          <%	 if result['picture'].nil?  %>
+                          <%	else  %>
+                              <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
                           <% end %>
-                        </div>
-                        <div class="col-md-5 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
-                          <h6>Attending today</h6>
-                        </div>
-                        <div class="col-md-4 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
-                          <h6>People that have been here</h6>
-                          <p><%= number_with_delimiter(result['checkins']) %></p>
-                        </div>
-                        <div class="col-xs-12 visible-xs" style="padding:0 !important; margin-top: -10px; ">
-                          <div style="margin-top: 10px; margin-bottom: -15px">
-                          <%= form_for(@micrositio) do |f| %>
-                              <%= f.hidden_field :name, value: result['name'] %>
-                              <%= f.hidden_field :referencefb, value: result['id'] %>
-                              <%	 if result['picture'].nil?  %>
-                              <%	else  %>
-                                  <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
-                              <% end %>
-                              <%= f.submit result['name'], class: "btn-success" %>
-                           <% end %>
-                          </div>
-                          <h6 style="font-size: 10px"><%= result['location']['city'] %></h6>
-                          <h6 style="font-size: 10px">Friends attending </h6>
-                          <h6 style="font-size: 10px">Have been here: <%= number_with_delimiter(result['checkins']) %> </h6>
-
-                              <script type="text/javascript">
-
-                                function getDistance(lat1,lon1,lat2,lon2)
-                                {
-                                    var R = 6371; // km
-                                    var φ1 = lat1.toRadians();
-                                    var φ2 = lat2.toRadians();
-                                    var Δφ = (lat2-lat1).toRadians();
-                                    var Δλ = (lon2-lon1).toRadians();
-                                    var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                                          Math.cos(φ1) * Math.cos(φ2) *
-                                          Math.sin(Δλ/2) * Math.sin(Δλ/2);
-                                    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-                                    var d = R * c;
-                                    alert(d);
-                                    return d;
-                                }
-
-                              </script>
-
-                          <h2> Distance</h2>
+                          <%= f.submit result['name'], class: "btn-success" %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-5 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
+                      <h6>Attending today</h6>
+                    </div>
+                    <div class="col-md-4 col-sm-3 hidden-xs" style="padding: 0 !important; text-align: center">
+                      <h6>People that have been here</h6>
+                      <p><%= number_with_delimiter(result['checkins']) %></p>
+                    </div>
+                    <div class="col-xs-12 visible-xs" style="padding:0 !important; margin-top: -10px; ">
+                      <div style="margin-top: 10px; margin-bottom: -15px">
+                      <%= form_for(@micrositio) do |f| %>
+                          <%= f.hidden_field :name, value: result['name'] %>
+                          <%= f.hidden_field :referencefb, value: result['id'] %>
+                          <%	 if result['picture'].nil?  %>
+                          <%	else  %>
+                              <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
+                          <% end %>
+                          <%= f.submit result['name'], class: "btn-success" %>
+                       <% end %>
+                      </div>
+                      <h6 style="font-size: 10px"><%= result['location']['city'] %></h6>
+                      <h6 style="font-size: 10px">Friends attending </h6>
+                      <h6 style="font-size: 10px">Have been here: <%= number_with_delimiter(result['checkins']) %> </h6>
 
 
+                    </div>
+              </div>
+              <div class="col-md-2 col-sm-2 hidden-xs  ">
+                <h6> Distance</h6>
+                <p id="distance">
+                    Km
+                </p>
+                <script>
+                    var lat1 = <%= current_user.lat %>
+                    var lon1 = <%= current_user.lng %>
+                    var lat2 = <%= result['location']['latitude'] %>
+                    var lon2 = <%= result['location']['longitude'] %>
+                    var distance =  function (lat1,lon1,lat2,lon2)
+                    {
+                        var R = 6371; // km
+                        var φ1 = lat1 * Math.PI / 180;
+                        var φ2 = lat2 * Math.PI / 180;
+                        var Δφ = (lat2-lat1) * Math.PI / 180;
+                        var Δλ = (lon2-lon1) * Math.PI / 180;
+                        var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                                Math.cos(φ1) * Math.cos(φ2) *
+                                Math.sin(Δλ/2) * Math.sin(Δλ/2);
+                        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+                        var d = R * c;
+                        var f = d.toFixed(2)
+                        return f;
 
-                        </div>
-                  </div>
-                  <div class="col-md-2 col-sm-2 hidden-xs  ">
-                    <h6> Distance</h6>
-                    <%=	  javascript_tag "getDistance(#{current_user.lat},#{current_user.lng},#{result['location']['latitude']},#{result['location']['longitude']})" %>
-                  </div>
-                </div>
-                <hr/>
+                    }
+                    var distanceframe = document.getElementById('distance');
+                    distanceframe.textContent = distance(lat1,lon1,lat2,lon2);
+                </script>
+              </div>
+            </div>
+            <hr/>
 
-          <%	 end %>
 
-        </div>
+
+
+    <%	 end %>
+
+    </div>
+
+
+
 
 <% else %>
     <%=	 render "shared/ingresa" %>
 <% end %>
+
+
+

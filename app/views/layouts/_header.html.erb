@@ -1,12 +1,6 @@
 <title>Limbo</title>
 <%= favicon_link_tag 'favicon.ico' %>
 <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
-<script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensor=true">
-</script>
-<script type="text/javascript"
-        src="http://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensorr=true">
-</script>
 <title><%= full_title(yield(:title)) %></title>
 <% if signed_in? 	  %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
