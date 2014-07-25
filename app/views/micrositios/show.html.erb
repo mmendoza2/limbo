@@ -22,7 +22,15 @@
             <h5> <p style="font-weight: bold; font-size: 16px"> <%= place['likes']  %>  likes in Facebook.</p> </h5>
           <div class="col-md-6" style="padding-top: 40px">
             <%= render 'follow_form' if signed_in? %>
-            <%= render 'follow_form' if signed_in? %>
+            <br/>
+
+
+                    <%= form_for(@reservation) do |f| %>
+                        <%= f.hidden_field :micrositio_id, value: @micrositio.id %>
+                        <%= f.submit "Reserve", class: "btn-success" %>
+                    <% end %>
+
+
           </div>
         </div>
       </div>

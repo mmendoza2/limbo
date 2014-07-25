@@ -1,7 +1,6 @@
 Limbo::Application.routes.draw do
 
 
-  resources :reserervations
 
   get 'sitemap.xml', :to => 'sitemap#index', :defaults => { :format => 'xml' }
 
@@ -78,6 +77,7 @@ Limbo::Application.routes.draw do
   resources :eventos
   resources :locations
   resources :micrositios
+  resources :reservations
   resources :microposts,    only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :relationeventos, only: [:create, :destroy]

@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe "reserervations/index" do
   before(:each) do
-    assign(:reserervations, [
-      stub_model(Reserervation),
-      stub_model(Reserervation)
+    assign(:reservations, [
+      stub_model(Reservation),
+      stub_model(Reservation)
     ])
   end
 

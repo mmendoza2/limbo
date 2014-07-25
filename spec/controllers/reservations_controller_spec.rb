@@ -18,7 +18,7 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe ReserervationsController do
+describe ReservationsController do
 
   # This should return the minimal set of attributes required to create a valid
   # Reserervation. As you add validations to Reserervation, be sure to
@@ -32,15 +32,15 @@ describe ReserervationsController do
 
   describe "GET index" do
     it "assigns all reserervations as @reserervations" do
-      reserervation = Reserervation.create! valid_attributes
+      reserervation = Reservation.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:reserervations).should eq([reserervation])
+      assigns(:reservations).should eq([reserervation])
     end
   end
 
   describe "GET show" do
     it "assigns the requested reserervation as @reserervation" do
-      reserervation = Reserervation.create! valid_attributes
+      reserervation = Reservation.create! valid_attributes
       get :show, {:id => reserervation.to_param}, valid_session
       assigns(:reserervation).should eq(reserervation)
     end
@@ -49,13 +49,13 @@ describe ReserervationsController do
   describe "GET new" do
     it "assigns a new reserervation as @reserervation" do
       get :new, {}, valid_session
-      assigns(:reserervation).should be_a_new(Reserervation)
+      assigns(:reserervation).should be_a_new(Reservation)
     end
   end
 
   describe "GET edit" do
     it "assigns the requested reserervation as @reserervation" do
-      reserervation = Reserervation.create! valid_attributes
+      reserervation = Reservation.create! valid_attributes
       get :edit, {:id => reserervation.to_param}, valid_session
       assigns(:reserervation).should eq(reserervation)
     end
@@ -66,32 +66,32 @@ describe ReserervationsController do
       it "creates a new Reserervation" do
         expect {
           post :create, {:reserervation => valid_attributes}, valid_session
-        }.to change(Reserervation, :count).by(1)
+        }.to change(Reservation, :count).by(1)
       end
 
       it "assigns a newly created reserervation as @reserervation" do
         post :create, {:reserervation => valid_attributes}, valid_session
-        assigns(:reserervation).should be_a(Reserervation)
+        assigns(:reserervation).should be_a(Reservation)
         assigns(:reserervation).should be_persisted
       end
 
       it "redirects to the created reserervation" do
         post :create, {:reserervation => valid_attributes}, valid_session
-        response.should redirect_to(Reserervation.last)
+        response.should redirect_to(Reservation.last)
       end
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved reserervation as @reserervation" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Reserervation.any_instance.stub(:save).and_return(false)
+        Reservation.any_instance.stub(:save).and_return(false)
         post :create, {:reserervation => {  }}, valid_session
-        assigns(:reserervation).should be_a_new(Reserervation)
+        assigns(:reserervation).should be_a_new(Reservation)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Reserervation.any_instance.stub(:save).and_return(false)
+        Reservation.any_instance.stub(:save).and_return(false)
         post :create, {:reserervation => {  }}, valid_session
         response.should render_template("new")
       end
@@ -101,23 +101,23 @@ describe ReserervationsController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested reserervation" do
-        reserervation = Reserervation.create! valid_attributes
+        reserervation = Reservation.create! valid_attributes
         # Assuming there are no other reserervations in the database, this
         # specifies that the Reserervation created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Reserervation.any_instance.should_receive(:update).with({ "these" => "params" })
+        Reservation.any_instance.should_receive(:update).with({ "these" => "params" })
         put :update, {:id => reserervation.to_param, :reserervation => { "these" => "params" }}, valid_session
       end
 
       it "assigns the requested reserervation as @reserervation" do
-        reserervation = Reserervation.create! valid_attributes
+        reserervation = Reservation.create! valid_attributes
         put :update, {:id => reserervation.to_param, :reserervation => valid_attributes}, valid_session
         assigns(:reserervation).should eq(reserervation)
       end
 
       it "redirects to the reserervation" do
-        reserervation = Reserervation.create! valid_attributes
+        reserervation = Reservation.create! valid_attributes
         put :update, {:id => reserervation.to_param, :reserervation => valid_attributes}, valid_session
         response.should redirect_to(reserervation)
       end
@@ -125,17 +125,17 @@ describe ReserervationsController do
 
     describe "with invalid params" do
       it "assigns the reserervation as @reserervation" do
-        reserervation = Reserervation.create! valid_attributes
+        reserervation = Reservation.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Reserervation.any_instance.stub(:save).and_return(false)
+        Reservation.any_instance.stub(:save).and_return(false)
         put :update, {:id => reserervation.to_param, :reserervation => {  }}, valid_session
         assigns(:reserervation).should eq(reserervation)
       end
 
       it "re-renders the 'edit' template" do
-        reserervation = Reserervation.create! valid_attributes
+        reserervation = Reservation.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        Reserervation.any_instance.stub(:save).and_return(false)
+        Reservation.any_instance.stub(:save).and_return(false)
         put :update, {:id => reserervation.to_param, :reserervation => {  }}, valid_session
         response.should render_template("edit")
       end
@@ -144,14 +144,14 @@ describe ReserervationsController do
 
   describe "DELETE destroy" do
     it "destroys the requested reserervation" do
-      reserervation = Reserervation.create! valid_attributes
+      reserervation = Reservation.create! valid_attributes
       expect {
         delete :destroy, {:id => reserervation.to_param}, valid_session
-      }.to change(Reserervation, :count).by(-1)
+      }.to change(Reservation, :count).by(-1)
     end
 
     it "redirects to the reserervations list" do
-      reserervation = Reserervation.create! valid_attributes
+      reserervation = Reservation.create! valid_attributes
       delete :destroy, {:id => reserervation.to_param}, valid_session
       response.should redirect_to(reserervations_url)
     end

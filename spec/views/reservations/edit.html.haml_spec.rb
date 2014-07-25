@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "reserervations/edit" do
   before(:each) do
-    @reserervation = assign(:reserervation, stub_model(Reserervation))
+    @reserervation = assign(:reserervation, stub_model(Reservation))
   end
 
   it "renders the edit reserervation form" do

@@ -15,6 +15,7 @@ class MicrositiosController < ApplicationController
     @micrositios = Micrositio.all
     @micrositio = Micrositio.friendly.find(params[:id])
     @user = Micrositio.friendly.find(params[:id])
+    @reservation = Reservation.new
   end
 
   # GET /micrositios/new

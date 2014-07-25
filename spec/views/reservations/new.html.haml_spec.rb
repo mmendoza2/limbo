@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe "reserervations/new" do
   before(:each) do
-    assign(:reserervation, stub_model(Reserervation).as_new_record)
+    assign(:reserervation, stub_model(Reservation).as_new_record)
   end
 
   it "renders new reserervation form" do

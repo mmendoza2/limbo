@@ -55,7 +55,7 @@
                               <%= f.hidden_field :photo_file_name, value: result['picture']['data']['url'] %>
                           <% end %>
                           <%= f.submit result['name'], class: "btn-success" %>
-                       <% end %>
+                      <% end %>
                       </div>
                       <h6 style="font-size: 10px"><%= result['location']['city'] %></h6>
                       <h6 style="font-size: 10px">Friends attending </h6>
@@ -67,38 +67,31 @@
               <div class="col-md-2 col-sm-2 hidden-xs  ">
                 <h6> Distance</h6>
                 <p id="distance">
-                    Km
+                  <%
+                     lat1 = current_user.lat
+                     lon1 = current_user.lng
+                     lat2 = result['location']['latitude']
+                     lon2 = result['location']['longitude']
+                     r = 6371
+                     pi = 3.1416
+                     alpha1 = (lat1 * pi).to_f / 180.0
+                     alpha2 = (lat2 * pi).to_f / 180.0
+                     deltaa = (lat2.to_f-lat1.to_f) * pi / 180.0
+                     deltag = (lon2.to_f-lon1.to_f) * pi / 180.0
+                     a = Math.sin(deltaa.to_f/2.0) * Math.sinh(deltaa.to_f/2.0) +
+                         Math.cos(alpha1) * Math.cos(alpha2) *
+                         Math.sin(deltag/2) * Math.sin(deltag/2)
+                     c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+                     d = r * c
+                     f = d.round(2)
+                  %>
+                  <%=	 f %>
+                  Km
                 </p>
-                <script>
-                    var lat1 = <%= current_user.lat %>
-                    var lon1 = <%= current_user.lng %>
-                    var lat2 = <%= result['location']['latitude'] %>
-                    var lon2 = <%= result['location']['longitude'] %>
-                    var distance =  function (lat1,lon1,lat2,lon2)
-                    {
-                        var R = 6371; // km
-                        var φ1 = lat1 * Math.PI / 180;
-                        var φ2 = lat2 * Math.PI / 180;
-                        var Δφ = (lat2-lat1) * Math.PI / 180;
-                        var Δλ = (lon2-lon1) * Math.PI / 180;
-                        var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-                                Math.cos(φ1) * Math.cos(φ2) *
-                                Math.sin(Δλ/2) * Math.sin(Δλ/2);
-                        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-                        var d = R * c;
-                        var f = d.toFixed(2)
-                        return f;
 
-                    }
-                    var distanceframe = document.getElementById('distance');
-                    distanceframe.textContent = distance(lat1,lon1,lat2,lon2);
-                </script>
               </div>
             </div>
             <hr/>
-
-
-
 
     <%	 end %>
 
