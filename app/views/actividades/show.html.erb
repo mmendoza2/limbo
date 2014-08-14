@@ -1,8 +1,13 @@
 
 <%	 if signed_in? %>
+  <div class="hidden-xs" id="googlemaps">
+    <div id="map-canvas" ></div>
+  </div>
+
+    <div class="col-md-5" style="z-index: 10" >
     <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px">
       <div class="row" style="background-color: #593e73; border-radius: 5px; padding: 15px;  margin-top: -10px; ">
-        <div class="col-md-6 col-sm-6 hidden-xs">
+        <div class="col-md-12 col-sm-12 hidden-xs">
           <h1 style="color: #ffffff"><%=	@actividad.slug.capitalize %> </h1>
         </div>
         <div class="visible-xs col-xs-6">
@@ -10,12 +15,12 @@
         </div>
       </div>
     </div>
-    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=50000&access_token=#{current_user.oauth_token}&limit=30").read) %>
+    <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=30000&access_token=#{current_user.oauth_token}&limit=30").read) %>
     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="border: 1px solid #d3d6db; " >
       <% fbplace['data'].each do |result| %>
 
             <div class="row" style="margin-bottom: -15px;  margin-top: -10px">
-              <div class="col-md-2 col-sm-2 col-xs-4">
+              <div class="col-md-4 col-sm-4 col-xs-4">
                 <%	 if result['picture'].nil?  %>
                 <%	else  %>
                     <div class="img-responsive hidden-xs" style="height: 110px; overflow: hidden">
@@ -26,7 +31,7 @@
                     </div>
                 <%	end  %>
               </div>
-              <div class="col-md-8 col-sm-8 col-xs-8" style="padding: 0 !important;">
+              <div class="col-md-6 col-sm-6 col-xs-6" style="padding: 0 !important;">
                     <div class="col-md-3 col-sm-6 col-xs-12 hidden-xs" style="padding: 0 !important; text-align: center ">
                       <%= form_for(@micrositio) do |f| %>
                           <%= f.hidden_field :name, value: result['name'] %>
@@ -60,11 +65,9 @@
                       <h6 style="font-size: 10px"><%= result['location']['city'] %></h6>
                       <h6 style="font-size: 10px">Friends attending </h6>
                       <h6 style="font-size: 10px">Have been here: <%= number_with_delimiter(result['checkins']) %> </h6>
-
-
                     </div>
               </div>
-              <div class="col-md-2 col-sm-2 hidden-xs  ">
+              <div class="col-md-2 col-sm-2 col-xs-2  ">
                 <h6> Distance</h6>
                 <p id="distance">
                   <%
@@ -97,8 +100,9 @@
 
     </div>
 
-
-
+    </div>
+    <div class="col-md-7">
+    </div>
 
 <% else %>
     <%=	 render "shared/ingresa" %>
@@ -106,3 +110,37 @@
 
 
 
+<script>
+    $(document).ready(function () {
+        var myLatlng = new google.maps.LatLng( <%= current_user.lat %>, <%= current_user.lng %>);
+        var mapOptions = {
+            zoom: 10,
+            center: myLatlng,
+            scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            mapTypeControl: false,
+            panControl: false,
+            rotateControl: false,
+            scaleControl: false,
+            streetViewControl: false,
+            zoomControl: false
+
+        }
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+
+        // Place a draggable marker on the map
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable:true,
+            title:"Your location!"
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function (event) {
+            document.getElementById("latbox").value = this.getPosition().lat();
+            document.getElementById("lngbox").value = this.getPosition().lng();
+        });
+    });
+</script>

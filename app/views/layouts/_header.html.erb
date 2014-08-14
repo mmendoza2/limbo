@@ -17,33 +17,6 @@
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
 <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxH3uvobKynTSs63CoAcTQSB0xzCRduCs&sensor=false">
-</script>
-<script type="text/javascript"
         src="http://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensorr=false">
 </script>
-
-<!-- Emp -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=755918064431368";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-<!-- Place this tag after the last +1 button tag. -->
-<script type="text/javascript">
-    (function() {
-        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-        po.src = 'https://apis.google.com/js/plusone.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
-</script>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
+<%=	 render 'layouts/analytics' %>

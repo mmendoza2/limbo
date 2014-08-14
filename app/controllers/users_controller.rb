@@ -36,6 +36,19 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
+
+  def update
+    respond_to do |format|
+      if current_user.update(current_user_params)
+        format.html { redirect_to current_user}
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: current_user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def editcategorias
     @micrositios = Micrositio.all
     @estadosalf = Estado.order("estado")

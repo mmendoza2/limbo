@@ -1,3 +1,23 @@
+#map-canvas{
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+}
+
+#googlemaps {
+  margin-top: -4px;
+  margin-left: -20px;
+  width: 100%;
+  background-color: #808080;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 5;
+}
+
+
 p {
   font-size: 10px;
 }

@@ -1,37 +1,25 @@
 <% if signed_in? %>
     <% if current_user.lat.nil? %>
-        <script>
-            $(document).ready(function () {
-                var myLatlng = new google.maps.LatLng(23.634501,-102.55278399999997);
-                var mapOptions = {
-                    zoom: 4,
-                    center: myLatlng
-                }
-                var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-                // Place a draggable marker on the map
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    draggable:true,
-                    title:"Your location!"
-                });
-                google.maps.event.addListener(marker, 'dragend', function (event) {
-                    document.getElementById("latbox").value = this.getPosition().lat();
-                    document.getElementById("lngbox").value = this.getPosition().lng();
-                });
-            });
-        </script>
-        <div class="row">
-          <p>Please update your location to continue</p>
-        </div>
-        <%= form_for(current_user, :html => { :multipart => true }) do |f| %>
-            <div id="map-canvas" class="thumbnail" style="height:400px"></div>
-            <div id="latlong">
-              <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'latbox' %></div>
-              <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lngbox' %></div>
-            </div>
+        <%= form_for current_user, remote: true  do |f| %>
+            <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'lat' %></div>
+            <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lng' %></div>
             <div class="col-md-7 " style="margin-bottom: 10px"><%= f.submit "Update your location", class: 'btn btn-large btn-primary' %></div>
         <% end %>
+        <script>
+            var lat = document.getElementById("lat");
+            var lng = document.getElementById("lng");
+            $(function() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    lat.innerHTML = "Geolocation is not supported by this browser.";
+                }
+                function showPosition(position) {
+                    lat.innerHTML=position.coords.latitude;
+                    lng.innerHTML=position.coords.longitude;
+                }
+            });
+        </script>
     <% else %>
     <% end %>
 <% else %>
