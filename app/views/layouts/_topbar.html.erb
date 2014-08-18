@@ -5,7 +5,6 @@
       <nav class="hidden-xs  ">
         <div class="col-md-offset-1" style="padding-top: 15px; margin-bottom: -45px" >
           <%= form_for current_user, remote: true  do |f| %>
-
               <div > <%= f.hidden_field :lat, id: 'demo' %></div>
               <div > <%= f.hidden_field :lng, class: 'input-sm', id: 'demoz' %></div>
               <%= button_tag(type: 'submit', class: 'transparent') do %>
@@ -16,7 +15,7 @@
           <%	 if loc['results'][0].nil? %>
 
           <%	 else %>
-            <div class="col-md-5" style="padding-top: 15px; margin-bottom: -45px" >
+            <div class="col-md-offset-5" style="padding-top: 15px; margin-bottom: -45px" >
 
            <h2 style="color: black"> <%= loc['results'][0]['address_components'][0]['short_name']  %> </h2>
             </div>
@@ -57,6 +56,19 @@
 
 
 <script>
+    var myLatlng = new google.maps.LatLng(<%= current_user.lat %>,<%= current_user.lng %>);
+    var mapOptions = {
+        zoom: 4,
+        center: myLatlng
+    }
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: 'Hello World!'
+    });
+
     $(function () {
         var x = document.getElementById("demo");
         var z = document.getElementById("demoz");
