@@ -1,29 +1,4 @@
 
-<%= form_for current_user, remote: true  do |f| %>
-
-    <div> <%= f.text_field :lat, class: 'input-sm', id: 'lat' %></div>
-    <div> <%= f.text_field :lng, class: 'input-sm', id: 'lng' %></div>
-
-    <div class="col-md-7 " style="margin-bottom: 10px"><%= f.submit "Update your location", class: 'btn btn-large btn-primary' %></div>
-<% end %>
-
-
-<script>
-    var lat = document.getElementById("lat");
-    var lng = document.getElementById("lng");
-    $(function() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            lat.innerHTML = "Geolocation is not supported by this browser.";
-        }
-        function showPosition(position) {
-            lat.innerHTML=position.coords.latitude;
-            lng.innerHTML=position.coords.longitude;
-        }
-    });
-</script>
-
 
 
 

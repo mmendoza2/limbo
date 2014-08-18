@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
+      respond_to do |format|
+        format.html { redirect_to(:back) }
+        format.js
+      end
       redirect_to :back
     else
       render 'new'
@@ -34,63 +38,16 @@ class UsersController < ApplicationController
     @micrositio = Micrositio.friendly.find(params[:id])
     @estado = Estado.friendly.find(params[:id])
     @user = User.friendly.find(params[:id])
-  end
 
-
-  def update
-    respond_to do |format|
-      if current_user.update(current_user_params)
-        format.html { redirect_to current_user}
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: current_user.errors, status: :unprocessable_entity }
-      end
-    end
   end
-
-  def editcategorias
-    @micrositios = Micrositio.all
-    @estadosalf = Estado.order("estado")
-    @actividad = Actividad.all
-    @actividadpadres = Actividadpadre.all
-    @categorias = Categoria.all
-  end
-
-  def editestados
-    @micrositios = Micrositio.all
-    @estadosalf = Estado.order("estado")
-    @actividad = Actividad.all
-    @actividadpadres = Actividadpadre.all
-  end
-
-  def editactividades
-    @categorias = Categoria.all
-    @micrositios = Micrositio.all
-    @estadosalf = Estado.order("estado")
-    @actividad = Actividad.all
-    @actividadpadres = Actividadpadre.all
-  end
-  def editlugares
-    @micrositios = Micrositio.all
-    @estadosalf = Estado.order("estado")
-    @actividad = Actividad.all
-    @actividadpadres = Actividadpadre.all
-  end
-  def editusuarios
-    @micrositios = Micrositio.all
-    @usuarios = User.all
-    @estadosalf = Estado.order("estado")
-    @actividad = Actividad.all
-    @actividadpadres = Actividadpadre.all
-  end
-
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
-      sign_in @user
-      redirect_to :back
+      respond_to do |format|
+        format.html { redirect_to(:back) }
+        format.js
+      end
+
     else
       render 'edit'
     end
@@ -116,9 +73,6 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
-
-
-
 
 
 

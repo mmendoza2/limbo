@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,  :omniauthable,
@@ -97,20 +96,6 @@ class User < ActiveRecord::Base
     logger.info e.to_s
     nil # or consider a custom null object
   end
-
-  def friends_count
-    facebook { |fb| fb.get_connection("me", "friends").size }
-  end
-
-  def friends_using_app
-  facebook { |fb| fb.get_connection("me", "friends?fields=installed") }
-  end
-
-  def invite_friends
-    facebook { |fb| fb.get_connection("me", "friends?fields=installed") }
-  end
-
-
 
 
   extend FriendlyId

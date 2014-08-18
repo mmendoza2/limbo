@@ -4,10 +4,13 @@
   <div>
       <nav class="hidden-xs  ">
         <div class="col-md-offset-1" style="padding-top: 15px; margin-bottom: -45px" >
-            <%= form_for current_user, remote: true  do |f| %>
-                <div> <%= f.hidden_field :lat, class: 'input-sm', id: 'lat' %></div>
-                <div> <%= f.hidden_field :lng, class: 'input-sm', id: 'lng' %></div>
-                <div class="col-md-2 " style="margin-bottom: 10px"><%= f.submit "Update your location", class: 'btn btn-large btn-primary' %></div>
+          <%= form_for current_user, remote: true  do |f| %>
+
+              <div > <%= f.hidden_field :lat, id: 'demo' %></div>
+              <div > <%= f.hidden_field :lng, class: 'input-sm', id: 'demoz' %></div>
+              <%= button_tag(type: 'submit', class: 'transparent') do %>
+                  <i class="fa fa-2x fa-location-arrow"></i>
+              <% end %>
             <% end %>
         </div>
           <%	 if loc['results'][0].nil? %>
@@ -53,19 +56,18 @@
 </div>
 
 
-
 <script>
-    var lat = document.getElementById("lat");
-    var lng = document.getElementById("lng");
-    $(function() {
+    $(function () {
+        var x = document.getElementById("demo");
+        var z = document.getElementById("demoz");
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition);
         } else {
-            lat.innerHTML = "Geolocation is not supported by this browser.";
+            x.innerHTML = "Geolocation is not supported by this browser.";
         }
         function showPosition(position) {
-            lat.innerHTML=position.coords.latitude;
-            lng.innerHTML=position.coords.longitude;
+            x.value =   position.coords.latitude;
+            z.value =   position.coords.longitude;
         }
     });
 </script>

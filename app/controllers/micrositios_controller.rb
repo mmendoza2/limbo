@@ -35,6 +35,7 @@ class MicrositiosController < ApplicationController
       if @micrositio.save
         format.html { redirect_to @micrositio }
         format.json { render action: 'show', status: :created, location: @micrositio }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @micrositio.errors, status: :unprocessable_entity }
