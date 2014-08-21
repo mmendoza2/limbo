@@ -1,49 +1,5 @@
 
-<div id="map-canvas" class="col-md-6" style="height: 300px"></div>
-
-<div class="row" style="margin-top: 400px">
 
 
 
-  <%= form_for current_user, remote: true  do |f| %>
-
-      <div > <%= f.text_field :lat, id: 'demo' %></div>
-      <div > <%= f.text_field :lng, class: 'input-sm', id: 'demoz' %></div>
-
-    <div class="col-md-7 " style="margin-bottom: 10px"><%= f.submit "Update your location", class: 'btn btn-large btn-primary' %></div>
-<% end %>
-</div>
-
-<script>
-    var myLatlng = new google.maps.LatLng(<%= current_user.lat %>,<%= current_user.lng %>);
-    var mapOptions = {
-        zoom: 4,
-        center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: 'Hello World!'
-    });
-
-    $(function () {
-    var x = document.getElementById("demo");
-    var z = document.getElementById("demoz");
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-    function showPosition(position) {
-        x.value =   position.coords.latitude;
-        z.value =   position.coords.longitude;
-    }
-    });
-</script>
-
-
-
-
-
+<%= render 'users/form_google' %>

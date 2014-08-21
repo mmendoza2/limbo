@@ -2,13 +2,7 @@
 <%= favicon_link_tag 'favicon.ico' %>
 <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0">
 <title><%= full_title(yield(:title)) %></title>
-<% if signed_in? 	  %>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-<%  else %>
-    <%= stylesheet_link_tag "principal/custom"%>
-    <%= stylesheet_link_tag "bootstrap"%>
-    <%= stylesheet_link_tag "limbo"%>
-<%  end %>
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <%= csrf_meta_tags %>
 <%= render 'layouts/shim' %>
@@ -17,6 +11,8 @@
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 
 <script type="text/javascript"
-        src="http://maps.googleapis.com/maps/api/js?libraries=visualization&key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensor=false">
+        src="http://maps.googleapis.com/maps/api/js?libraries=visualization,places&key=AIzaSyDFAg4UahxEExMg5KMJmd05M4Kq0rBcbEI&sensor=true">
 </script>
+
+
 <%=	 render 'layouts/analytics' %>

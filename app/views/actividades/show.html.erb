@@ -20,7 +20,11 @@
     <%	fbplace = ActiveSupport::JSON.decode(open("https://graph.facebook.com/search?q=#{@actividad.namefb},page&fields=cover,checkins,name,location,category_list,picture.width(100)&type=place&center=#{current_user.lat},#{current_user.lng}&distance=30000&access_token=#{current_user.oauth_token}&limit=30").read) %>
     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="border: 1px solid #d3d6db; " >
       <% fbplace['data'].each do |result| %>
-
+          <script>
+            var pins = [
+              new google.maps.LatLng(<%= result['location']['latitude']%>, <%= result['location']['longitude']%>)
+            ];
+          </script>
 
           <%= form_for(@micrositio, remote: true)  do |f| %>
               <%= f.hidden_field :name, value: result['name'] %>
@@ -140,11 +144,31 @@
                 zoomControl: false
 
             }
+            var markers = [];
+            var iterator = 0;
+            var map;
             var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            for (var i = 0; i < pins.length; i++) {
+                setTimeout(function() {
+                    addMarker();
+                }, i * 200);
+            }
+
             var marker = new google.maps.Marker({
                 position: myLatlng,
                 map: map
             });
+
+            function addMarker() {
+                markers.push(new google.maps.Marker({
+                    position: neighborhoods[iterator],
+                    map: map,
+                    draggable: false,
+                    animation: google.maps.Animation.DROP
+                }));
+                iterator++;
+            }
 
         });
     </script>

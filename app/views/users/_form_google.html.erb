@@ -1,0 +1,29 @@
+<%= form_for(current_user) do |f| %>
+<div class="col-md-12">
+    <fieldset>
+        <div class="col-md-5">
+            <%= f.label :lat %>
+            <%= f.hidden_field :lat, class: "col-md-12", id: "lat" %>
+
+            <%= f.label :lng %>
+            <%= f.hidden_field :lng, class: "col-md-12", id: "lng" %>
+
+            <%= f.submit "Save Location", class: 'btn' %>
+        </div>
+        <div class="col-md-7">
+            <%= label_tag :search, "Search For Address" %>
+            <%= text_field_tag :location_search, nil, class: "col-md-12", type: "search" %>
+
+             <%= render partial: "users/googlemap" %>
+        </div>
+    </fieldset>
+<% end %>
+
+    <div class="row">
+      <div class="well col-md-12">
+        <h4>Images</h4>
+        <div id="place_images"></div>
+      </div>
+    </div>
+
+</div>
