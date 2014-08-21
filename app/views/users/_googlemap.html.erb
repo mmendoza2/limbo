@@ -1,20 +1,5 @@
 <div id="googlemap"></div>
 
-<script>
-    $(function () {
-        var x = document.getElementById("lat");
-        var z = document.getElementById("lng");
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else {
-            x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-        function showPosition(position) {
-            x.value =   position.coords.latitude;
-            z.value =   position.coords.longitude;
-        }
-    });
-</script>
 
 <script type="text/javascript">
 

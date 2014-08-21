@@ -1,3 +1,4 @@
+
 <%= form_for(current_user) do |f| %>
 <div class="col-md-12">
     <fieldset>
@@ -5,7 +6,7 @@
             <%= f.hidden_field :lat, class: "col-md-12", id: "lat" %>
             <%= f.hidden_field :lng, class: "col-md-12", id: "lng" %>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <%= text_field_tag :location_search, nil, class: "col-md-12 search-query", type: "search" %>
             <%= render partial: "users/googlemap" %>
         </div>

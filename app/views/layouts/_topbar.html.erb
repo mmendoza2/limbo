@@ -4,12 +4,12 @@
   <div>
       <nav class="hidden-xs  ">
         <div class="col-md-12" style="padding-top: 0px; margin-bottom: -45px" >
-            <div class="col-md-6" style="padding-top: 10px">
+            <div class="col-md-4" style="padding-top: 10px">
                     <%=	 render "users/form_google_topbar" %>
             </div>
             <%	 if loc['results'][0].nil? %>
             <%	 else %>
-                <div class="col-md-6" style="padding-top: 15px; margin-bottom: -45px" >
+                <div class="col-md-8" style="padding-top: 15px; margin-bottom: -45px" >
                   <h2 style="color: black"> <%= loc['results'][0]['address_components'][0]['short_name']  %> </h2>
                 </div>
             <%	 end %>

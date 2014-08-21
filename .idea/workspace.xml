@@ -2,88 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_form_google.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_googlemap.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/principal/custom.css.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/FontAwesome-277d99c23f3dfaf7cc6b0d23157cef29.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/FontAwesome-e0fe74d3db2adf53d3e180a511c1c818.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-31e87bf9b192bfb7d4f70a1d414d205a.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-31e87bf9b192bfb7d4f70a1d414d205a.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-7fb0f9a99d6e08b630328caa700510fb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-7fb0f9a99d6e08b630328caa700510fb.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9a25f3cf79327aee6ddedfdc89b17704.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9a25f3cf79327aee6ddedfdc89b17704.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9d728366afcb5e2ba929f4971e263290.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9d728366afcb5e2ba929f4971e263290.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-b3163eb68cabcded2ace0680e5bc2dec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-b3163eb68cabcded2ace0680e5bc2dec.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-c1655bb6adfe93e7eb71261daef8847a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-c1655bb6adfe93e7eb71261daef8847a.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-dbf56e256cccb5bed846d5c02de7e1b4.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-dbf56e256cccb5bed846d5c02de7e1b4.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-e0c1659b1f42781b2377088fb47e602d.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-e0c1659b1f42781b2377088fb47e602d.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f3c85c53b2e1bd8be4f5dded0f88dfcb.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f3c85c53b2e1bd8be4f5dded0f88dfcb.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f65584ecf88e7e425065bb3143059141.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f65584ecf88e7e425065bb3143059141.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-fa7d0370469947ca58333df34255db8b.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-fa7d0370469947ca58333df34255db8b.css.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-0f4a7be6dc74b926e8120a545f8b96ea.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-5eefd964cf689e3315d8c9459714e4cd.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-b8371b58529b77f0818e5d721a7a5624.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap/glyphicons-halflings-regular-cf24e42fad297dbaa33853187ba876e7.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fondo-gris-01-2cd4a1eba7687bbb1461c1c25e627034.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fondo-gris-01-5c41429f847060e3a91f00109d55371e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fondo-gris-053f4e697c80fb4000164217f8b7a5e7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fondo-gris-7555c0036fdd0827f2a66ed4753b5b8f.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-34b2504c792d70e1f0c5801c1e31a30d.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-3c1db8c9b878124973c6857922eaf5cc.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-5fc501e301a817d5a050290822c309ee.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-63ef8d962411a81869fd02e4851430db.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-646c86f24924f605aed6f59661d49638.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-a40e0d426b07d22fccbfebe8f7835f6d.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-cbfb665ef7be7c10a279bb37903394b2.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/fontawesome-webfont-e72088b10aca8d79f0fa0c86d42a8896.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings-regular-0f4a7be6dc74b926e8120a545f8b96ea.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings-regular-5eefd964cf689e3315d8c9459714e4cd.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings-regular-b8371b58529b77f0818e5d721a7a5624.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/glyphicons-halflings-regular-cf24e42fad297dbaa33853187ba876e7.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/animated-overlay-9a4683da631ff0931e6b79fe1e3b0f62.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100-2caf1906ef29c8b0a0231bab3378af15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-d0d2c550e34708246dbba1f9f3159a05.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_55_fbf9ee_1x400-d95a178c13be166f92d0fddd88db5c3e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_65_ffffff_1x400-6ecb6ac2eae0121dc49bf072fd85d856.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_75_dadada_1x400-38d0d320907a653310f2d313ba6d9517.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_75_e6e6e6_1x400-4ce93dd83037898f449c88a3f17e00bf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_95_fef1ec_1x400-1f18353efdd3c901f5ddca1878c91fdd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100-c934ac5defcc98eed5b8adb52cf4426d.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_222222_256x240-1a69acf2f1f4e05b77624051d7efa3c7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_2e83ff_256x240-fb696ff371365fefead5c91e34c5c7a2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_454545_256x240-03e9ed8d9e9bd4267ee7c351a3d490ef.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_888888_256x240-428cc3b69b8ea50c9524dff27ae83baa.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_cd0a0a_256x240-8aa975adfe1f2d53cdbbb8f5d4013337.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/manifest-0fa844cbe1a162bf5ffcd544d6d31db7.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_header2.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header2.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_form_google.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_form_google.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_googlemap.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_googlemap.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_topbar.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_topbar.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/google.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/google.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/limbo/places.html.erb" afterPath="$PROJECT_DIR$/app/views/limbo/places.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/actividades/show.html.erb" afterPath="$PROJECT_DIR$/app/views/actividades/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/update.js.erb" afterPath="$PROJECT_DIR$/app/views/users/update.js.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="notelimites.iws" />
@@ -110,11 +33,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="places.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/limbo/places.html.erb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="165">
-              <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.16329704" vertical-offset="225" max-vertical-offset="2565">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/actividades/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,8 +56,8 @@
       <file leaf-file-name="_topbar.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_topbar.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="840">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="840">
+              <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -136,24 +69,30 @@
       <file leaf-file-name="_form_google_topbar.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="390">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="405">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <marker date="1408640626000" expanded="true" signature="74:700" placeholder="..." />
-                <marker date="1408640626000" expanded="true" signature="88:243" placeholder="..." />
-                <marker date="1408640626000" expanded="true" signature="274:447" placeholder="..." />
-                <marker date="1408640626000" expanded="false" signature="486:522" placeholder="..." />
-                <marker date="1408640626000" expanded="true" signature="523:684" placeholder="..." />
+                <element signature="n#style#0;n#div#2;n#fieldset#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_googlemap.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_form_google.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/users/_form_google.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="540">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_googlemap.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/_googlemap.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.110456556" vertical-offset="0" max-vertical-offset="3030">
-              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+            <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="2805">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -217,7 +156,6 @@
         <option value="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_topbarxs.html.erb" />
         <option value="$PROJECT_DIR$/app/views/limbo/home.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/actividades/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/update.js.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/app/views/limbo/places.html.erb" />
@@ -227,11 +165,12 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_header2.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-        <option value="$PROJECT_DIR$/app/views/users/_form_google.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/google.css.scss" />
         <option value="$PROJECT_DIR$/app/views/layouts/_topbar.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/_googlemap.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/_form_google.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/actividades/show.html.erb" />
       </list>
     </option>
   </component>
@@ -362,6 +301,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="notelimites" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="limbo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actividades" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -644,14 +605,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46971935" sideWeight="0.49918962" order="10" side_tool="false" content_ui="tabs" x="23" y="250" width="1234" height="318" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.53028065" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2671875" sideWeight="0.67236465" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2671875" sideWeight="0.67236465" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2575387" sideWeight="0.11078287" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32768363" sideWeight="0.500813" order="11" side_tool="true" content_ui="tabs" />
@@ -709,13 +670,6 @@
         <state vertical-scroll-proportion="-4.9772725" vertical-offset="21" max-vertical-offset="1440">
           <caret line="16" column="31" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/actividades/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="703">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -894,14 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1742" max-vertical-offset="2820">
-          <caret line="170" column="13" selection-start-line="170" selection-start-column="13" selection-end-line="170" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/update.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="570">
@@ -1019,18 +965,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_googlemap.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="2805">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/users/_form_google.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="540">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/limbo/places.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="165">
+        <state vertical-scroll-proportion="0.09146342" vertical-offset="0" max-vertical-offset="656">
           <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/actividades/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_topbar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="840">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="840">
+          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#ul#0;n#nav#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1038,32 +1008,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_form_google.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35346097" vertical-offset="0" max-vertical-offset="679">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="390">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="405">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <marker date="1408640626000" expanded="true" signature="74:700" placeholder="..." />
-            <marker date="1408640626000" expanded="true" signature="88:243" placeholder="..." />
-            <marker date="1408640626000" expanded="true" signature="274:447" placeholder="..." />
-            <marker date="1408640626000" expanded="false" signature="486:522" placeholder="..." />
-            <marker date="1408640626000" expanded="true" signature="523:684" placeholder="..." />
+            <element signature="n#style#0;n#div#2;n#fieldset#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_googlemap.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/actividades/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.110456556" vertical-offset="0" max-vertical-offset="3030">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.16329704" vertical-offset="225" max-vertical-offset="2565">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding />
         </state>
       </provider>
