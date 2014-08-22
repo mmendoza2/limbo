@@ -17,6 +17,7 @@ Limbo::Application.routes.draw do
   match '/index',    to: 'limbo#index',    via: 'get'
   match '/ayuda',    to: 'info#ayuda',    via: 'get'
   match '/places',    to: 'limbo#places',    via: 'get'
+  match '/location',    to: 'instrucciones#location',    via: 'get'
   match '/zwopa',    to: 'info#zwopa',    via: 'get'
   match '/terminos',    to: 'info#terminos',    via: 'get'
   match '/promocionate',    to: 'info#promocionate',    via: 'get'

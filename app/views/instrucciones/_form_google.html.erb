@@ -1,3 +1,4 @@
+<div class="col-md-12">
 <%= form_for(current_user) do |f| %>
 
 <fieldset>
@@ -7,13 +8,13 @@
       <div class="control-group">
         <%= f.label :lat, class: "control-label" %>
         <div class="controls">
-          <%= f.text_field :lat, class: "col-md-12" %>
+          <%= f.text_field :lat, class: "col-md-12", id: "lat" %>
         </div>
       </div>
       <div class="control-group">
         <%= f.label :lng, class: "control-label" %>
         <div class="controls">
-          <%= f.text_field :lng, class: "col-md-12" %>
+          <%= f.text_field :lng, class: "col-md-12", id: "lng" %>
         </div>
       </div>
       <div class="control-group pull-right">
@@ -27,8 +28,9 @@
         <%= label_tag :search, "Search For Address" %>
         <%= text_field_tag :location_search, nil, class: "col-md-12 search-query", type: "search" %>
       </div>
-      <%= render partial: "users/googlemap" %>
+      <%= render partial: "googlemap" %>
     </div>
   </div>
 </fieldset>
 <% end %>
+</div>

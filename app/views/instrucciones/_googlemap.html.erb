@@ -1,28 +1,24 @@
-<div id="googlemap"></div>
+<div id="maploc" style="height: 600px; width: 600px"></div>
 
 
 <script type="text/javascript">
-
-
-
 
 <!--
   var defaultZoom = 12; // Why zoomed in? Because it looks good.
   
   // create map and add controls
-// create map and add controls
-var mapOptions = {
+  var mapOptions = {
     <% if current_user.lat.nil?  %>
-    center: new google.maps.LatLng(13.731548,100.56799),
-    <% else %>
-    center: new google.maps.LatLng(<%= current_user.lat %>, <%= current_user.lng %>),
-    <% end %>
+      center: new google.maps.LatLng(13.731548,100.56799),
+      <% else %>
+      center: new google.maps.LatLng(<%= current_user.lat %>, <%= current_user.lng %>),
+      <% end %>
     zoom: defaultZoom,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     scrollwheel: false,
     scaleControl: false
-};
-  var map = new google.maps.Map(document.getElementById('googlemap'),mapOptions);
+  };
+  var map = new google.maps.Map(document.getElementById('maploc'),mapOptions);
 
 	// I'm Centering the map in Bangkok
 	// '13.731547730050778'
