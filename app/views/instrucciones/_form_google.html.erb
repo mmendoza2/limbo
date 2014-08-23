@@ -1,36 +1,31 @@
 <div class="col-md-12">
-<%= form_for(current_user) do |f| %>
 
-<fieldset>
-  <div class="row">
-
-    <div class="col-md-5 ">
-      <div class="control-group">
-        <%= f.label :lat, class: "control-label" %>
-        <div class="controls">
-          <%= f.text_field :lat, class: "col-md-12", id: "lat" %>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :lng, class: "control-label" %>
-        <div class="controls">
-          <%= f.text_field :lng, class: "col-md-12", id: "lng" %>
-        </div>
-      </div>
-      <div class="control-group pull-right">
-        <%= f.submit "Save Location", class: 'btn' %>
-      </div>
+    <div class="col-md-1 col-md-offset-2"  >
+      <button onclick="getLocation()" class="transparent" style= "margin-top: 60px; margin-left: 50px"><i class="fa fa-2x fa-location-arrow"></i></button>
     </div>
 
-    <div class="col-md-7">
+    <div class="col-md-8">
+    <%= form_for(current_user) do |f| %>
 
-      <div class="control-group">
-        <%= label_tag :search, "Search For Address" %>
-        <%= text_field_tag :location_search, nil, class: "col-md-12 search-query", type: "search" %>
-      </div>
-      <%= render partial: "googlemap" %>
+
+
+
+          <%= f.hidden_field :lat, id: "lat" %>
+          <%= f.hidden_field :lng, id: "lng" %>
+        <div class="col-md-12  col-xs-12">
+        <h4>Please update your location to show you nice places around you</h4>
+          <br/>
+          <div class="col-md-9 control-group">
+            <%= text_field_tag :location_search, nil, class: "search-query", type: "search" %>
+          </div>
+
+          <div class="col-md-3 control-group ">
+            <%= f.submit "Save Location", class: 'btn-success' %>
+          </div>
+          <%= render partial: "googlemap" %>
+        </div>
+
+
+    <% end %>
     </div>
-  </div>
-</fieldset>
-<% end %>
 </div>

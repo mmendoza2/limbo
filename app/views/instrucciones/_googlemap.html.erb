@@ -1,11 +1,46 @@
-<div id="maploc" style="height: 600px; width: 600px"></div>
+<div id="maploc" style="height: 400px; width: 100%"></div>
 
+<script>
+    var x = document.getElementById("lat");
+    var z = document.getElementById("lng");
+    var latgeo;
+    var lnggeo;
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        x.value = position.coords.latitude;
+        z.value = position.coords.longitude;
+        latgeo = position.coords.latitude;
+        lnggeo = position.coords.longitude;
+
+
+        var latLong = new google.maps.LatLng(latgeo, lnggeo);
+        marker = new google.maps.Marker(latLong);
+
+        map.setCenter(latLong, 10);
+        map.addOverlay(marker);
+        marker.openInfoWindow(markerText);
+        alert("1")
+        google.maps.Event.addListener(marker, "click", function () {
+            marker.openInfoWindow(markerText);
+        });
+
+    }
+
+
+</script>
 
 <script type="text/javascript">
 
 <!--
   var defaultZoom = 12; // Why zoomed in? Because it looks good.
-  
+
   // create map and add controls
   var mapOptions = {
     <% if current_user.lat.nil?  %>
@@ -23,6 +58,10 @@
 	// I'm Centering the map in Bangkok
 	// '13.731547730050778'
 	// '100.56798934936523'
+
+
+
+
 	var mylat = document.getElementById("lat").value;
 	var mylng = document.getElementById("lng").value;
 	if (jQuery.isEmptyObject(mylat)) {
@@ -56,12 +95,12 @@
 
 	// create Info window for marker
   var infowindow = new google.maps.InfoWindow();
-  
+
   // Address Autocomplete
   var input = document.getElementById('location_search');
   var autocomplete = new google.maps.places.Autocomplete(input);
   autocomplete.bindTo('bounds', map);
-  
+
 	// add a drag listener to the map
 	google.maps.event.addListener(marker, "dragend", function() {
 		var point = marker.getPosition();
@@ -76,13 +115,14 @@
 
   // Autocomplete Listener
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
     place = autocomplete.getPlace();
     marker.setPosition(place.geometry.location);
     map.panTo(place.geometry.location);
     map.setZoom(16);
 		document.getElementById("lat").value = place.geometry.location.lat();
 		document.getElementById("lng").value = place.geometry.location.lng();
-		
+
 		// Sets the proper image on the marker. ie. school/hospital marker
 		var image = new google.maps.MarkerImage(
         place.icon,
@@ -106,7 +146,7 @@
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
-    
+
     // Autofill the fields in the form. TODO: improve parsing of the returned JSON data.
     var address = place.address_components;
     var website = place.url;
