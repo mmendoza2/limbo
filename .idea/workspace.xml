@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/_googlemapxs.html.erb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/limbo/instrucciones.html.erb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/instrucciones/_form_google.html.erb" afterPath="$PROJECT_DIR$/app/views/instrucciones/_form_google.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_form_google_topbar.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_form_google_topbarxs.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_form_google_topbarxs.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/instrucciones/_googlemap.html.erb" afterPath="$PROJECT_DIR$/app/views/instrucciones/_googlemap.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_googlemap.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_googlemap.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_topbarxs.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_topbarxs.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/google.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/google.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/limbo/home.html.erb" afterPath="$PROJECT_DIR$/app/views/limbo/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="4ab0fe60-3f7f-48cf-afee-5624ebe0c2c7" name="Default" comment="" />
     <ignored path="notelimites.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
